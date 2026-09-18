@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Camera hành trình 70mai A210 | Văn Long Auto</title>
+  <meta name="description" content="70mai A210: ghi hình trước sau 1080P, HDR, 60FPS, GPS, Wi-Fi 6, giám sát đỗ xe và điều khiển qua ứng dụng.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#c9a84c;--bg:#09090a;--card:#141416;--line:#303034;--text:#f5f5f5;--muted:#aaa}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 "Montserrat",Arial,sans-serif}img,video{max-width:100%}a{color:inherit;text-decoration:none}
+    .container{width:min(1180px,calc(100% - 32px));margin:auto}nav{border-bottom:1px solid #222;background:#101011}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{max-width:190px;max-height:48px}.back{color:var(--muted)}
+    .crumb{padding:24px 0;color:#888;font-size:13px}.crumb a,.brand,.eyebrow{color:var(--gold)}.overview{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;padding-bottom:55px}.product-slider{position:relative;overflow:hidden;aspect-ratio:1;border:1px solid var(--line);border-radius:14px;background:#fff}.track{display:flex;height:100%;transition:transform .5s ease;touch-action:pan-y}.slide{flex:0 0 100%;display:grid;place-items:center;margin:0}.slide img{width:100%;height:100%;object-fit:contain;user-select:none}.arrow{position:absolute;top:50%;z-index:2;width:42px;height:42px;border:0;border-radius:50%;background:var(--gold);font-size:27px;cursor:pointer;transform:translateY(-50%)}.prev{left:12px}.next{right:12px}.dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:7px}.dot{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#777;cursor:pointer}.dot.active{width:23px;border-radius:8px;background:var(--gold)}
+    .brand,.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}h1{margin:10px 0 14px;font-size:clamp(30px,4vw,50px);line-height:1.12}.summary>p{color:var(--muted)}.offer{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap;margin:22px 0}.price{display:inline-flex;min-width:260px;flex-direction:column;padding:16px 24px;border:1px solid #5a4a20;border-radius:10px;background:#17150f}.price small{color:#aaa}.price strong{color:var(--gold);font-size:28px}.notes{display:grid;gap:8px}.note{padding:9px 13px;border:1px solid #333;border-radius:8px;background:var(--card);font-size:12px}.note b{color:var(--gold)}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{padding:12px 18px;border:1px solid var(--gold);border-radius:7px;font-weight:700}.primary{background:var(--gold);color:#111}
+    section{padding:55px 0;border-top:1px solid #222}.section-head{margin-bottom:25px}.section-head h2{margin:6px 0;font-size:clamp(25px,3vw,38px);line-height:1.2}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.feature{padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--card)}.feature b{color:var(--gold)}.feature h3{margin:7px 0;font-size:16px}.feature p{margin:0;color:var(--muted);font-size:13px}
+    .detail{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:34px;align-items:start;padding:55px 0;border-top:1px solid #222}.article{min-width:0}.article-block{margin-bottom:42px}.article-block h3{margin:0 0 9px;color:var(--gold);font-size:22px}.article-block p,.article-block li{color:#bbb}.article-block ul{padding-left:20px}.content-media{margin:20px 0 0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#111}.content-media img,.content-media video{display:block;width:100%;height:auto;object-fit:contain}.content-media figcaption{padding:10px 14px;color:#888;font-size:12px}.video-label{display:flex;align-items:center;gap:8px}.video-label::before{content:"▶";color:var(--gold);font-size:13px}.media-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px;border-top:1px solid var(--line);background:#0e0e10}.media-tab{padding:11px 10px;border:1px solid #36363a;border-radius:7px;background:#18181b;color:#bbb;font:600 13px "Montserrat",sans-serif;cursor:pointer;transition:.2s}.media-tab.active{border-color:var(--gold);background:var(--gold);color:#111;box-shadow:0 0 14px #c9a84c55}
+    .specs{position:sticky;top:20px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--card)}.specs h2{margin:5px 0 14px;font-size:21px}.specs table{width:100%;border-collapse:collapse}.specs th,.specs td{padding:10px 0;border-bottom:1px solid #2a2a2d;font-size:13px;vertical-align:top}.specs th{width:45%;padding-right:10px;color:#999;text-align:left;font-weight:500}.specs td{text-align:right;font-weight:600}.specs tr:last-child>*{border:0}.source{margin:0 0 30px;color:#999;font-size:13px}.source a{color:var(--gold)}.cta{margin-bottom:45px;padding:28px;border:1px solid #5a4a20;border-radius:12px;background:#15130e}.cta h2{margin:0 0 8px}.cta p{color:var(--muted)}footer{padding:24px;border-top:1px solid #222;color:#888;text-align:center}
+    @media(max-width:900px){.overview,.detail{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}.specs{position:static}.detail{gap:24px}}
+    @media(max-width:560px){.container{width:min(100% - 24px,1180px)}.nav{height:64px}.logo{max-width:145px}.back{font-size:12px}.overview{gap:22px;padding-bottom:40px}section,.detail{padding:40px 0}.features{grid-template-columns:1fr}.price{width:100%;min-width:0}.notes{width:100%}.specs{padding:17px}.arrow{width:38px;height:38px}}
+  </style>
+</head>
+<body>
+  <nav><div class="container nav">
+    <a href="index.html"><img class="logo" src="assets/LOGO VAN LONG.png" alt="Văn Long Auto"></a>
+    <a class="back" href="index.html">← Quay lại trang chủ</a>
+  </div></nav>
+
+  <main class="container">
+    <div class="crumb"><a href="index.html">Trang chủ</a> / Camera hành trình / 70mai A210</div>
+    <div class="overview">
+      <div class="product-slider" id="slider">
+        <div class="track" id="track">
+          <figure class="slide"><img src="assets/a210/a210 vuong/1.png" alt="70mai A210, ảnh 1" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a210/a210 vuong/2.png" alt="70mai A210, ảnh 2" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a210/a210 vuong/3.png" alt="70mai A210, ảnh 3" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a210/a210 vuong/4.png" alt="70mai A210, ảnh 4" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a210/a210 vuong/5.png" alt="70mai A210, ảnh 5" draggable="false"></figure>
+        </div>
+        <button class="arrow prev" aria-label="Ảnh trước">‹</button><button class="arrow next" aria-label="Ảnh tiếp theo">›</button>
+        <div class="dots" id="dots" aria-label="Chọn ảnh"></div>
+      </div>
+      <div class="summary">
+        <span class="brand">Văn Long Auto · 70mai</span>
+        <h1>Camera hành trình 70mai A210</h1>
+        <p>Camera hành trình trước–sau 1080P, hỗ trợ 60FPS, HDR, GPS, Wi-Fi 6 và giám sát đỗ xe khi sử dụng bộ nguồn tương thích.</p>
+        <div class="offer">
+          <div class="price"><small>Giá bán tại Văn Long Auto</small><strong>Liên hệ</strong></div>
+          <div class="notes"><div class="note"><b>RC21</b> camera sau bán riêng</div><div class="note"><b>Hardwire Kit</b> bán riêng</div></div>
+        </div>
+        <div class="buttons"><a class="btn primary" href="https://zalo.me/0886636338">Nhận tư vấn</a><a class="btn" href="#thong-so">Xem thông số</a></div>
+      </div>
+    </div>
+    <div class="detail">
+      <article class="article">
+        <header class="section-head"><span class="eyebrow">Chi tiết sản phẩm</span><h2>Các công nghệ chính trên 70mai A210</h2></header>
+
+        <div class="article-block">
+          <h3>Ghi hình trước và sau 1080P</h3>
+          <p>A210 có thể ghi camera trước ở 1080P 60FPS để hình ảnh chuyển động mượt hơn. Khi kết hợp camera sau RC21, thiết bị bổ sung góc quan sát phía sau 1080P. Góc nhìn trước 132° và góc nhìn sau 130° giúp bao quát nhiều phần đường hơn.</p>
+          <p><small>Camera RC21 bán riêng. Khi ghi 60FPS, HDR không hoạt động.</small></p>
+          <figure class="content-media">
+            <img id="visionImage" src="assets/a210/a210 ngang/1.png" alt="Ghi hình ban ngày của 70mai A210">
+            <div class="media-tabs" role="tablist" aria-label="Chọn điều kiện ghi hình">
+              <button class="media-tab active" type="button" data-vision="day" role="tab" aria-selected="true">Ban ngày</button>
+              <button class="media-tab" type="button" data-vision="night" role="tab" aria-selected="false">Ban đêm</button>
+            </div>
+            <figcaption>Chọn Ban ngày hoặc Ban đêm để xem ảnh tương ứng; ảnh luôn giữ nguyên tỷ lệ.</figcaption>
+          </figure>
+        </div>
+
+        <div class="article-block">
+          <h3>Super Night Vision và HDR</h3>
+          <p>Khẩu độ f/1.6 hỗ trợ camera thu sáng tốt hơn vào ban đêm. Thuật toán HDR giúp chuyển tiếp vùng sáng tối tự nhiên hơn và làm rõ các chi tiết quan trọng trong điều kiện ánh sáng phức tạp.</p>
+          <p><small>Khi bật HDR, camera trước tự chuyển về 30FPS.</small></p>
+          <figure class="content-media"><img src="assets/a210/a210 ngang/3.png" alt="Khả năng ghi hình HDR của 70mai A210"><figcaption>Có thể dùng ảnh ngang, dọc hoặc ảnh dài.</figcaption></figure>
+        </div>
+
+        <div class="article-block">
+          <h3>Ghi khẩn cấp có bộ đệm</h3>
+          <p>Khi G-Sensor nhận biết va chạm, A210 có thể lưu tối đa 190 giây trước và 30 giây sau thời điểm phát hiện. Video quan trọng được khóa trong thư mục riêng trên ứng dụng 70mai để dễ tìm lại khi cần.</p>
+          <p><small>Khoảng thời gian ghi trước phụ thuộc cài đặt ghi vòng lặp và thời điểm va chạm.</small></p>
+          <figure class="content-media"><video autoplay muted loop playsinline preload="metadata" src="assets/a210/video va cham.mp4"></video><figcaption class="video-label">Video ghi khẩn cấp</figcaption></figure>
+        </div>
+
+        <div class="article-block">
+          <h3>Giám sát đỗ xe 24 giờ</h3>
+          <p>Ở chế độ đỗ xe, cảm biến G có thể kích hoạt ghi hình khi phát hiện tác động. Thiết bị cũng hỗ trợ ghi Time-lapse để theo dõi trong thời gian dài và thông báo sự kiện khi camera được bật lại.</p>
+          <p><small>Cần bộ dây nguồn 70mai Hardwire Kit, bán riêng.</small></p>
+          <figure class="content-media">
+            <video id="parkingVideo" autoplay muted loop playsinline preload="metadata" src="assets/a210/phat hien va cham.mp4"></video>
+            <div class="media-tabs" role="tablist" aria-label="Chọn chế độ giám sát đỗ xe">
+              <button class="media-tab active" type="button" data-parking data-src="assets/a210/phat hien va cham.mp4" role="tab" aria-selected="true">Phát hiện va chạm</button>
+              <button class="media-tab" type="button" data-parking data-src="assets/a210/tua nhanh.mp4" role="tab" aria-selected="false">Tua nhanh thời gian</button>
+            </div>
+            <figcaption class="video-label">Chọn chế độ để xem video</figcaption>
+          </figure>
+        </div>
+
+        <div class="article-block">
+          <h3>Ghi vòng lặp liên tục</h3>
+          <p>Khi thẻ nhớ đầy, các tệp cũ thông thường sẽ được tự động ghi đè để duy trì việc ghi hình. Những video được đánh dấu quan trọng sẽ lưu riêng và không nằm trong nhóm ghi đè thông thường.</p>
+        </div>
+
+        <div class="article-block">
+          <h3>Siêu tụ điện bền bỉ</h3>
+          <p>Siêu tụ điện cung cấp nguồn ổn định và phù hợp với dải nhiệt độ khắc nghiệt trong xe. Theo thử nghiệm của 70mai, bộ phận này có thể đạt tới 500.000 chu kỳ sạc; kết quả thực tế thay đổi theo điều kiện sử dụng.</p>
+        </div>
+
+        <div class="article-block">
+          <h3>Wi-Fi 6 và điều khiển qua ứng dụng</h3>
+          <p>Wi-Fi 6 tích hợp cho tốc độ tải xuống công bố tối đa 5MB/s. Ứng dụng 70mai cho phép xem trực tiếp, điều chỉnh cài đặt, quản lý và tải video về điện thoại.</p>
+        </div>
+
+        <div class="article-block">
+          <h3>Lưu trữ tối đa 256GB</h3>
+          <p>A210 hỗ trợ thẻ microSD dung lượng đến 256GB, chuẩn U1 trở lên. Dung lượng lớn giúp kéo dài thời gian lưu trước khi hệ thống ghi vòng lặp thay thế các video cũ.</p>
+        </div>
+      </article>
+
+      <aside class="specs" id="thong-so">
+        <span class="brand">70mai A210</span><h2>Thông số kỹ thuật</h2>
+        <table>
+          <tr><th>HDR</th><td>Có</td></tr>
+          <tr><th>Độ phân giải</th><td>Trước và sau 1080P</td></tr>
+          <tr><th>Camera trước</th><td>30FPS khi HDR<br>Hoặc 60FPS</td></tr>
+          <tr><th>Góc nhìn trước</th><td>FOV 132°</td></tr>
+          <tr><th>Góc nhìn sau</th><td>FOV 130°</td></tr>
+          <tr><th>Khẩu độ</th><td>f/1.6</td></tr>
+          <tr><th>Màn hình</th><td>1.9 inch</td></tr>
+          <tr><th>Bộ nhớ</th><td>MicroSD đến 256GB<br>U1 trở lên</td></tr>
+          <tr><th>GPS</th><td>Có</td></tr>
+          <tr><th>Wi-Fi</th><td>Wi-Fi 6<br>Tối đa 5MB/s</td></tr>
+          <tr><th>Nguồn dự phòng</th><td>Siêu tụ điện</td></tr>
+          <tr><th>Điều khiển ứng dụng</th><td>Có</td></tr>
+          <tr><th>Camera sau</th><td>70mai RC21<br>Bán riêng</td></tr>
+          <tr><th>Giám sát đỗ xe</th><td>Cần Hardwire Kit</td></tr>
+        </table>
+      </aside>
+    </div>
+
+    <p class="source">Thông tin được tổng hợp và biên soạn lại từ <a href="https://www.70mai.com/vn/a210/" target="_blank" rel="noopener">trang sản phẩm 70mai A210</a>. Giá, phụ kiện và phiên bản sản phẩm có thể thay đổi; vui lòng xác nhận với Văn Long Auto trước khi mua.</p>
+    <section class="cta"><h2>Bạn muốn lắp 70mai A210 cho xe?</h2><p>Gửi tên xe và nhu cầu sử dụng để Văn Long Auto tư vấn bộ một camera, bộ trước–sau và nguồn giám sát đỗ xe phù hợp.</p><a class="btn primary" href="https://zalo.me/0886636338">Tư vấn ngay</a></section>
+  </main>
+
+  <footer>© Văn Long Auto · Trung tâm chăm sóc và nâng cấp xe hơi.</footer>
+  <script>
+    const slider=document.querySelector('#slider'),track=document.querySelector('#track'),slides=[...document.querySelectorAll('.slide')],dots=document.querySelector('#dots');let current=0,timer,x=0;
+    slides.forEach((_,i)=>dots.insertAdjacentHTML('beforeend',`<button class="dot" aria-label="Xem ảnh ${i+1}"></button>`));const dot=[...dots.children];
+    function show(i){current=(i+slides.length)%slides.length;track.style.transform=`translateX(-${current*100}%)`;dot.forEach((b,n)=>b.classList.toggle('active',n===current))}function auto(){clearInterval(timer);timer=setInterval(()=>show(current+1),3500)}
+    document.querySelector('.next').onclick=()=>{show(current+1);auto()};document.querySelector('.prev').onclick=()=>{show(current-1);auto()};dot.forEach((b,i)=>b.onclick=()=>{show(i);auto()});slider.ontouchstart=e=>{x=e.touches[0].clientX;clearInterval(timer)};slider.ontouchend=e=>{if(Math.abs(e.changedTouches[0].clientX-x)>45)show(current+(e.changedTouches[0].clientX<x?1:-1));auto()};slider.onmouseenter=()=>clearInterval(timer);slider.onmouseleave=auto;show(0);auto();
+    const tabs=(selector,media,files)=>document.querySelectorAll(selector).forEach(btn=>btn.onclick=()=>{media.src=files[btn.dataset.vision||btn.dataset.parking];if(media.tagName==='VIDEO'){media.load();media.play().catch(()=>{})}document.querySelectorAll(selector).forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',b===btn)})});
+    tabs('[data-vision]',document.querySelector('#visionImage'),{day:'assets/a210/a210 ngang/1.png',night:'assets/a210/a210 ngang/2.png'});
+    const parkingVideo=document.querySelector('#parkingVideo'),parkingTabs=document.querySelectorAll('[data-parking]');
+    parkingTabs.forEach(btn=>btn.onclick=()=>{parkingVideo.src=btn.dataset.src;parkingVideo.play().catch(()=>{});parkingTabs.forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',b===btn)})});
+  </script>
+</body>
+</html>

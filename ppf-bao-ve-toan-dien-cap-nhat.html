@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dán PPF Bảo Vệ Toàn Diện | Văn Long Auto</title>
+  <meta name="description" content="Dán PPF bảo vệ sơn ô tô tại Văn Long Auto: hạn chế trầy xước, đá văng, tia UV và tác nhân môi trường, hỗ trợ tự phục hồi vết xước nhẹ và giữ bề mặt sơn zin.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =========================================
+       PPF DETAIL - CHỈ DÙNG CHO TRANG NÀY
+    ========================================= */
+
+    .ppf-benefits {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .ppf-benefit {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .ppf-benefit strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .ppf-benefit p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .ppf-packages {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .ppf-package {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #111;
+    }
+
+    .ppf-package span {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .ppf-package h3 {
+      margin: 8px 0 !important;
+    }
+
+    .ppf-package p {
+      margin-bottom: 0 !important;
+    }
+
+    .ppf-process {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .ppf-step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 13px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #111;
+    }
+
+    .ppf-step-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #111;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .ppf-step h3 {
+      margin: 0 0 5px !important;
+    }
+
+    .ppf-step p {
+      margin: 0 !important;
+    }
+
+    .ppf-price {
+      scroll-margin-top: calc(var(--nav-h) + 30px);
+      padding: 40px 0 55px;
+      border-top: 1px solid var(--border);
+    }
+
+    .ppf-price-head {
+      margin-bottom: 18px;
+    }
+
+    .ppf-price-head span {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+
+    .ppf-price-head h2 {
+      margin-top: 7px;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .ppf-price-image {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #111;
+    }
+
+    .ppf-price-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    @media (max-width: 800px) {
+      .ppf-benefits,
+      .ppf-packages {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .ppf-benefits,
+      .ppf-packages {
+        grid-template-columns: 1fr;
+      }
+
+      .ppf-step {
+        grid-template-columns: 36px 1fr;
+      }
+
+      .ppf-step-number {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="nav-brand">
+        <img src="assets/LOGO VAN LONG.png" alt="Logo Văn Long Auto" class="logo">
+      </a>
+
+      <ul class="nav-menu nav-menu--static">
+        <li>
+          <a href="index.html#featured-services" class="nav-link">
+            ← Quay lại Dịch Vụ
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <main class="pd-page">
+    <div class="pd-container">
+
+      <!-- BREADCRUMB -->
+      <nav class="pd-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Trang chủ</a>
+        <span aria-hidden="true">/</span>
+        <a href="index.html#featured-services">Dịch vụ</a>
+        <span aria-hidden="true">/</span>
+        <span>Dán PPF</span>
+      </nav>
+
+
+      <!-- =========================================
+           HERO / FORM GIỐNG I-SOTEC
+      ========================================== -->
+      <section class="pd-overview">
+
+        <div class="pd-media">
+
+          <div class="pd-main-image">
+            <img
+              src="assets/ppf.jpg"
+              alt="Dán PPF bảo vệ sơn ô tô tại Văn Long Auto"
+            >
+          </div>
+
+          <p class="pd-image-note">
+            Dán PPF bảo vệ sơn ngoại thất • Văn Long Auto
+          </p>
+
+        </div>
+
+
+        <div class="pd-summary">
+
+          <span class="pd-brand">
+            PAINT PROTECTION FILM
+          </span>
+
+          <h1 class="pd-title">
+            Dán PPF Bảo Vệ Toàn Diện
+          </h1>
+
+          <p class="pd-short">
+            PPF là lớp phim bảo vệ bề mặt sơn ô tô, giúp hạn chế trầy xước,
+            đá văng, tác động của tia UV và các yếu tố môi trường trong quá trình sử dụng.
+            Các dòng PPF cao cấp còn có khả năng hỗ trợ tự phục hồi những vết xước nhẹ.
+          </p>
+
+
+          <div class="pd-points">
+            <div class="pd-point">Bảo vệ lớp sơn zin trước đá văng và va quệt nhẹ.</div>
+            <div class="pd-point">Hạn chế tia UV, nhựa cây, phân chim và tác nhân môi trường.</div>
+            <div class="pd-point">Hỗ trợ tự phục hồi các vết xước nhẹ ở nhiều dòng PPF cao cấp.</div>
+            <div class="pd-point">Giúp bề mặt xe giữ độ bóng và tính thẩm mỹ lâu dài.</div>
+            <div class="pd-point">Có thể lựa chọn dán cản trước, đầu xe hoặc full toàn bộ xe.</div>
+          </div>
+
+
+          <div class="pd-actions">
+
+            <!-- NÚT 1: ĐẶT LỊCH -->
+            <a
+              href="#bang-gia"
+              class="pd-btn pd-btn--primary"
+            >
+              Bảng Giá PPF
+            </a>
+
+            <!-- NÚT 2: XEM CHI TIẾT -->
+            <a
+              href="#chi-tiet"
+              class="pd-btn pd-btn--ghost"
+            >
+              Xem Chi Tiết
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- MENU NỘI DUNG -->
+      <nav class="pd-anchorbar" aria-label="Nội dung PPF">
+        <a href="#chi-tiet">PPF là gì?</a>
+        <a href="#loi-ich">Lợi ích</a>
+        <a href="#goi-dan">Các gói PPF</a>
+        <a href="#bang-gia">Bảng giá</a>
+        <a href="#quy-trinh">Quy trình</a>
+      </nav>
+
+
+      <div class="pd-content-grid">
+
+        <article class="pd-article">
+
+
+          <!-- PPF LÀ GÌ -->
+          <section class="pd-section" id="chi-tiet">
+
+            <h2>PPF ô tô là gì?</h2>
+
+            <p>
+              PPF (Paint Protection Film) là loại màng phim bảo vệ được làm từ
+              polyurethane hoặc TPU cao cấp, có độ trong suốt cao và được dán trực tiếp
+              lên bề mặt ngoại thất của xe.
+            </p>
+
+            <p>
+              Lớp phim hoạt động như một lớp bảo vệ cho sơn nguyên bản, giúp hạn chế
+              trầy xước do đá văng, cành cây, va quệt nhẹ, nhựa đường cũng như các
+              tác nhân môi trường như tia UV, mưa axit và hóa chất.
+            </p>
+        <img src="assets/pp1/1.png" alt="LED viền nội thất ô tô">
+
+          </section>
+
+
+          <!-- LỢI ÍCH -->
+          <section class="pd-section" id="loi-ich">
+
+            <h2>Lợi ích nổi bật khi dán PPF</h2>
+
+            <div class="ppf-benefits">
+
+              <div class="ppf-benefit">
+                <strong>Chống trầy xước</strong>
+                <p>Hạn chế vết xước do đá văng, cành cây và những va quệt nhẹ khi sử dụng xe.</p>
+              </div>
+
+              <div class="ppf-benefit">
+                <strong>Self-Healing</strong>
+                <p>Nhiều dòng PPF cao cấp có khả năng hỗ trợ phục hồi vết xước nhẹ khi gặp nhiệt.</p>
+              </div>
+
+              <div class="ppf-benefit">
+                <strong>Hạn chế tia UV</strong>
+                <p>Giảm tác động của tia UV và quá trình oxy hóa gây bạc màu bề mặt sơn.</p>
+              </div>
+
+              <div class="ppf-benefit">
+                <strong>Chống tác nhân môi trường</strong>
+                <p>Hạn chế ảnh hưởng từ mưa axit, nhựa cây, phân chim, côn trùng và hóa chất.</p>
+              </div>
+
+              <div class="ppf-benefit">
+                <strong>Tăng độ bóng</strong>
+                <p>Giúp bề mặt xe duy trì vẻ sáng bóng và hạn chế xuống màu trong quá trình sử dụng.</p>
+              </div>
+
+              <div class="ppf-benefit">
+                <strong>Giữ giá trị xe</strong>
+                <p>Bảo vệ lớp sơn zin tốt hơn, hỗ trợ duy trì tình trạng ngoại thất khi sử dụng lâu dài.</p>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- GÓI PPF -->
+          <section class="pd-section" id="goi-dan">
+
+            <h2>Các gói dán PPF phổ biến</h2>
+
+            <div class="ppf-packages">
+
+              <div class="ppf-package">
+                <span>GÓI 01</span>
+                <h3>PPF Cản Trước</h3>
+                <p>
+                  Tập trung bảo vệ khu vực dễ chịu đá văng và va quệt nhất,
+                  phù hợp khi muốn tối ưu chi phí.
+                </p>
+              </div>
+
+              <div class="ppf-package">
+                <span>GÓI 02</span>
+                <h3>PPF Đầu Xe</h3>
+                <p>
+                  Có thể bao gồm nắp capo, cản trước, gương chiếu hậu,
+                  chắn bùn trước và cụm đèn tùy cấu hình.
+                </p>
+              </div>
+
+              <div class="ppf-package">
+                <span>GÓI 03</span>
+                <h3>PPF Full Toàn Xe</h3>
+                <p>
+                  Bao phủ các bề mặt sơn ngoại thất như capo, cản trước,
+                  cánh cửa, hông xe, cản sau và những chi tiết sơn khác.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          
+
+          <!-- =========================================
+               BẢNG GIÁ PPF - NGAY DƯỚI CÁC GÓI DÁN
+          ========================================== -->
+          <section class="pd-section ppf-price" id="bang-gia">
+
+            <div class="ppf-price-head">
+              <span>BẢNG GIÁ DÁN PPF</span>
+              <h2>Bảng Giá PPF Tại Văn Long Auto</h2>
+            </div>
+
+            <div class="ppf-price-image">
+              <img
+                src="assets/ppf/15.png"
+                alt="Bảng giá dán PPF bảo vệ sơn ngoại thất tại Văn Long Auto"
+                loading="lazy"
+              >
+            </div>
+
+
+            <img
+                src="assets/ppf/16.png"
+                alt="Bảng giá dán PPF bảo vệ sơn ngoại thất tại Văn Long Auto"
+                loading="lazy"
+              >
+            </div>
+          </section>
+
+<!-- QUY TRÌNH -->
+          <section class="pd-section" id="quy-trinh">
+
+            <h2>Quy trình dán PPF</h2>
+
+            <div class="ppf-process">
+
+              <div class="ppf-step">
+                <div class="ppf-step-number">01</div>
+                <div>
+                  <h3>Kiểm tra bề mặt sơn</h3>
+                  <p>
+                    Kiểm tra tổng thể tình trạng sơn và xác định các khu vực cần xử lý
+                    trước khi tiến hành thi công.
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="ppf-step">
+                <div class="ppf-step-number">02</div>
+                <div>
+                  <h3>Vệ sinh & xử lý bề mặt</h3>
+                  <p>
+                    Làm sạch bụi bẩn, nhựa đường, côn trùng và các tạp chất để chuẩn bị
+                    bề mặt cho lớp PPF.
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="ppf-step">
+                <div class="ppf-step-number">03</div>
+                <div>
+                  <h3>Cắt PPF theo form xe</h3>
+                  <p>
+                    Phim được chuẩn bị theo form từng chi tiết, ưu tiên độ chính xác
+                    và hạn chế tác động trực tiếp lên lớp sơn nguyên bản.
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="ppf-step">
+                <div class="ppf-step-number">04</div>
+                <div>
+                  <h3>Thi công PPF</h3>
+                  <p>
+                    Kỹ thuật viên dán phim lên từng khu vực trong môi trường sạch,
+                    giúp lớp phim ôm sát bề mặt và hạn chế bụi bẩn.
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="ppf-step">
+                <div class="ppf-step-number">05</div>
+                <div>
+                  <h3>Kiểm tra & bàn giao</h3>
+                  <p>
+                    Kiểm tra độ bám, bọt khí, nếp gấp và các mép phim trước khi hoàn thiện,
+                    đồng thời hướng dẫn chăm sóc sau thi công.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+        </article>
+
+
+        <!-- SIDEBAR -->
+        <aside class="pd-sidebar">
+
+          <div class="pd-spec-card">
+
+            <h2>PPF bảo vệ gì?</h2>
+
+            <dl class="pd-spec-list">
+
+              <div class="pd-spec-row">
+                <dt>Đá văng</dt>
+                <dd>Hạn chế</dd>
+              </div>
+
+              <div class="pd-spec-row">
+                <dt>Trầy xước nhẹ</dt>
+                <dd>Hạn chế</dd>
+              </div>
+
+              <div class="pd-spec-row">
+                <dt>Tia UV</dt>
+                <dd>Hỗ trợ bảo vệ</dd>
+              </div>
+
+              <div class="pd-spec-row">
+                <dt>Nhựa cây</dt>
+                <dd>Hạn chế tiếp xúc</dd>
+              </div>
+
+              <div class="pd-spec-row">
+                <dt>Phân chim</dt>
+                <dd>Hạn chế tác động</dd>
+              </div>
+
+              <div class="pd-spec-row">
+                <dt>Self-Healing</dt>
+                <dd>Tùy dòng PPF</dd>
+              </div>
+
+              <div class="pd-spec-row">
+                <dt>Phạm vi</dt>
+                <dd>Cản / Đầu xe / Full xe</dd>
+              </div>
+
+              <div class="pd-spec-row">
+                <dt>Bảo hành</dt>
+                <dd>Theo từng dòng PPF</dd>
+              </div>
+
+            </dl>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+
+      <!-- CTA CUỐI -->
+      <section class="pd-cta">
+
+        <h2>Muốn bảo vệ lớp sơn zin ngay từ đầu?</h2>
+
+        <p>
+          Gửi dòng xe và nhu cầu sử dụng, Văn Long Auto sẽ tư vấn
+          loại PPF và phạm vi thi công phù hợp.
+        </p>
+
+         <a href="https://zalo.me/0886636338" target="_blank" rel="noopener" class="pd-btn pd-btn--primary">
+          Nhận tư vấn từ Văn Long Auto
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+
+  <footer class="footer footer--simple">
+    <div class="container">
+      <p>© Văn Long Auto | Trung tâm chăm sóc &amp; nâng cấp xe hơi.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

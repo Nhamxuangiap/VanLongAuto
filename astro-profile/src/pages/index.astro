@@ -1,0 +1,156 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+
+type Setting = { key: string; value: string };
+type Service = { id: string; icon: string; image: string; title: string; desc: string; features: string; featured: string };
+type PortfolioItem = { id: string; category: string; title: string; subtitle: string; image: string; size: string; action: string };
+
+const API_BASE = 'https://opensheet.elk.sh/1EbuuihVyLmbMsx42X2uJUPvQKNvEi1BDVjjLRsA8Yxk';
+
+async function fetchSheet<T>(sheet: string): Promise<T[]> {
+  try {
+    const response = await fetch(`${API_BASE}/${sheet}`, { signal: AbortSignal.timeout(8_000) });
+    if (!response.ok) throw new Error(`${sheet}: HTTP ${response.status}`);
+    const data: unknown = await response.json();
+    return Array.isArray(data) ? (data as T[]) : [];
+  } catch (error) {
+    console.warn(`Unable to load ${sheet} data. Rendering fallback content.`, error);
+    return [];
+  }
+}
+
+const [settingsRows, services, portfolio] = await Promise.all([
+  fetchSheet<Setting>('Settings'),
+  fetchSheet<Service>('Services'),
+  fetchSheet<PortfolioItem>('Portfolio'),
+]);
+
+const fallbackServices: Service[] = [
+  { id: '1', icon: '📷', image: '/assets/portfolio_photo1.jpg', title: 'Chụp Ảnh', desc: 'Chụp ảnh chân dung, thời trang, sự kiện, cưới hỏi và phong cảnh với chất lượng điện ảnh.', features: 'Ảnh chân dung & thời trang|Ảnh cưới & sự kiện|Ảnh phong cảnh du lịch|Ảnh sản phẩm thương mại', featured: 'no' },
+  { id: '2', icon: '🎬', image: '/assets/portfolio_video.jpg', title: 'Quay Phim', desc: 'Sản xuất video chuyên nghiệp từ phim ngắn, phim doanh nghiệp đến TVC quảng cáo.', features: 'Video quảng cáo TVC|Phim doanh nghiệp|Phim ngắn nghệ thuật|Video sự kiện & hội nghị', featured: 'no' },
+  { id: '3', icon: '🎵', image: '/assets/portfolio_tiktok.jpg', title: 'TikTok Content', desc: 'Sản xuất video TikTok viral – từ ý tưởng, quay dựng đến chiến lược phát triển kênh.', features: 'Lên concept & kịch bản|Quay & dựng video TikTok|Chiến lược phát triển kênh|Tư vấn xu hướng trending', featured: 'yes' },
+  { id: '4', icon: '▶️', image: '', title: 'YouTube & Social', desc: 'Xây dựng và phát triển kênh YouTube, nội dung mạng xã hội chuyên nghiệp, tăng trưởng bền vững.', features: 'Sản xuất video YouTube|Chiến lược phát triển kênh|Nội dung Instagram & Facebook|Biên tập & hậu kỳ chuyên nghiệp', featured: 'no' },
+];
+const fallbackPortfolio: PortfolioItem[] = [
+  { id: '1', category: 'photo', title: 'Chân dung thời trang', subtitle: 'Studio & Outdoor', image: '/assets/portfolio_photo1.jpg', size: 'normal', action: 'zoom' },
+  { id: '2', category: 'video', title: 'TVC Thương Mại', subtitle: 'Quảng cáo doanh nghiệp', image: '/assets/portfolio_video.jpg', size: 'wide', action: 'play' },
+  { id: '3', category: 'tiktok', title: 'Viral Content', subtitle: '1M+ lượt xem', image: '/assets/portfolio_tiktok.jpg', size: 'normal', action: 'zoom' },
+  { id: '4', category: 'photo', title: 'Phong Cảnh Sapa', subtitle: 'Du lịch & Thiên nhiên', image: '/assets/portfolio_photo2.jpg', size: 'normal', action: 'zoom' },
+  { id: '5', category: 'youtube', title: 'Vlog Du Lịch', subtitle: '500K+ views', image: '', size: 'normal', action: 'play' },
+  { id: '6', category: 'video', title: 'Phim Ngắn Nghệ Thuật', subtitle: 'Nghệ thuật điện ảnh', image: '', size: 'normal', action: 'play' },
+  { id: '7', category: 'tiktok', title: 'Behind The Scenes', subtitle: 'Series content', image: '', size: 'tall', action: 'play' },
+  { id: '8', category: 'photo', title: 'Ảnh Sự Kiện', subtitle: 'Concert & Hội nghị', image: '', size: 'normal', action: 'zoom' },
+  { id: '9', category: 'youtube', title: 'Review Gear Camera', subtitle: '200K+ views', image: '', size: 'normal', action: 'play' },
+];
+const servicesData = services.length ? services : fallbackServices;
+const portfolioData = portfolio.length ? portfolio : fallbackPortfolio;
+const settings = new Map(settingsRows.map(({ key, value }) => [key.trim(), value.trim()]));
+const setting = (key: string, fallback: string) => settings.get(key) || fallback;
+const splitValues = (value: string, fallback: string[]) => value ? value.split('|').map((item) => item.trim()).filter(Boolean) : fallback;
+const categoryLabel: Record<string, string> = { photo: '📷 Ảnh', video: '🎬 Video', tiktok: '🎵 TikTok', youtube: '▶️ YouTube' };
+const placeholderClass: Record<string, string> = { photo: 'photo-bg2', video: 'video-bg', tiktok: 'tiktok-bg', youtube: 'youtube-bg' };
+const portfolioSizeClass = (size: string) => size === 'wide' ? 'portfolio-item--wide' : size === 'tall' ? 'portfolio-item--tall' : '';
+---
+
+<Layout
+  title={setting('site_title', 'Giáp Photographer | Nhâm Xuân Giáp – Nhiếp ảnh & Video Chuyên Nghiệp')}
+  description={setting('site_description', 'Nhâm Xuân Giáp – Nhiếp ảnh gia và nhà làm phim chuyên nghiệp tại Việt Nam.')}
+>
+  <Header brandName={setting('brand_name', 'Giáp')} brandSub={setting('brand_sub', 'Photographer')} />
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img src={setting('hero_image', '/assets/hero_bg.jpg')} alt="Nhâm Xuân Giáp đang tác nghiệp" class="hero-img" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">{setting('hero_eyebrow', 'Nhiếp Ảnh Gia & Nhà Làm Phim')}</p>
+        <h1 class="hero-title"><span class="hero-title-line">{setting('hero_title_line', 'Nhâm Xuân')}</span><span class="hero-title-accent">{setting('hero_title_accent', 'Giáp')}</span></h1>
+        <p class="hero-desc">{setting('hero_desc', 'Kể câu chuyện của bạn qua từng khung hình — chân thực, đẹp đẽ và đầy cảm xúc.')}</p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary">Xem tác phẩm</a>
+          <a href="#contact" class="btn btn-outline">Tư vấn ngay</a>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator"><div class="scroll-line"></div><span>Cuộn xuống</span></div>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">{setting('hero_stat1_num', '5+')}</span><span class="stat-label">{setting('hero_stat1_label', 'Năm kinh nghiệm')}</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><span class="stat-num">{setting('hero_stat2_num', '500+')}</span><span class="stat-label">{setting('hero_stat2_label', 'Dự án hoàn thành')}</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><span class="stat-num">{setting('hero_stat3_num', '100K+')}</span><span class="stat-label">{setting('hero_stat3_label', 'Followers')}</span></div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container"><div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-img-frame"><img src="/assets/photographer_portrait.jpg" alt="Nhâm Xuân Giáp – Nhiếp ảnh gia" class="about-img" /></div>
+          <div class="about-tag"><span class="tag-icon">📸</span></div>
+        </div>
+        <div class="about-content">
+          <p class="section-eyebrow">Về tôi</p><h2 class="section-title">Đam mê &amp; <em>Sáng tạo</em></h2>
+          <p class="about-text">Xin chào! Tôi là <strong>Nhâm Xuân Giáp</strong> – một nhiếp ảnh gia và nhà sản xuất nội dung số với hơn 5 năm kinh nghiệm trong lĩnh vực sáng tạo hình ảnh.</p>
+          <p class="about-text">Tôi tin rằng mỗi khoảnh khắc đều có câu chuyện riêng. Từ những bức ảnh chân dung đầy cảm xúc, những thước phim điện ảnh đến các nội dung sáng tạo trên TikTok và YouTube – tôi luôn đặt tâm huyết vào từng sản phẩm.</p>
+          <div class="about-skills"><div class="skill-badge">📷 Nhiếp ảnh</div><div class="skill-badge">🎬 Quay phim</div><div class="skill-badge">🎵 TikTok</div><div class="skill-badge">▶️ YouTube</div><div class="skill-badge">✨ Editing</div><div class="skill-badge">📱 Social Media</div></div>
+          <a href="#contact" class="btn btn-primary" style="margin-top:2rem;">Hợp tác cùng tôi</a>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-header"><p class="section-eyebrow">Dịch vụ</p><h2 class="section-title">Tôi làm <em>gì?</em></h2><p class="section-subtitle">Đa dạng dịch vụ sáng tạo nội dung – từ ảnh nghệ thuật đến video viral</p></div>
+        <div class="services-grid">
+          {servicesData.map((service) => (
+            <article class:list={['service-card', { 'service-card--featured': service.featured.toLowerCase() === 'yes' }]} id={`service-${service.id}`}>
+              <div class="service-icon-wrap"><div class="service-icon">{service.icon}</div></div>
+              <div class="service-media">
+                {service.image ? <img src={service.image} alt={service.title} class="service-img" /> : <div class="service-img-placeholder"><div class="placeholder-icon">{service.icon}</div><span>{service.title}</span></div>}
+                <div class="service-media-overlay"></div>
+              </div>
+              <div class="service-body"><h3 class="service-title">{service.title}</h3><p class="service-desc">{service.desc}</p><ul class="service-list">{splitValues(service.features, []).map((feature) => <li>{feature}</li>)}</ul><a href="#contact" class="service-link">Tư vấn ngay →</a></div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio section" id="portfolio">
+      <div class="container">
+        <div class="section-header"><p class="section-eyebrow">Tác phẩm tiêu biểu</p><h2 class="section-title">Thành phẩm <em>của tôi</em></h2><p class="section-subtitle">Tuyển tập những tác phẩm tâm huyết nhất</p></div>
+        <div class="portfolio-filters" role="tablist" aria-label="Lọc tác phẩm"><button class="filter-btn active" type="button" data-filter="all" id="filter-all">Tất cả</button><button class="filter-btn" type="button" data-filter="photo" id="filter-photo">Ảnh</button><button class="filter-btn" type="button" data-filter="video" id="filter-video">Video</button><button class="filter-btn" type="button" data-filter="tiktok" id="filter-tiktok">TikTok</button><button class="filter-btn" type="button" data-filter="youtube" id="filter-youtube">YouTube</button></div>
+        <div class="portfolio-grid" id="portfolioGrid">
+          {portfolioData.map((item) => (
+            <article class:list={['portfolio-item', portfolioSizeClass(item.size)]} data-category={item.category} id={`pitem-${item.id}`}>
+              <div class="pitem-inner">
+                {item.image ? <img src={item.image} alt={item.title} class="pitem-img" /> : <div class:list={['pitem-placeholder-bg', placeholderClass[item.category] ?? 'photo-bg2']}><div class="placeholder-info"><span class="pitem-cat">{categoryLabel[item.category] ?? item.category}</span><h3 class="pitem-title">{item.title}</h3><p class="pitem-sub">{item.subtitle}</p></div></div>}
+                <div class="pitem-overlay"><div class="pitem-info"><span class="pitem-cat">{categoryLabel[item.category] ?? item.category}</span><h3 class="pitem-title">{item.title}</h3><p class="pitem-sub">{item.subtitle}</p></div>{item.action === 'zoom' && item.image ? <button class="pitem-zoom" type="button" onclick={`openLightbox(${JSON.stringify(item.image)}, ${JSON.stringify(item.title)})`} aria-label={`Xem ảnh ${item.title}`}>⤢</button> : <button class="pitem-play" type="button" aria-label={`Xem ${item.title}`}>▶</button>}</div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="portfolio-cta"><p>Xem thêm tác phẩm trên các nền tảng của tôi</p><div class="social-platform-btns"><a href="#" class="platform-btn tiktok-btn">🎵 TikTok</a><a href="#" class="platform-btn youtube-btn">▶️ YouTube</a><a href="#" class="platform-btn insta-btn">📸 Instagram</a></div></div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact-bg"></div><div class="container">
+        <div class="section-header"><p class="section-eyebrow">Liên hệ</p><h2 class="section-title">Hãy cùng <em>tạo ra</em> điều gì đó tuyệt vời</h2><p class="section-subtitle">Tôi luôn sẵn sàng nghe về dự án của bạn và tư vấn miễn phí</p></div>
+        <div class="contact-grid"><div class="contact-info"><div class="contact-info-card"><div class="contact-info-header"><h3>Thông tin liên hệ</h3><p>Hãy nhắn tin hoặc gọi cho tôi – tôi phản hồi trong vòng 24 giờ.</p></div><ul class="contact-details"><li class="contact-detail-item"><div class="cdi-icon">📞</div><div class="cdi-text"><span class="cdi-label">Điện thoại</span><a href="tel:+84xxxxxxxxx" class="cdi-value">+84 xxx xxx xxx</a></div></li><li class="contact-detail-item"><div class="cdi-icon">✉️</div><div class="cdi-text"><span class="cdi-label">Email</span><a href="mailto:giap@photographer.vn" class="cdi-value">giap@photographer.vn</a></div></li><li class="contact-detail-item"><div class="cdi-icon">📍</div><div class="cdi-text"><span class="cdi-label">Khu vực hoạt động</span><span class="cdi-value">Hà Nội &amp; Toàn quốc</span></div></li><li class="contact-detail-item"><div class="cdi-icon">💬</div><div class="cdi-text"><span class="cdi-label">Zalo / Messenger</span><a href="#" class="cdi-value">Nhâm Xuân Giáp</a></div></li></ul><div class="contact-social"><a href="#" class="csocial-link" aria-label="TikTok">🎵</a><a href="#" class="csocial-link" aria-label="YouTube">▶️</a><a href="#" class="csocial-link" aria-label="Instagram">📸</a><a href="#" class="csocial-link" aria-label="Facebook">📘</a></div></div></div>
+          <div class="contact-form-wrap"><form class="contact-form" action="mailto:giap@photographer.vn" method="post" enctype="text/plain"><div class="form-row"><div class="form-group"><label for="fname">Họ và tên <span class="required">*</span></label><input type="text" id="fname" name="fname" placeholder="Nguyễn Văn A" required /></div><div class="form-group"><label for="fphone">Số điện thoại <span class="required">*</span></label><input type="tel" id="fphone" name="fphone" placeholder="0xxx xxx xxx" required /></div></div><div class="form-group"><label for="femail">Email</label><input type="email" id="femail" name="femail" placeholder="email@example.com" /></div><div class="form-group"><label for="fservice">Dịch vụ quan tâm <span class="required">*</span></label><select id="fservice" name="fservice" required><option value="">-- Chọn dịch vụ --</option><option value="photo">📷 Chụp ảnh</option><option value="video">🎬 Quay phim</option><option value="tiktok">🎵 TikTok Content</option><option value="youtube">▶️ YouTube &amp; Social Media</option><option value="combo">✨ Gói kết hợp</option><option value="other">💡 Khác / Tư vấn</option></select></div><div class="form-group"><label for="fmessage">Nội dung dự án</label><textarea id="fmessage" name="fmessage" rows="4" placeholder="Mô tả ngắn về dự án, ngân sách và thời gian dự kiến..."></textarea></div><button type="submit" class="btn btn-primary btn-full"><span class="btn-text">Gửi yêu cầu tư vấn</span><span class="btn-icon">→</span></button></form></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" type="button" onclick="closeLightbox()" aria-label="Đóng">✕</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()"><img src="" alt="" class="lightbox-img" id="lightboxImg" /><p class="lightbox-caption" id="lightboxCaption"></p></div>
+  </div>
+</Layout>

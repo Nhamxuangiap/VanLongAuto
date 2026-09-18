@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Độ Âm Thanh Cao Cấp | Văn Long Auto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    .subpage-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('assets/placeholder-audio-hero.jpg') center/cover;
+      padding: 120px 0 60px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+    .subpage-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 42px;
+      color: #FFD700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    .subpage-desc {
+      color: #ddd;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .product-section {
+      padding: 80px 0;
+      background-color: #0a0a0a;
+    }
+
+    /* === BỐ CỤC LƯỚI 2 SẢN PHẨM / 1 DÒNG === */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 cột bằng nhau */
+      gap: 40px; /* Khoảng cách giữa các sản phẩm */
+    }
+
+    /* Thiết kế thẻ sản phẩm dạng dọc */
+    .product-item {
+      display: flex;
+      flex-direction: column;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .product-item:hover {
+      border-color: #FFD700;
+      transform: translateY(-5px);
+    }
+    .product-img {
+      width: 100%;
+      height: 280px;
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .product-item:hover .product-img img {
+      transform: scale(1.05);
+    }
+    .product-content {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1; /* Đẩy nút bấm xuống dưới cùng */
+    }
+    .brand-tag {
+      display: inline-table;
+      background: #333;
+      color: #FFD700;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      align-self: flex-start;
+    }
+    .product-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    .product-specs {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+    .product-specs li {
+      position: relative;
+      padding-left: 25px;
+      color: #bbb;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      font-size: 14.5px;
+    }
+    .product-specs li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #FFD700;
+      font-size: 14px;
+    }
+    .btn-buy {
+      display: block;
+      text-align: center;
+      background: #FFD700;
+      color: #000;
+      padding: 12px 25px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s;
+      margin-top: auto; /* Tự động đẩy xuống đáy thẻ */
+    }
+    .btn-buy:hover {
+      background: #fff;
+    }
+
+    /* Đáp ứng màn hình điện thoại (chuyển về 1 cột) */
+    @media (max-width: 768px) {
+      .products-grid {
+        grid-template-columns: 1fr; 
+      }
+    }
+    
+    .back-to-home {
+      display: inline-block;
+      margin-top: 50px;
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid #FFD700;
+      padding-bottom: 3px;
+    }
+    .back-to-home:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======= NAVIGATION ======= -->
+  <nav class="navbar" id="navbar" style="background-color: #111111;">
+    <div class="nav-container">
+     <a href="index.html" class="nav-brand">
+        <img src="assets/LOGO VAN LONG.png" alt="Logo Văn Long Auto" class="logo" style="height: 90px; width: auto;">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">← Quay lại Trang Chủ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ======= HERO SUBPAGE ======= -->
+  <section class="subpage-hero">
+    <div class="container">
+      <h1 class="subpage-title">Độ Loa Sub Điện Gầm Ghế</h1>
+      <p class="subpage-desc">Giải pháp nâng cấp dải Bass hiệu quả, tối ưu không gian nội thất với các thương hiệu Subwoofer danh tiếng được tuyển chọn kỹ lưỡng.</p>
+    </div>
+  </section>
+
+  <!-- =====================================================
+     CATALOG SẢN PHẨM - VĂN LONG AUTO
+===================================================== -->
+<section class="product-section">
+  <div class="container product-catalog-container">
+
+    <div class="vl-product-grid" id="vlProductGrid">
+
+  <!-- ================= SẢN PHẨM 1 ================= -->
+  <article class="vl-product-card">
+
+    <a href="san-pham-isotec-ba6.html" class="vl-product-image">
+
+      <span class="vl-sale-badge">-9%</span>
+
+      <img
+        src="assets/sub iso.png"
+        alt="Sub Điện I-Sotec B+A 6"
+      >
+
+    </a>
+
+    <div class="vl-product-info">
+
+      <a href="san-pham-isotec-ba6.html" class="vl-product-name">
+        Sub Điện I-Sotec B+A 6 Tích Hợp Amply DSP 8 Kênh
+      </a>
+
+      <div class="vl-product-price">
+        <span class="vl-price-new">10.500.000đ</span>
+        <span class="vl-price-old">11.500.000đ</span>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- ================= SẢN PHẨM 2 ================= -->
+  <article class="vl-product-card">
+
+    <a href="san-pham-vinsub-v8.html" class="vl-product-image">
+
+      <img
+        src="assets/vinsub-v8.jpg"
+        alt="Vinsub VS-8 Pro"
+      >
+
+    </a>
+
+    <div class="vl-product-info">
+
+      <a href="san-pham-vinsub-v8.html" class="vl-product-name">
+        Loa Sub Điện Gầm Ghế Vinsub VS-8 Pro
+      </a>
+
+      <div class="vl-product-price">
+        <span class="vl-price-new">4.900.000đ</span>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- ================= SẢN PHẨM 3 ================= -->
+  <article class="vl-product-card">
+
+    <a href="san-pham-feelart-ev8.html" class="vl-product-image">
+
+      <span class="vl-sale-badge">-11%</span>
+
+      <img
+        src="assets/feelart-ev8tw.jpg"
+        alt="EV-8TW Subwoofer Feelart"
+      >
+
+    </a>
+
+    <div class="vl-product-info">
+
+      <a href="san-pham-feelart-ev8.html" class="vl-product-name">
+        EV-8TW Subwoofer Feelart 8 Inch
+      </a>
+
+      <div class="vl-product-price">
+        <span class="vl-price-new">8.500.000đ</span>
+        <span class="vl-price-old">9.500.000đ</span>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- ================= SẢN PHẨM 4 ================= -->
+  <article class="vl-product-card">
+
+    <a href="san-pham-sinfoni-sp10.html" class="vl-product-image">
+
+      <img
+        src="assets/sinfoni-sp10.jpg"
+        alt="Sinfoni SP10"
+      >
+
+    </a>
+
+    <div class="vl-product-info">
+
+      <a href="san-pham-sinfoni-sp10.html" class="vl-product-name">
+        Loa Siêu Trầm Lốp Dự Phòng Chủ Động Sinfoni SP10 10 Inch
+      </a>
+
+      <div class="vl-product-price">
+        <span class="vl-price-new">13.500.000đ</span>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- =================================================
+       SẢN PHẨM 5
+
+       VỀ SAU MUỐN THÊM SẢN PHẨM:
+       COPY NGUYÊN 1 <article>...</article>
+       VÀ DÁN TIẾP XUỐNG DƯỚI.
+  ================================================== -->
+
+
+</div>
+
+
+<!-- PHÂN TRANG -->
+<div class="vl-pagination" id="vlPagination"></div>
+
+    <div class="product-back">
+      <a href="index.html" class="back-to-home">← Trở về Trang Chủ Văn Long Auto</a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer" style="background: #111; padding: 40px 0; text-align: center; border-top: 1px solid #333;">
+    <div class="container">
+      <p style="color: #777; font-size: 14px;">© All Copyrights Reserved by VĂN LONG AUTO | TRUNG TÂM CHĂM SÓC & NÂNG CẤP XE HƠI.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

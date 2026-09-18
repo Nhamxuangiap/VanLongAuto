@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Màn Hình Santek X620 | Văn Long Auto</title>
+  <meta name="description" content="Màn hình Android Santek X620 tại Văn Long Auto: RAM 2GB, ROM 64GB, Android 10, màn 9/10 inch, Apple CarPlay và Android Auto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+/* =========================================================
+   VĂN LONG AUTO — SHARED STYLES
+   Dùng chung cho tất cả các trang.
+   ========================================================= */
+
+:root {
+  --bg: #0a0a0b;
+  --bg-soft: #0f0f10;
+  --surface: #141416;
+  --surface-2: #1a1a1d;
+  --border: rgba(255,255,255,.08);
+  --border-strong: rgba(255,255,255,.13);
+  --gold: #c9a84c;
+  --gold-light: #e2c47a;
+  --gold-dark: #9a7a2e;
+  --text: #f0ede8;
+  --muted: rgba(240,237,232,.58);
+  --faint: rgba(240,237,232,.34);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Syne', 'Montserrat', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --nav-h: 72px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --ease: .3s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button, input, select, textarea { font: inherit; }
+button { border: 0; background: none; cursor: pointer; }
+
+.container { width: min(1280px, calc(100% - 64px)); margin-inline: auto; }
+.section { position: relative; padding: 100px 0; }
+.section-header { margin-bottom: 60px; text-align: center; }
+.section-eyebrow { display: block; margin-bottom: 12px; color: var(--gold); font: 700 .75rem/1 var(--font-display); letter-spacing: .22em; text-transform: uppercase; }
+.section-title { margin-bottom: 16px; color: var(--text); font: 300 clamp(2.2rem, 4vw, 3.5rem)/1.15 var(--font-serif); }
+.section-title em { color: var(--gold); font-style: italic; }
+.section-subtitle { max-width: 560px; margin-inline: auto; color: var(--muted); }
+
+/* Navigation */
+.navbar { position: fixed; inset: 0 0 auto; z-index: 1000; height: var(--nav-h); background: #111; transition: background var(--ease), box-shadow var(--ease); }
+.navbar.scrolled { background: rgba(10,10,11,.94); backdrop-filter: blur(18px); box-shadow: 0 1px 0 var(--border); }
+.nav-container { width: min(1280px, calc(100% - 64px)); height: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav-brand { display: flex; align-items: center; }
+.nav-brand .logo { width: auto; height: 64px; max-width: 220px; object-fit: contain; }
+.nav-menu { display: flex; align-items: center; gap: 2rem; }
+.nav-menu--static { display: flex !important; }
+.nav-link { position: relative; color: var(--muted); font: 500 .875rem/1.2 var(--font-display); letter-spacing: .04em; transition: color var(--ease); }
+.nav-link::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 0; height: 1px; background: var(--gold); transition: width var(--ease); }
+.nav-link:hover, .nav-link.active-nav { color: var(--text); }
+.nav-link:hover::after, .nav-link.active-nav::after { width: 100%; }
+.nav-link.nav-cta { padding: .55rem 1.35rem; border-radius: 999px; background: var(--gold); color: #0a0a0b; font-weight: 700; }
+.nav-link.nav-cta::after { display: none; }
+.nav-link.nav-cta:hover { background: var(--gold-light); }
+.nav-toggle { display: none; padding: 8px; flex-direction: column; gap: 5px; }
+.nav-toggle span { width: 24px; height: 2px; border-radius: 2px; background: var(--text); transition: transform var(--ease), opacity var(--ease); }
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .85rem 1.8rem; border-radius: 6px; font: 700 .82rem/1.2 'Montserrat', var(--font-sans); letter-spacing: .03em; text-transform: uppercase; transition: transform var(--ease), background var(--ease), color var(--ease), border-color var(--ease), box-shadow var(--ease); }
+.btn-primary { border: 2px solid var(--gold); background: var(--gold); color: #111; box-shadow: 0 4px 15px rgba(201,168,76,.25); }
+.btn-primary:hover { transform: translateY(-2px); background: transparent; color: var(--gold); }
+.btn-secondary { border: 2px solid #fff; background: rgba(255,255,255,.08); color: #fff; backdrop-filter: blur(5px); }
+.btn-secondary:hover { transform: translateY(-2px); background: #fff; color: #111; }
+.btn-full { width: 100%; }
+
+/* Footer */
+.footer { padding: 60px 0 30px; border-top: 1px solid var(--border); background: var(--surface); }
+.footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-brand .brand-name { color: var(--gold); font: 600 1.8rem/1 var(--font-serif); }
+.footer-brand .brand-sub { display: block; margin-top: 3px; color: var(--muted); font: 600 .65rem/1 var(--font-display); letter-spacing: .3em; text-transform: uppercase; }
+.footer-tagline { margin-top: 8px; color: var(--faint); font-size: .8rem; font-style: italic; }
+.footer-links { display: flex; flex-direction: column; gap: .6rem; }
+.footer-links a { color: var(--muted); font-size: .875rem; transition: color var(--ease); }
+.footer-links a:hover { color: var(--gold); }
+.footer-social { display: flex; gap: .75rem; }
+.footer-social-link { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--border-strong); border-radius: 12px; transition: border-color var(--ease), background var(--ease), transform var(--ease); }
+.footer-social-link:hover { transform: translateY(-2px); border-color: var(--gold); background: rgba(201,168,76,.1); }
+.footer-bottom { padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+.footer-bottom p { color: var(--faint); font-size: .8rem; }
+.footer--simple { padding: 34px 0; text-align: center; }
+.footer--simple p { color: var(--faint); font-size: .82rem; }
+
+/* Reveal animation */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Floating Zalo + Music */
+.zalo-floating { position: fixed; left: 40px; bottom: 40px; z-index: 9999; display: flex; align-items: center; }
+.zalo-icon-wrapper { position: relative; z-index: 2; width: 60px; height: 60px; display: grid; place-items: center; border-radius: 50%; background: #0068ff; box-shadow: 0 4px 12px rgba(0,104,255,.4); animation: pulse-zalo 1.5s infinite; }
+.zalo-label { margin-left: -35px; padding: 10px 20px 10px 45px; border-radius: 30px; background: #fff; color: #0068ff; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+.music-floating { position: fixed; right: 40px; bottom: 40px; z-index: 9999; width: 55px; height: 55px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg,#fa243c,#ff5e7e); box-shadow: 0 4px 15px rgba(250,36,60,.4); transition: transform var(--ease); }
+.music-floating:hover { transform: scale(1.08); }
+.music-icon { position: relative; z-index: 2; color: #fff; font-size: 22px; }
+.music-playing .music-icon { animation: spin 3s linear infinite; }
+.flying-heart { position: absolute; top: 50%; left: 50%; z-index: 1; pointer-events: none; animation: heart-fly 1.2s ease-out forwards; }
+@keyframes pulse-zalo { 0% { box-shadow: 0 0 0 0 rgba(0,104,255,.6); } 70% { box-shadow: 0 0 0 15px rgba(0,104,255,0); } 100% { box-shadow: 0 0 0 0 rgba(0,104,255,0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes heart-fly { to { opacity: 0; transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.5) rotate(var(--rot)); } }
+
+/* Responsive shared */
+@media (max-width: 768px) {
+  :root { --nav-h: 68px; }
+  .container, .nav-container { width: calc(100% - 32px); }
+  .section { padding: 64px 0; }
+  .section-header { margin-bottom: 36px; }
+  .section-title { font-size: clamp(2rem, 9vw, 2.75rem); }
+  .nav-brand .logo { height: 54px; max-width: 170px; }
+  .nav-toggle { display: flex; }
+  .nav-menu { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; width: 100%; max-height: calc(100dvh - var(--nav-h)); overflow-y: auto; flex-direction: column; align-items: stretch; gap: 1rem; padding: 1.25rem 1rem; border-bottom: 1px solid var(--border); background: rgba(10,10,11,.98); backdrop-filter: blur(18px); }
+  .nav-menu.open { display: flex; }
+  .nav-menu--static { position: static; width: auto; max-height: none; padding: 0; border: 0; background: none; backdrop-filter: none; flex-direction: row; }
+  .nav-menu .nav-link { display: block; padding: .45rem 0; }
+  .nav-link.nav-cta { width: fit-content; }
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+  .footer-links { align-items: center; }
+  .zalo-floating { left: 12px; bottom: 14px; }
+  .zalo-icon-wrapper { width: 48px; height: 48px; }
+  .zalo-label { max-width: calc(100vw - 110px); margin-left: -30px; padding: 8px 12px 8px 38px; font-size: .72rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .music-floating { right: 12px; bottom: 14px; width: 48px; height: 48px; }
+}
+
+@media (max-width: 420px) {
+  .container, .nav-container { width: calc(100% - 24px); }
+  .section { padding: 52px 0; }
+  .footer { padding-bottom: 86px; }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .reveal { transition-duration: .35s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* Nghệ sĩ & KOL: 5 ảnh desktop, 3 tablet, 2 mobile */
+.artist-section { overflow: hidden; border-top: 1px solid var(--border); background: var(--bg-soft); }
+.artist-heading { margin-bottom: 38px; }
+.artist-section, .artist-section button { font-family: 'Montserrat', sans-serif; }
+.artist-slider { position: relative; }
+.artist-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+}
+.artist-track::-webkit-scrollbar { display: none; }
+.artist-card {
+  position: relative;
+  flex: 0 0 calc((100% - 64px) / 5);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  background: var(--surface);
+  scroll-snap-align: start;
+}
+.artist-media { position: absolute; inset: 0; display: grid; place-items: center; color: var(--faint); font-size: 12px; letter-spacing: .15em; }
+.artist-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.artist-caption { position: absolute; inset: auto 0 0; z-index: 2; padding: 52px 15px 15px; background: linear-gradient(transparent, rgba(0,0,0,.92)); }
+.artist-caption h3 { color: #fff; font-size: 14px; line-height: 1.3; }
+.artist-caption p { margin-top: 3px; color: var(--gold-light); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.artist-card:hover .artist-media img { transform: scale(1.06); }
+.artist-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 50%;
+  background: rgba(0,0,0,.72);
+  color: #fff;
+  font-size: 28px;
+  transform: translateY(-50%);
+  transition: background var(--ease), color var(--ease);
+}
+.artist-arrow:hover { background: var(--gold); color: #111; }
+.artist-prev { left: 10px; }
+.artist-next { right: 10px; }
+.artist-dots { display: flex; justify-content: center; gap: 7px; margin-top: 22px; }
+.artist-dot { width: 7px; height: 7px; border-radius: 50%; background: #555; transition: width var(--ease), background var(--ease); }
+.artist-dot.active { width: 22px; border-radius: 10px; background: var(--gold); }
+
+@media (max-width: 900px) {
+  .artist-card { flex-basis: calc((100% - 32px) / 3); }
+}
+
+@media (max-width: 600px) {
+  .artist-heading { margin-bottom: 28px; }
+  .artist-track { gap: 10px; }
+  .artist-card { flex-basis: calc((100% - 10px) / 2); border-radius: 10px; }
+  .artist-caption { padding: 38px 11px 11px; }
+  .artist-caption h3 { font-size: 12px; }
+  .artist-caption p { font-size: 9px; }
+  .artist-arrow { display: none; }
+}
+/* =========================================================
+   VĂN LONG AUTO — PRODUCT DETAIL
+   Mọi class dùng tiền tố pd- để không xung đột CSS trang khác.
+   ========================================================= */
+
+.pd-page { padding-top: var(--nav-h); background: var(--bg); }
+.pd-container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+
+/* Breadcrumb */
+.pd-breadcrumb { display: flex; flex-wrap: wrap; gap: 6px; padding: 22px 0 16px; color: var(--faint); font-size: 12px; }
+.pd-breadcrumb a:hover { color: var(--gold); }
+.pd-breadcrumb span[aria-hidden="true"] { color: rgba(255,255,255,.18); }
+
+/* Overview */
+.pd-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.03fr) minmax(360px, .97fr);
+  gap: 42px;
+  align-items: start;
+  padding: 20px 0 42px;
+}
+
+.pd-media { position: sticky; top: calc(var(--nav-h) + 20px); }
+.pd-main-image {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  background: #f4f4f4;
+}
+.pd-main-image img { width: 100%; height: 100%; object-fit: contain; }
+.pd-sale {
+  position: absolute; top: 14px; left: 14px; z-index: 2;
+  padding: 7px 10px; border-radius: 6px;
+  background: #ef4319; color: #fff;
+  font: 800 12px/1 'Montserrat', var(--font-sans);
+}
+.pd-image-note { margin-top: 10px; color: var(--faint); font-size: 11px; text-align: center; }
+
+/* Summary */
+.pd-summary { padding-top: 4px; }
+.pd-brand {
+  display: inline-flex; align-items: center;
+  margin-bottom: 12px; padding: 6px 9px;
+  border: 1px solid rgba(212,175,55,.26); border-radius: 6px;
+  background: rgba(212,175,55,.08); color: var(--gold);
+  font: 800 10px/1 'Montserrat', var(--font-sans);
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.pd-title { margin: 0 0 14px; color: #fff; font: 800 clamp(1.65rem,3vw,2.35rem)/1.25 'Montserrat', var(--font-sans); }
+.pd-short { margin-bottom: 20px; color: var(--muted); font-size: 14px; line-height: 1.75; }
+
+.pd-price-box { padding: 18px 0; border-block: 1px solid var(--border); }
+.pd-price-label { display: block; margin-bottom: 5px; color: var(--faint); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.pd-price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 12px; }
+.pd-price-current { color: #ffd700; font: 800 28px/1.2 'Montserrat', var(--font-sans); }
+.pd-price-old { color: #777; font-size: 13px; text-decoration: line-through; }
+.pd-discount { padding: 4px 7px; border-radius: 4px; background: rgba(239,67,25,.12); color: #ff7048; font: 700 10px/1 'Montserrat', var(--font-sans); }
+
+.pd-points { display: grid; gap: 9px; margin: 20px 0; }
+.pd-point { display: flex; gap: 9px; align-items: flex-start; color: #c7c7c7; font-size: 13px; line-height: 1.55; }
+.pd-point::before { content: '✓'; flex: 0 0 auto; color: var(--gold); font-weight: 800; }
+
+.pd-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pd-btn {
+  min-height: 46px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 14px; border-radius: 8px;
+  font: 700 12px/1.2 'Montserrat', var(--font-sans); text-align: center;
+  transition: transform var(--ease), border-color var(--ease), background var(--ease), color var(--ease);
+}
+.pd-btn:hover { transform: translateY(-2px); }
+.pd-btn--primary { background: var(--gold); color: #111; }
+.pd-btn--primary:hover { background: var(--gold-light); }
+.pd-btn--ghost { border: 1px solid var(--border-strong); color: #fff; }
+.pd-btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Anchor bar */
+.pd-anchorbar {
+  position: sticky; top: var(--nav-h); z-index: 20;
+  display: flex; gap: 8px; overflow-x: auto;
+  margin-bottom: 34px; padding: 10px;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: rgba(15,15,16,.95); backdrop-filter: blur(14px);
+  scrollbar-width: none;
+}
+.pd-anchorbar::-webkit-scrollbar { display: none; }
+.pd-anchorbar a { white-space: nowrap; padding: 8px 12px; border-radius: 6px; color: var(--muted); font: 700 11px/1 'Montserrat', var(--font-sans); }
+.pd-anchorbar a:hover { background: rgba(212,175,55,.08); color: var(--gold); }
+
+/* Content */
+.pd-content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 34px; align-items: start; }
+.pd-article { min-width: 0; }
+.pd-section { scroll-margin-top: calc(var(--nav-h) + 72px); padding-bottom: 34px; }
+.pd-section + .pd-section { padding-top: 34px; border-top: 1px solid var(--border); }
+.pd-section h2 { margin-bottom: 13px; color: #fff; font: 800 21px/1.35 'Montserrat', var(--font-sans); }
+.pd-section h3 { margin: 24px 0 8px; color: #fff; font: 700 15px/1.4 'Montserrat', var(--font-sans); }
+.pd-section p { margin-bottom: 14px; color: var(--muted); font-size: 14px; line-height: 1.82; }
+.pd-section ul { display: grid; gap: 8px; margin: 14px 0; }
+.pd-section li { position: relative; padding-left: 19px; color: #bcbcbc; font-size: 13px; line-height: 1.6; }
+.pd-section li::before { content: '•'; position: absolute; left: 2px; color: var(--gold); }
+.pd-detail-image { width: 100%; margin: 18px 0 6px; border: 1px solid var(--border); border-radius: 12px; background: #111; object-fit: contain; }
+
+/* Specs */
+.pd-sidebar { position: sticky; top: calc(var(--nav-h) + 72px); }
+.pd-spec-card { padding: 20px; border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface); }
+.pd-spec-card h2 { margin-bottom: 14px; color: #fff; font: 800 16px/1.3 'Montserrat', var(--font-sans); }
+.pd-spec-list { display: grid; }
+.pd-spec-row { display: grid; grid-template-columns: 1fr 1.15fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--border); font-size: 12px; line-height: 1.45; }
+.pd-spec-row:first-child { border-top: 0; }
+.pd-spec-row dt { color: var(--faint); }
+.pd-spec-row dd { color: #dedede; font-weight: 600; text-align: right; }
+
+/* CTA */
+.pd-cta { margin: 10px 0 46px; padding: 24px; border: 1px solid rgba(212,175,55,.22); border-radius: 14px; background: linear-gradient(135deg,rgba(212,175,55,.08),rgba(255,255,255,.02)); }
+.pd-cta h2 { margin-bottom: 7px; color: #fff; font: 800 18px/1.35 'Montserrat', var(--font-sans); }
+.pd-cta p { margin-bottom: 15px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+/* Related products */
+.pd-related { padding: 38px 0 58px; border-top: 1px solid var(--border); }
+.pd-related-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.pd-related h2 { color: #fff; font: 800 20px/1.35 'Montserrat', var(--font-sans); }
+.pd-related-all { color: var(--gold); font-size: 12px; font-weight: 700; }
+.pd-related-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+.pd-related-card { overflow: hidden; border: 1px solid var(--border); border-radius: 9px; background: #141414; }
+.pd-related-card img { width: 100%; aspect-ratio: 1/1; background: #f4f4f4; object-fit: contain; }
+.pd-related-body { padding: 10px; }
+.pd-related-name { display: -webkit-box; min-height: 33px; overflow: hidden; color: #fff; font: 600 11px/1.45 'Montserrat',var(--font-sans); line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.pd-related-price { margin-top: 7px; color: #ffd700; font: 800 13px/1.2 'Montserrat', var(--font-sans); }
+
+@media (max-width: 900px) {
+  .pd-overview { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .pd-content-grid { grid-template-columns: 1fr; }
+  .pd-sidebar { position: static; }
+  .pd-related-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+
+@media (max-width: 680px) {
+  .pd-container { width: calc(100% - 24px); }
+  .pd-breadcrumb { padding-top: 16px; font-size: 10px; }
+  .pd-overview { grid-template-columns: 1fr; gap: 20px; padding-top: 8px; }
+  .pd-media { position: static; }
+  .pd-main-image { border-radius: 12px; }
+  .pd-title { font-size: 1.45rem; }
+  .pd-short { font-size: 13px; }
+  .pd-price-current { font-size: 23px; }
+  .pd-actions { grid-template-columns: 1fr; }
+  .pd-anchorbar { top: var(--nav-h); margin-inline: -2px; }
+  .pd-section h2 { font-size: 18px; }
+  .pd-section p { font-size: 13px; line-height: 1.72; }
+  .pd-related-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+}
+/* ẢNH CHI TIẾT SẢN PHẨM 800x800 - HIỂN THỊ GỌN */
+
+.pd-detail-image {
+  display: block;
+
+  width: 100%;
+  max-width: 480px;
+
+  aspect-ratio: 1 / 1;
+
+  height: auto;
+
+  object-fit: contain;
+
+  margin: 22px auto 30px;
+
+  border-radius: 10px;
+
+  background: #151515;
+}/* =====================================================
+   VAN LONG AUTO - PRODUCT GRID
+   DESKTOP: 5 SẢN PHẨM / HÀNG
+===================================================== */
+
+.audio-catalog {
+  width: 100%;
+  padding: 0 20px 60px;
+}
+
+
+/* ================= GRID ================= */
+
+.catalog-grid {
+  display: grid;
+
+  /* Desktop luôn đúng 5 sản phẩm */
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 16px;
+
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  align-items: stretch;
+}
+
+
+/* ================= CARD ================= */
+
+.catalog-card {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.catalog-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.7);
+}
+
+
+/* ================= ẢNH ================= */
+
+.catalog-image {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #f3f3f3;
+}
+
+.catalog-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.catalog-card:hover .catalog-image img {
+  transform: scale(1.04);
+}
+
+
+/* ================= SALE ================= */
+
+.sale-badge {
+  position: absolute;
+
+  top: 8px;
+  left: 8px;
+
+  z-index: 2;
+
+  padding: 4px 7px;
+
+  background: #d4af37;
+  color: #111;
+
+  border-radius: 4px;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* ================= CONTENT ================= */
+
+.catalog-body {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 10px;
+}
+
+
+/* ================= NAME ================= */
+
+.catalog-name {
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+
+  overflow: hidden;
+
+  min-height: 38px;
+
+  color: #f3f3f3;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.55;
+
+  transition: color 0.2s ease;
+}
+
+.catalog-name:hover {
+  color: #d4af37;
+}
+
+
+/* ================= PRICE ================= */
+
+.catalog-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  gap: 5px;
+
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.price-current {
+  color: #ffd700;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.price-old {
+  color: #777;
+
+  font-size: 9px;
+
+  text-decoration: line-through;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+
+/* TABLET LỚN: 4 CARD */
+@media (max-width: 1000px) {
+
+  .catalog-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+}
+
+
+/* TABLET: 3 CARD */
+@media (max-width: 800px) {
+
+  .catalog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+}
+
+
+/* MOBILE: 2 CARD */
+@media (max-width: 600px) {
+
+  .audio-catalog {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .catalog-body {
+    padding: 8px;
+  }
+
+  .catalog-name {
+    min-height: 34px;
+    font-size: 10px;
+  }
+
+  .price-current {
+    font-size: 12px;
+  }
+
+}
+/* MOBILE RẤT NHỎ */
+@media (max-width: 360px) {
+
+  .catalog-grid {
+    gap: 8px;
+  }
+
+  .catalog-name {
+    font-size: 9px;
+  }
+
+}/* =====================================
+   PRODUCT IMAGE SLIDER
+===================================== */
+
+.product-gallery {
+  padding: 45px 0 60px;
+  border-top: 1px solid var(--border);
+}
+
+
+/* TITLE */
+
+.gallery-head {
+  margin-bottom: 20px;
+}
+
+.gallery-head span {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+.gallery-head h2 {
+  margin-top: 7px;
+
+  color: #fff;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+/* SLIDER */
+
+.gallery-slider {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: #111;
+}
+
+
+.gallery-track {
+  display: flex;
+
+  transition: transform .45s ease;
+}
+
+
+/* SLIDE */
+
+.gallery-slide {
+  min-width: 100%;
+}
+
+
+.gallery-slide img {
+  display: block;
+
+  width: 100%;
+  max-height: 720px;
+
+  object-fit: contain;
+
+  background: #111;
+}
+
+
+/* =====================================
+   ARROWS
+===================================== */
+
+.gallery-arrow {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 5;
+
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+
+  background: rgba(0,0,0,.65);
+
+  color: #fff;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+
+.gallery-arrow:hover {
+  background: var(--gold);
+
+  color: #111;
+
+  border-color: var(--gold);
+}
+
+
+.gallery-prev {
+  left: 16px;
+}
+
+
+.gallery-next {
+  right: 16px;
+}
+
+
+/* =====================================
+   DOTS
+===================================== */
+
+.gallery-dots {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #555;
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+
+.gallery-dot.active {
+  width: 24px;
+
+  border-radius: 20px;
+
+  background: var(--gold);
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+  .product-gallery {
+    padding: 32px 0 45px;
+  }
+
+
+  .gallery-head h2 {
+    font-size: 19px;
+  }
+
+
+  .gallery-arrow {
+    width: 38px;
+    height: 38px;
+
+    font-size: 25px;
+  }
+
+
+  .gallery-prev {
+    left: 8px;
+  }
+
+
+  .gallery-next {
+    right: 8px;
+  }
+
+
+  .gallery-slide img {
+    max-height: 520px;
+  }
+
+}.ppf-price-image {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.ppf-price-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* LED DETAIL */
+.led-detail-page,
+.led-detail-page button { font-family: 'Montserrat', sans-serif; }
+
+.led-detail-page .pd-main-image { aspect-ratio: 4 / 3; background: #111; }
+.led-detail-page .pd-main-image img { object-fit: cover; }
+
+.led-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+.led-thumb { padding: 0; overflow: hidden; border: 2px solid transparent; border-radius: 9px; background: #111; opacity: .65; cursor: pointer; transition: .2s ease; }
+.led-thumb img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.led-thumb:hover, .led-thumb.active { opacity: 1; border-color: var(--gold); }
+
+.led-block { padding: 56px 0; border-top: 1px solid var(--border); }
+.led-block__head { margin-bottom: 24px; text-align: center; }
+.led-block__head span { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.led-block__head h2 { margin-top: 7px; color: #fff; font-size: 24px; }
+
+.led-feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.led-feature-grid article { padding: 22px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.led-feature-grid b { display: block; margin-bottom: 14px; color: var(--gold); }
+.led-feature-grid h3 { margin-bottom: 7px; color: #fff; font-size: 14px; }
+.led-feature-grid p { color: var(--muted); font-size: 12px; }
+
+.led-package-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.led-package { position: relative; padding: 28px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.led-package.featured { border: 2px solid var(--gold); }
+.led-package__tag { position: absolute; top: 0; right: 0; padding: 6px 12px; border-radius: 0 9px 0 9px; background: var(--gold); color: #111; font-size: 10px; font-weight: 700; }
+.led-package h3 { color: #fff; font-size: 22px; }
+.led-package > strong { display: block; margin: 4px 0 16px; color: var(--gold-light); font-size: 25px; }
+.led-package ul { display: grid; gap: 8px; margin-bottom: 20px; }
+.led-package li { color: var(--muted); font-size: 13px; }
+.led-package li::before { content: '✓'; margin-right: 8px; color: var(--gold); }
+
+/* Slider ngang 5 ảnh */
+.led-detail-page .product-gallery { padding: 56px 0; }
+.led-detail-page .gallery-head { text-align: center; }
+.led-detail-page .gallery-slider { aspect-ratio: 16 / 9; }
+.led-detail-page .gallery-track { height: 100%; }
+.led-detail-page .gallery-slide { flex: 0 0 100%; height: 100%; }
+.led-detail-page .gallery-slide img { width: 100%; height: 100%; max-height: none; object-fit: cover; }
+.led-detail-page .gallery-dot.active { width: 8px; border-radius: 50%; }
+
+@media (max-width: 800px) {
+  .led-feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .led-block, .led-detail-page .product-gallery { padding: 40px 0; }
+  .led-feature-grid, .led-package-grid { grid-template-columns: 1fr; }
+  .led-feature-grid article, .led-package { padding: 20px; }
+  .led-block__head h2, .gallery-head h2 { font-size: 19px; }
+  .led-detail-page .gallery-slider { aspect-ratio: 16 / 10; }
+}
+
+</style>
+  <style>
+    .santek-page .pd-main-image { aspect-ratio: 1 / 1; background: #111; }
+    .santek-page .pd-main-image img { width: 100%; height: 100%; object-fit: contain; }
+
+    .santek-image-list { display: grid; gap: 18px; }
+    .santek-image-list figure { overflow: hidden; border: 1px solid var(--border); border-radius: 12px; background: #111; }
+    .santek-image-list img { width: 100%; height: auto; display: block; object-fit: contain; }
+
+    .santek-spec-wrap { overflow: hidden; border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface); }
+    .santek-spec-table { width: 100%; border-collapse: collapse; }
+    .santek-spec-table th,
+    .santek-spec-table td { padding: 15px 18px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    .santek-spec-table tr:last-child th,
+    .santek-spec-table tr:last-child td { border-bottom: 0; }
+    .santek-spec-table th { width: 30%; color: var(--gold); font-size: 13px; }
+    .santek-spec-table td { color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 600px) {
+      .santek-image-list { gap: 10px; }
+      .santek-spec-table th,
+      .santek-spec-table td { display: block; width: 100%; padding-inline: 14px; }
+      .santek-spec-table th { padding-bottom: 4px; border-bottom: 0; }
+      .santek-spec-table td { padding-top: 0; padding-bottom: 13px; }
+    }
+  </style>
+<style>
+.s600-slider{position:relative;max-width:100%;outline-offset:5px}
+.s600-window{overflow:hidden;border:1px solid #39352a;border-radius:14px;transition:height .4s ease;background:#111;touch-action:pan-y}
+.s600-track{display:flex;align-items:flex-start;transition:transform .55s ease;will-change:transform}
+.s600-slide{flex:0 0 100%;min-width:0;margin:0!important;box-sizing:border-box}
+.s600-slide img{display:block;width:100%;height:auto;object-fit:contain}
+.s600-slide img[hidden],.s600-empty[hidden]{display:none}
+.s600-empty{min-height:260px;aspect-ratio:16/9;display:grid;place-items:center;background:#171717;color:#c9a84c;font-weight:700;letter-spacing:2px}
+.s600-arrow{position:absolute;top:calc(50% - 24px);transform:translateY(-50%);z-index:2;width:46px;height:46px;border:1px solid #c9a84c;border-radius:50%;background:#c9a84c;color:#111;font-size:34px;line-height:1;cursor:pointer}
+.s600-prev{left:12px}.s600-next{right:12px}
+.s600-controls{display:flex;justify-content:center;align-items:center;gap:16px;min-height:56px;color:#ccc;font-size:14px}
+.s600-dots{display:flex;gap:4px}.s600-dots button{width:30px;height:36px;background:none;border:0;cursor:pointer;padding:10px}
+.s600-dots button::after{content:'';display:block;width:10px;height:10px;background:#666;border-radius:50%}.s600-dots button[aria-current=true]::after{background:#c9a84c}
+.s600-pause{border:1px solid #555;border-radius:6px;padding:8px 12px;background:#191919;color:#eee;cursor:pointer}
+@media(max-width:600px){.s600-arrow{width:40px;height:40px}.s600-prev{left:8px}.s600-next{right:8px}.s600-controls{gap:8px}}
+@media(prefers-reduced-motion:reduce){.s600-track,.s600-window{transition:none}}
+</style></head>
+
+<body class="led-detail-page santek-page">
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/LOGO VAN LONG.png" alt="Văn Long Auto" class="logo" onerror="this.hidden=true;this.insertAdjacentText('afterend','VĂN LONG AUTO')">
+      </a>
+      <ul class="nav-menu nav-menu--static">
+        <li><a href="man-hinh-android-cam-360.html" class="nav-link">← Quay lại danh mục</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="pd-page">
+    <div class="pd-container">
+      <div class="pd-breadcrumb">
+        <a href="index.html">Trang chủ</a><span>/</span>
+        <a href="man-hinh-android-cam-360.html">Màn hình &amp; Camera 360</a><span>/</span>
+        <strong>Santek X620</strong>
+      </div>
+
+      <section class="pd-overview">
+        <div class="pd-media">
+          <div class="pd-main-image">
+            <img onerror="this.hidden=true;this.parentElement.style.display='grid';this.parentElement.style.placeItems='center';this.parentElement.insertAdjacentText('beforeend','ẢNH SẢN PHẨM')" id="pdMainImage" src="assets/santek-x620/1.jpg" alt="Màn hình Santek X620">
+          </div>
+        </div>
+
+        <div class="pd-summary">
+          <span class="pd-brand">Văn Long Auto · Santek</span>
+          <h1 class="pd-title">Màn Hình Santek X620</h1>
+          <p class="pd-short">Santek X620 mang đến màn hình lớn cho việc xem bản đồ và kết nối điện thoại trên ô tô. Bộ nhớ 64GB cùng Apple CarPlay và Android Auto giúp bạn sử dụng các ứng dụng tương thích thuận tiện hơn.</p>
+
+          <div class="pd-price-box">
+            <span class="pd-price-label">Giá tham khảo theo hãng</span>
+            <div class="pd-price-row">
+              <strong class="pd-price-current">6.500.000đ</strong>
+            </div>
+          </div>
+
+          <div class="pd-actions">
+            <a class="pd-btn pd-btn--primary" href="https://zalo.me/0886636338">Nhận tư vấn</a>
+            <a class="pd-btn pd-btn--ghost" href="#thong-so">Xem thông số</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="led-block">
+        <header class="led-block__head">
+          <span>Điểm nổi bật</span>
+          <h2>Màn hình lớn, kết nối thuận tiện</h2>
+        </header>
+        <div class="led-feature-grid">
+          <article><b>01</b><h3>Màn hình 9/10 inch</h3><p>Lựa chọn kích thước theo không gian bảng điều khiển và mặt dưỡng của xe.</p></article>
+          <article><b>02</b><h3>Kết nối điện thoại</h3><p>Hỗ trợ Apple CarPlay và Android Auto.</p></article>
+          <article><b>03</b><h3>Bộ nhớ 64GB</h3><p>RAM 2GB, CPU 8 nhân và hệ điều hành Android 10.</p></article>
+          <article><b>04</b><h3>Internet linh hoạt</h3><p>Kết nối SIM 4G hoặc Wi-Fi hai băng tần.</p></article>
+        </div>
+      </section>
+
+      <section class="product-gallery" aria-label="Hình ảnh Santek X620">
+        <header class="gallery-head">
+          <span>HÌNH ẢNH SẢN PHẨM</span>
+          <h2>Santek X620</h2>
+        </header>
+
+        <div class="s600-slider" role="region" aria-roledescription="băng chuyền" aria-label="4 hình ảnh sản phẩm" tabindex="0">
+          <div class="s600-window"><div class="s600-track"><figure class="s600-slide" role="group" aria-label="Ảnh 1 / 4"><img src="assets/santek-x620/1.jpg" alt="Santek X620 — ảnh 1" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="s600-empty" hidden>ẢNH SẢN PHẨM 01</div></figure><figure class="s600-slide" role="group" aria-label="Ảnh 2 / 4"><img src="assets/santek-x620/2.jpg" alt="Santek X620 — ảnh 2" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="s600-empty" hidden>ẢNH SẢN PHẨM 02</div></figure><figure class="s600-slide" role="group" aria-label="Ảnh 3 / 4"><img src="assets/santek-x620/3.jpg" alt="Santek X620 — ảnh 3" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="s600-empty" hidden>ẢNH SẢN PHẨM 03</div></figure><figure class="s600-slide" role="group" aria-label="Ảnh 4 / 4"><img src="assets/santek-x620/4.jpg" alt="Santek X620 — ảnh 4" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="s600-empty" hidden>ẢNH SẢN PHẨM 04</div></figure></div></div>
+          <button type="button" class="s600-arrow s600-prev" aria-label="Ảnh trước">‹</button>
+          <button type="button" class="s600-arrow s600-next" aria-label="Ảnh tiếp theo">›</button>
+          <div class="s600-controls"><div class="s600-dots"></div><span class="s600-count" aria-live="off">1 / 4</span><button type="button" class="s600-pause">Tạm dừng</button></div>
+        </div>
+      </section>
+
+      <section class="led-block" id="thong-so">
+        <header class="led-block__head">
+          <span>Thông số sản phẩm</span>
+          <h2>Cấu hình Santek X620</h2>
+        </header>
+
+        <div class="santek-spec-wrap">
+          <table class="santek-spec-table">
+            <tbody>
+              <tr><th scope="row">CPU</th><td>8 nhân 825</td></tr>
+              <tr><th scope="row">RAM</th><td>2GB</td></tr>
+              <tr><th scope="row">Bộ nhớ trong</th><td>64GB</td></tr>
+              <tr><th scope="row">Hệ điều hành</th><td>Android 10</td></tr>
+              <tr><th scope="row">Kích thước màn hình</th><td>9 / 10 inch</td></tr>
+              <tr><th scope="row">Wi-Fi</th><td>Hai băng tần 2.4GHz và 5GHz</td></tr>
+              <tr><th scope="row">Bluetooth</th><td>4+ (theo thông tin hãng)</td></tr>
+              <tr><th scope="row">Mạng di động</th><td>SIM 4G</td></tr>
+              <tr><th scope="row">Cổng kết nối</th><td>2 cổng USB, khe SIM, AUX</td></tr>
+              <tr><th scope="row">Kết nối điện thoại</th><td>Apple CarPlay, Android Auto</td></tr>
+              <tr><th scope="row">Âm thanh qua USB</th><td>MP3, WAV, OGG, FLAC</td></tr>
+              <tr><th scope="row">Video qua USB</th><td>MP4, FLV, AVI, MOV, WMV</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <p style="color:var(--muted);font-size:13px;line-height:1.7">Thông tin tham khảo từ <a href="https://santekvietnam.com/san-pham/man-hinh-santek-x620/" target="_blank" rel="noopener" style="color:var(--gold)">Santek Việt Nam</a>. Liên hệ Văn Long Auto để xác nhận giá lắp đặt và cấu hình phù hợp với xe.</p>
+      <section class="pd-cta">
+        <h2>Santek X620 có phù hợp với xe của bạn?</h2>
+        <p>Gửi tên xe và đời xe để Văn Long Auto kiểm tra mặt dưỡng, kết nối và tư vấn cấu hình lắp đặt phù hợp.</p>
+        <a class="pd-btn pd-btn--primary" href="https://zalo.me/0886636338">Tư vấn ngay</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer footer--simple">
+    <div class="container"><p>© Văn Long Auto · Trung tâm chăm sóc và nâng cấp xe hơi.</p></div>
+  </footer>
+<script>(() => {
+ const root=document.querySelector('.s600-slider'), track=root.querySelector('.s600-track'), viewport=root.querySelector('.s600-window');
+ const slides=[...root.querySelectorAll('.s600-slide')], dots=root.querySelector('.s600-dots'), pause=root.querySelector('.s600-pause');
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ let index=0,timer=null,paused=reduced.matches,hover=false,touchX=null;
+ const resize=()=>{viewport.style.height=slides[index].getBoundingClientRect().height+'px';};
+ const stop=()=>{clearInterval(timer);timer=null;};
+ const schedule=()=>{stop();if(!paused&&!hover&&!document.hidden&&!root.contains(document.activeElement))timer=setInterval(()=>show(index+1),3500);};
+ function show(next){index=(next+slides.length)%slides.length;track.style.transform='translateX(-'+index*100+'%)';slides.forEach((s,i)=>s.setAttribute('aria-hidden',String(i!==index)));[...dots.children].forEach((d,i)=>d.setAttribute('aria-current',String(i===index)));root.querySelector('.s600-count').textContent=(index+1)+' / '+slides.length;resize();}
+ slides.forEach((slide,i)=>{const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label','Xem ảnh '+(i+1));dot.onclick=()=>{show(i);schedule();};dots.appendChild(dot);slide.querySelector('img').addEventListener('load',resize);slide.querySelector('img').addEventListener('error',resize);});
+ root.querySelector('.s600-prev').onclick=()=>{show(index-1);schedule();};root.querySelector('.s600-next').onclick=()=>{show(index+1);schedule();};
+ pause.onclick=()=>{paused=!paused;pause.textContent=paused?'Tự động chạy':'Tạm dừng';schedule();};
+ root.addEventListener('mouseenter',()=>{hover=true;stop();});root.addEventListener('mouseleave',()=>{hover=false;schedule();});
+ root.addEventListener('focusin',stop);root.addEventListener('focusout',()=>setTimeout(schedule,0));document.addEventListener('visibilitychange',schedule);
+ root.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();show(index+(e.key==='ArrowLeft'?-1:1));schedule();}});
+ viewport.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;stop();},{passive:true});
+ viewport.addEventListener('touchend',e=>{if(touchX!==null){const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>45)show(index+(dx<0?1:-1));}touchX=null;schedule();},{passive:true});
+ viewport.addEventListener('touchcancel',()=>{touchX=null;schedule();},{passive:true});
+ new ResizeObserver(resize).observe(track);window.addEventListener('resize',resize);
+ pause.textContent=paused?'Tự động chạy':'Tạm dừng';show(0);schedule();
+})();</script>
+</body>
+</html>

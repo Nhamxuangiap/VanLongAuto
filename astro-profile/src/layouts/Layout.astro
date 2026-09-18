@@ -1,0 +1,31 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Giáp Photographer | Nhâm Xuân Giáp',
+  description = 'Nhâm Xuân Giáp – Nhiếp ảnh gia và nhà làm phim chuyên nghiệp tại Việt Nam.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script is:inline src="/scripts/site.js"></script>
+  </body>
+</html>

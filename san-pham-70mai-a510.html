@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Camera hành trình 70mai A510 | Văn Long Auto</title>
+  <meta name="description" content="70mai A510: Sony STARVIS 2 IMX675, 1944P HDR, ghi hình hai kênh, GPS, ADAS, giám sát đỗ xe và hỗ trợ 4G.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#c9a84c;--bg:#09090a;--card:#141416;--line:#303034;--text:#f5f5f5;--muted:#aaa}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Montserrat,Arial,sans-serif}img,video{max-width:100%}a{color:inherit;text-decoration:none}
+    .container{width:min(1180px,calc(100% - 32px));margin:auto}nav{border-bottom:1px solid #222;background:#101011}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{max-width:190px;max-height:48px}.back,.article p{color:var(--muted)}
+    .crumb{padding:24px 0;color:#888;font-size:13px}.crumb a,.brand,.eyebrow,.article h3{color:var(--gold)}.overview{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;padding-bottom:55px}
+    .slider{position:relative;overflow:hidden;aspect-ratio:1;border:1px solid var(--line);border-radius:14px;background:#fff}.track{display:flex;height:100%;transition:transform .5s;touch-action:pan-y}.slide{flex:0 0 100%;display:grid;place-items:center;margin:0}.slide img{width:100%;height:100%;object-fit:contain;user-select:none}.arrow{position:absolute;top:50%;z-index:2;width:42px;height:42px;border:0;border-radius:50%;background:var(--gold);font-size:27px;cursor:pointer;transform:translateY(-50%)}.prev{left:12px}.next{right:12px}.dots{position:absolute;right:0;bottom:14px;left:0;display:flex;justify-content:center;gap:7px}.dot{width:8px;height:8px;padding:0;border:0;border-radius:10px;background:#777}.dot.active{width:23px;background:var(--gold)}
+    .brand,.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}h1{margin:10px 0 14px;font-size:clamp(30px,4vw,50px);line-height:1.12}.summary>p{color:var(--muted)}.offer{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.price{display:flex;min-width:260px;flex-direction:column;padding:16px 24px;border:1px solid #5a4a20;border-radius:10px;background:#17150f}.price small{color:#aaa}.price strong{color:var(--gold);font-size:28px}.note{padding:11px 14px;border:1px solid #333;border-radius:8px;background:var(--card);font-size:12px}.note b{color:var(--gold)}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{padding:12px 18px;border:1px solid var(--gold);border-radius:7px;font-weight:700}.primary{background:var(--gold);color:#111}
+    .highlights{padding:50px 0;border-top:1px solid #222}.section-head{margin-bottom:25px}.section-head h2{margin:6px 0;font-size:clamp(25px,3vw,38px);line-height:1.2}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.feature{padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--card)}.feature b{color:var(--gold)}.feature h3{margin:7px 0;font-size:16px}.feature p{margin:0;color:var(--muted);font-size:13px}
+    .detail{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:34px;align-items:start;padding:55px 0;border-top:1px solid #222}.article{min-width:0}.article-block{margin-bottom:42px}.article-block h3{margin:0 0 9px;font-size:22px}.media{margin:20px 0 0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#111}.media img,.media video{display:block;width:100%;height:auto;object-fit:contain}.media figcaption{padding:10px 14px;color:#888;font-size:12px}.media-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px;border-top:1px solid var(--line)}.media-tab{padding:11px;border:1px solid #36363a;border-radius:7px;background:#18181b;color:#bbb;font:600 13px Montserrat,sans-serif;cursor:pointer;transition:.2s}.media-tab.active{border-color:var(--gold);background:var(--gold);color:#111;box-shadow:0 0 14px #c9a84c55}
+    .specs{position:sticky;top:20px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--card)}.specs h2{margin:5px 0 14px;font-size:21px}.specs table{width:100%;border-collapse:collapse}.specs th,.specs td{padding:10px 0;border-bottom:1px solid #2a2a2d;font-size:13px;vertical-align:top}.specs th{width:44%;padding-right:10px;color:#999;text-align:left;font-weight:500}.specs td{text-align:right;font-weight:600}.specs tr:last-child>*{border:0}.source{margin:0 0 30px;color:#999;font-size:13px}.source a{color:var(--gold)}.cta{margin-bottom:45px;padding:28px;border:1px solid #5a4a20;border-radius:12px;background:#15130e}.cta h2{margin:0 0 8px}.cta p{color:var(--muted)}footer{padding:24px;border-top:1px solid #222;color:#888;text-align:center}
+    @media(max-width:900px){.overview,.detail{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}.specs{position:static}}
+    @media(max-width:560px){.container{width:min(100% - 24px,1180px)}.nav{height:64px}.logo{max-width:145px}.back{font-size:12px}.overview{gap:22px}.highlights,.detail{padding:40px 0}.features{grid-template-columns:1fr}.price{width:100%;min-width:0}.arrow{width:38px;height:38px}.specs{padding:17px}}
+  </style>
+</head>
+<body>
+  <nav><div class="container nav">
+    <a href="index.html"><img class="logo" src="assets/LOGO VAN LONG.png" alt="Văn Long Auto"></a>
+    <a class="back" href="index.html">← Quay lại trang chủ</a>
+  </div></nav>
+
+  <main class="container">
+    <div class="crumb"><a href="index.html">Trang chủ</a> / Màn Hình Android & Camera hành trình / 70mai A510</div>
+
+    <div class="overview">
+      <div class="slider" id="slider">
+        <div class="track" id="track">
+          <figure class="slide"><img src="assets/a510/a510 vuong/1.png" alt="70mai A510, ảnh 1" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a510/a510 vuong/2.png" alt="70mai A510, ảnh 2" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a510/a510 vuong/3.png" alt="70mai A510, ảnh 3" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a510/a510 vuong/4.png" alt="70mai A510, ảnh 4" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a510/a510 vuong/5.png" alt="70mai A510, ảnh 5" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a510/a510 vuong/6.png" alt="70mai A510, ảnh 6" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a510/a510 vuong/7.png" alt="70mai A510, ảnh 7" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a510/a510 vuong/8.png" alt="70mai A510, ảnh 8" draggable="false"></figure>
+        </div>
+        <button class="arrow prev" aria-label="Ảnh trước">‹</button><button class="arrow next" aria-label="Ảnh tiếp theo">›</button>
+        <div class="dots" id="dots"></div>
+      </div>
+
+      <div class="summary">
+        <span class="brand">Văn Long Auto · 70mai</span>
+        <h1>Camera hành trình 70mai A510</h1>
+        <p>Camera hành trình 1944P HDR với cảm biến Sony STARVIS 2, hỗ trợ ghi hình hai kênh, GPS, ADAS, giám sát đỗ xe và kết nối 4G tùy chọn.</p>
+        <div class="offer">
+          <div class="price"><small>Giá bán tại Văn Long Auto</small><strong>3.190.000đ</strong></div>
+          <div class="note"><b>Lưu ý:</b> camera sau và Hardwire Kit tùy gói lắp đặt.</div>
+        </div>
+        <div class="buttons"><a class="btn primary" href="https://zalo.me/0886636338">Nhận tư vấn</a><a class="btn" href="#thong-so">Xem thông số</a></div>
+      </div>
+    </div>
+
+    <section class="highlights">
+      <header class="section-head"><span class="eyebrow">Điểm nổi bật</span><h2>Hình ảnh rõ nét, bảo vệ toàn diện</h2></header>
+      <div class="features">
+        <article class="feature"><b>01</b><h3>1944P HDR</h3><p>Camera trước 5MP ghi lại chi tiết với dải sáng rộng.</p></article>
+        <article class="feature"><b>02</b><h3>STARVIS 2</h3><p>Cảm biến Sony IMX675 cải thiện khả năng ghi hình thiếu sáng.</p></article>
+        <article class="feature"><b>03</b><h3>GPS & ADAS</h3><p>Lưu dữ liệu hành trình và hỗ trợ cảnh báo khi lái xe.</p></article>
+        <article class="feature"><b>04</b><h3>Đỗ xe & 4G</h3><p>Hỗ trợ giám sát đỗ xe và kết nối từ xa khi có phụ kiện phù hợp.</p></article>
+      </div>
+    </section>
+
+    <div class="detail">
+      <article class="article">
+        <header class="section-head"><span class="eyebrow">Chi tiết sản phẩm</span><h2>Công nghệ chính trên 70mai A510</h2></header>
+
+        <section class="article-block">
+          <h3>Sony STARVIS 2 IMX675 và hình ảnh 1944P HDR</h3>
+          <p>Cảm biến 5MP Sony STARVIS 2 IMX675 kết hợp HDR giúp cân bằng vùng sáng và tối, đồng thời duy trì nhiều chi tiết hơn khi ghi hình ban ngày hoặc trong điều kiện ánh sáng yếu.</p>
+          <figure class="media"><img loading="lazy" src="assets/a510/a510 ngang/1.png" alt="Cảm biến Sony STARVIS 2 trên 70mai A510"><figcaption>Ảnh tự giữ nguyên tỷ lệ, không bị crop.</figcaption></figure>
+        </section>
+
+        <section class="article-block">
+          <h3>So sánh ghi hình ban ngày và ban đêm</h3>
+          <p>Chọn từng chế độ để trình bày chất lượng hình ảnh thực tế của A510 trong các điều kiện ánh sáng khác nhau.</p>
+          <figure class="media">
+            <img id="visionMedia" loading="lazy" src="assets/a510/ngang/2.png" alt="70mai A510 ghi hình ban ngày">
+            <div class="media-tabs">
+              <button class="media-tab active" data-vision data-src="assets/a510/ngang/2.png" type="button">Ban ngày</button>
+              <button class="media-tab" data-vision data-src="assets/a510/ngang/3.png" type="button">Ban đêm</button>
+            </div>
+          </figure>
+        </section>
+
+        <section class="article-block">
+          <h3>Ghi hình hai kênh trước và sau</h3>
+          <p>A510 có thể kết hợp camera sau tương thích để bổ sung góc quan sát phía sau. Hình ảnh hai kênh có thể hiển thị đồng thời trên màn hình theo dạng hình trong hình.</p>
+          <figure class="media"><img loading="lazy" src="assets/a510/ngang/4.png" alt="Khả năng ghi hình hai kênh của 70mai A510"></figure>
+        </section>
+
+        <section class="article-block">
+          <h3>Hệ thống ADAS và GPS tích hợp</h3>
+          <p>ADAS hỗ trợ cảnh báo chệch làn, xe phía trước khởi hành và nguy cơ va chạm phía trước. GPS lưu tốc độ, thời gian và tọa độ để xem lại trên ứng dụng 70mai.</p>
+          <figure class="media"><img loading="lazy" src="assets/a510/ngang/5.png" alt="ADAS và GPS tích hợp trên 70mai A510"></figure>
+        </section>
+
+        <section class="article-block">
+          <h3>Ghi hình khẩn cấp và ghi vòng lặp</h3>
+          <p>Khi phát hiện tác động, video sự kiện được lưu riêng để hạn chế bị ghi đè. Ghi vòng lặp tự thay thế các tệp thông thường cũ khi thẻ nhớ đầy.</p>
+          <figure class="media"><img loading="lazy" src="assets/a510/ngang/6.png" alt="Ghi hình khẩn cấp trên 70mai A510"></figure>
+        </section>
+
+        <section class="article-block">
+          <h3>Giám sát đỗ xe thông minh 24 giờ</h3>
+          <p>Cảm biến G có thể kích hoạt đoạn ghi hình khi phát hiện va chạm. Chế độ Time-lapse hỗ trợ theo dõi trong thời gian dài khi camera được cấp nguồn phù hợp.</p>
+          <p><small>Cần Hardwire Kit UP03/UP04 tương thích, bán riêng.</small></p>
+          < class="media">
+            <img loading="lazy" src="assets/a510/ngang/7.png" alt="Ghi hình khẩn cấp trên 70mai A510"></figure>
+            <div class="media-tabs">
+
+        </section>
+
+        <section class="article-block">
+          <h3>Kết nối 4G và ứng dụng 70mai</h3>
+          <p>Khi kết hợp bộ nguồn 4G UP04 và dịch vụ tương thích, người dùng có thể nhận cảnh báo, xem trực tiếp và tìm vị trí xe từ xa. Ứng dụng 70mai cũng hỗ trợ xem, tải video và thay đổi cài đặt.</p>
+          <figure class="media"><img loading="lazy" src="assets/a510/ngang/8.png" alt="Kết nối 4G và ứng dụng của 70mai A510"></figure>
+        </section>
+      </article>
+
+      <aside class="specs" id="thong-so">
+        <span class="brand">70mai A510</span><h2>Thông số kỹ thuật</h2>
+        <table>
+          <tr><th>Cảm biến trước</th><td>Sony STARVIS 2<br>IMX675, 5MP</td></tr>
+          <tr><th>Độ phân giải trước</th><td>2592 × 1944P<br>2560 × 1440P</td></tr>
+          <tr><th>Camera sau</th><td>1920 × 1080P<br>Tùy phụ kiện</td></tr>
+          <tr><th>Tốc độ khung hình</th><td>60FPS / 30FPS</td></tr>
+          <tr><th>HDR</th><td>Có</td></tr>
+          <tr><th>Góc nhìn</th><td>Trước 140°<br>Sau 130°</td></tr>
+          <tr><th>Khẩu độ</th><td>F1.8</td></tr>
+          <tr><th>Màn hình</th><td>2 inch IPS</td></tr>
+          <tr><th>Pin</th><td>500mAh</td></tr>
+          <tr><th>Bộ nhớ</th><td>MicroSD đến 256GB</td></tr>
+          <tr><th>GPS & ADAS</th><td>Tích hợp</td></tr>
+          <tr><th>Ghi hình hai kênh</th><td>Có</td></tr>
+          <tr><th>Giám sát đỗ xe</th><td>Cần Hardwire Kit</td></tr>
+          <tr><th>Kết nối 4G</th><td>Tùy chọn với UP04</td></tr>
+          <tr><th>Điều khiển ứng dụng</th><td>Có</td></tr>
+        </table>
+      </aside>
+    </div>
+    <section class="cta"><h2>Bạn muốn lắp 70mai A510 cho xe?</h2><p>Gửi tên xe và nhu cầu để Văn Long Auto tư vấn camera sau, thẻ nhớ và bộ nguồn phù hợp.</p><a class="btn primary" href="https://zalo.me/0886636338">Tư vấn ngay</a></section>
+  </main>
+
+  <footer>© Văn Long Auto · Trung tâm chăm sóc và nâng cấp xe hơi.</footer>
+  <script>
+    const slider=document.querySelector('#slider'),track=document.querySelector('#track'),slides=[...document.querySelectorAll('.slide')],dots=document.querySelector('#dots');let current=0,timer,x=0;
+    slides.forEach((_,i)=>dots.insertAdjacentHTML('beforeend',`<button class="dot" aria-label="Xem ảnh ${i+1}"></button>`));const dot=[...dots.children];
+    function show(i){current=(i+slides.length)%slides.length;track.style.transform=`translateX(-${current*100}%)`;dot.forEach((b,n)=>b.classList.toggle('active',n===current))}function auto(){clearInterval(timer);timer=setInterval(()=>show(current+1),3500)}
+    document.querySelector('.next').onclick=()=>{show(current+1);auto()};document.querySelector('.prev').onclick=()=>{show(current-1);auto()};dot.forEach((b,i)=>b.onclick=()=>{show(i);auto()});slider.ontouchstart=e=>{x=e.touches[0].clientX;clearInterval(timer)};slider.ontouchend=e=>{if(Math.abs(e.changedTouches[0].clientX-x)>45)show(current+(e.changedTouches[0].clientX<x?1:-1));auto()};slider.onmouseenter=()=>clearInterval(timer);slider.onmouseleave=auto;show(0);auto();
+    const tabs=(selector,media)=>{const buttons=document.querySelectorAll(selector);buttons.forEach(btn=>btn.onclick=()=>{media.src=btn.dataset.src;if(media.tagName==='VIDEO'){media.load();media.play().catch(()=>{})}buttons.forEach(b=>b.classList.toggle('active',b===btn))})};
+    tabs('[data-vision]',document.querySelector('#visionMedia'));tabs('[data-parking]',document.querySelector('#parkingVideo'));
+  </script>
+</body>
+</html>

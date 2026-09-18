@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Camera hành trình VIETMAP SpeedMap M1 | Văn Long Auto</title>
+  <meta name="description" content="VIETMAP SpeedMap M1: ghi hình Super HD 2K, Sony Starvis, cảnh báo tốc độ, GPS, Wi-Fi và ứng dụng VIETMAP REC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#c9a84c;--bg:#09090a;--card:#141416;--line:#303034;--text:#f5f5f5;--muted:#aaa}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.7 "Montserrat",Arial,sans-serif}img{max-width:100%}a{color:inherit;text-decoration:none}
+    .container{width:min(1180px,calc(100% - 32px));margin:auto}nav{border-bottom:1px solid #222;background:#101011}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{max-width:190px;max-height:48px}.back{color:var(--muted)}
+    .crumb{padding:24px 0;color:#888;font-size:13px}.crumb a,.brand,.eyebrow{color:var(--gold)}.overview{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;padding-bottom:55px}.product-slider{position:relative;overflow:hidden;aspect-ratio:1;border:1px solid var(--line);border-radius:14px;background:#fff}.track{display:flex;height:100%;transition:transform .5s ease;touch-action:pan-y}.slide{flex:0 0 100%;display:grid;place-items:center;margin:0}.slide img{width:100%;height:100%;object-fit:contain;user-select:none}.arrow{position:absolute;top:50%;z-index:2;width:42px;height:42px;border:0;border-radius:50%;background:var(--gold);font-size:27px;cursor:pointer;transform:translateY(-50%)}.prev{left:12px}.next{right:12px}.dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:7px}.dot{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#777;cursor:pointer}.dot.active{width:23px;border-radius:8px;background:var(--gold)}
+    .brand,.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}h1{margin:10px 0 14px;font-size:clamp(30px,4vw,50px);line-height:1.12}.summary>p{color:var(--muted)}.offer{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap;margin:22px 0}.price{display:inline-flex;min-width:260px;flex-direction:column;padding:16px 24px;border:1px solid #5a4a20;border-radius:10px;background:#17150f}.price small{color:#aaa}.price strong{color:var(--gold);font-size:28px}.notes{display:grid;gap:8px}.note{padding:9px 13px;border:1px solid #333;border-radius:8px;background:var(--card);font-size:12px}.note b{color:var(--gold)}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{padding:12px 18px;border:1px solid var(--gold);border-radius:7px;font-weight:700}.primary{background:var(--gold);color:#111}
+    section{padding:55px 0;border-top:1px solid #222}.section-head{margin-bottom:25px}.section-head h2{margin:6px 0;font-size:clamp(25px,3vw,38px);line-height:1.2}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.feature{padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--card)}.feature b{color:var(--gold)}.feature h3{margin:7px 0;font-size:16px}.feature p{margin:0;color:var(--muted);font-size:13px}
+    .detail{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:34px;align-items:start;padding:55px 0;border-top:1px solid #222}.article{min-width:0}.article-block{margin-bottom:42px}.article-block h3{margin:0 0 9px;color:var(--gold);font-size:22px}.article-block p,.article-block li{color:#bbb}.article-block ul{padding-left:20px}.content-image{margin:20px 0 0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#111}.content-image img{display:block;width:100%;height:auto;object-fit:contain}.content-image figcaption{padding:10px 14px;color:#888;font-size:12px}
+    .specs{position:sticky;top:20px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--card)}.specs h2{margin:5px 0 14px;font-size:21px}.specs table{width:100%;border-collapse:collapse}.specs th,.specs td{padding:10px 0;border-bottom:1px solid #2a2a2d;font-size:13px;vertical-align:top}.specs th{width:45%;padding-right:10px;color:#999;text-align:left;font-weight:500}.specs td{text-align:right;font-weight:600}.specs tr:last-child>*{border:0}.source{margin:0 0 30px;color:#999;font-size:13px}.source a{color:var(--gold)}.cta{margin-bottom:45px;padding:28px;border:1px solid #5a4a20;border-radius:12px;background:#15130e}.cta h2{margin:0 0 8px}.cta p{color:var(--muted)}footer{padding:24px;border-top:1px solid #222;color:#888;text-align:center}
+    @media(max-width:900px){.overview,.detail{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}.specs{position:static}.detail{gap:24px}}
+    @media(max-width:560px){.container{width:min(100% - 24px,1180px)}.nav{height:64px}.logo{max-width:145px}.back{font-size:12px}.overview{gap:22px;padding-bottom:40px}section,.detail{padding:40px 0}.features{grid-template-columns:1fr}.price{width:100%;min-width:0}.notes{width:100%}.specs{padding:17px}.arrow{width:38px;height:38px}}
+  </style>
+</head>
+<body>
+  <nav><div class="container nav">
+    <a href="index.html"><img class="logo" src="assets/LOGO VAN LONG.png" alt="Văn Long Auto"></a>
+    <a class="back" href="index.html">← Quay lại trang chủ</a>
+  </div></nav>
+
+  <main class="container">
+    <div class="crumb"><a href="index.html">Trang chủ</a> / Màn hình Android & Camera 360 / SpeedMap M1</div>
+    <div class="overview">
+      <div class="product-slider" id="slider">
+        <div class="track" id="track">
+          <figure class="slide"><img src="assets/m1 vuong/2.png" alt="SpeedMap M1, ảnh 1" draggable="false"></figure>
+          <figure class="slide"><img src="assets/m1 vuong/3.png" alt="SpeedMap M1, ảnh 2" draggable="false"></figure>
+          <figure class="slide"><img src="assets/m1 vuong/4.png" alt="SpeedMap M1, ảnh 3" draggable="false"></figure>
+          <figure class="slide"><img src="assets/m1 vuong/5.png" alt="SpeedMap M1, ảnh 4" draggable="false"></figure>
+          <figure class="slide"><img src="assets/m1 vuong/6.png" alt="SpeedMap M1, ảnh 5" draggable="false"></figure>
+          <figure class="slide"><img src="assets/m1 vuong/1.png" alt="SpeedMap M1, ảnh 6" draggable="false"></figure>
+        </div>
+        <button class="arrow prev" aria-label="Ảnh trước">‹</button><button class="arrow next" aria-label="Ảnh tiếp theo">›</button>
+        <div class="dots" id="dots" aria-label="Chọn ảnh"></div>
+      </div>
+      <div class="summary">
+        <span class="brand">Văn Long Auto · VIETMAP</span>
+        <h1>Camera hành trình VIETMAP SpeedMap M1</h1>
+        <p>Camera hành trình ghi hình Super HD 2K, hiển thị tốc độ giới hạn, cảnh báo quá tốc độ và lưu thông tin tuyến đường trong video.</p>
+        <div class="offer">
+          <div class="price"><small>Giá niêm yết tham khảo</small><strong>6.190.000đ</strong></div>
+          <div class="notes"><div class="note"><b>Lưu ý</b> camera sau là phụ kiện rời</div><div class="note"><b>Hỗ trợ</b> thẻ nhớ tối đa 256GB</div></div>
+        </div>
+        <div class="buttons"><a class="btn primary" href="https://zalo.me/0886636338">Nhận tư vấn</a><a class="btn" href="#thong-so">Xem thông số</a></div>
+      </div>
+    </div>
+
+    <section>
+      <header class="section-head"><span class="eyebrow">Tính năng nổi bật</span><h2>Cảnh báo tốc độ và ghi hình rõ nét</h2></header>
+      <div class="features">
+        <article class="feature"><b>01</b><h3>Góc quay rộng</h3><p>Quan sát toàn cảnh phía trước và phía sau xe.</p></article>
+        <article class="feature"><b>02</b><h3>Sony Starvis</h3><p>Cải thiện khả năng ghi hình trong điều kiện thiếu sáng.</p></article>
+        <article class="feature"><b>03</b><h3>Cảnh báo tốc độ</h3><p>Hiển thị giới hạn và nhắc khi xe chạy quá tốc độ.</p></article>
+        <article class="feature"><b>04</b><h3>Cảnh báo giọng nói</h3><p>Cung cấp dữ liệu giao thông bằng tiếng Việt.</p></article>
+        <article class="feature"><b>05</b><h3>Kết nối Wi-Fi</h3><p>Xem và tải video qua ứng dụng VIETMAP REC.</p></article>
+        <article class="feature"><b>06</b><h3>G-Sensor</h3><p>Hỗ trợ bảo vệ video khi phát hiện va chạm.</p></article>
+        <article class="feature"><b>07</b><h3>Super HD 2K</h3><p>Camera trước ghi hình 2K ở 30 khung hình/giây.</p></article>
+        <article class="feature"><b>08</b><h3>Lắp đặt linh hoạt</h3><p>Thiết kế nhỏ gọn, phù hợp nhiều vị trí trên kính xe.</p></article>
+      </div>
+    </section>
+
+    <div class="detail">
+      <article class="article">
+        <header class="section-head"><span class="eyebrow">Chi tiết sản phẩm</span><h2>Các công nghệ chính trên SpeedMap M1</h2></header>
+
+        <div class="article-block">
+          <h3>Luôn hiển thị giới hạn tốc độ</h3>
+          <p>SpeedMap M1 hiển thị mức tốc độ cho phép trên tuyến đường đang đi và phát cảnh báo bằng hình ảnh lẫn giọng nói khi xe vượt ngưỡng. Video hành trình còn có thể ghi kèm tên đường, quận, thành phố, giới hạn tốc độ và tốc độ thực tế của xe.</p>
+          <figure class="content-image"><img src="assets/m1 ngang/1.png" alt="Hiển thị tốc độ giới hạn trên SpeedMap M1">
+        </div>
+
+        <div class="article-block">
+          <h3>Ghi hình kép với góc quan sát rộng</h3>
+          <p>Camera trước sử dụng cảm biến Sony Starvis, ghi Super HD 2K 30FPS với góc rộng 170°. Camera sau tùy chọn ghi Full HD 1080p 30FPS, góc rộng 150°. Màn hình IPS 3,18 inch hỗ trợ quan sát trực tiếp hình ảnh hành trình.</p>
+          <figure class="content-image"><img src="assets/m1 ngang/2.png" alt="Ghi hình trước sau SpeedMap M1">
+        </div>
+
+        <div class="article-block">
+          <h3>Cảnh báo giao thông bằng tiếng Việt</h3>
+          <p>Dữ liệu cảnh báo được VIETMAP thu thập và cập nhật thường xuyên, hỗ trợ người lái chủ động theo dõi tình hình trên đường.</p>
+          <ul><li>Giới hạn tốc độ trên từng cung đường.</li><li>Khu vực ra vào khu dân cư.</li><li>Biển cấm vượt và hết cấm vượt.</li><li>Vị trí có camera giao thông.</li><li>Khu vực thường kiểm tra tốc độ.</li></ul>
+          <figure class="content-image"><img src="assets/m1 ngang/3.png" alt="Cảnh báo giao thông SpeedMap M1">
+        </div>
+
+        <div class="article-block">
+          <h3>Kết nối Wi-Fi và ứng dụng VIETMAP REC</h3>
+          <p>Chuẩn nén H.265 giúp tối ưu dung lượng video. Khi kết nối Wi-Fi, người dùng có thể sử dụng VIETMAP REC trên Android hoặc iOS để xem lại, tải video và cập nhật dữ liệu cảnh báo thuận tiện hơn.</p>
+          <figure class="content-image"><img src="assets/m1 ngang/4.png" alt="Ứng dụng VIETMAP REC">
+        </div>
+
+        <div class="article-block">
+          <h3>Ghi hình khi xe đỗ</h3>
+          <p>Khi trang bị thêm bộ nguồn trực tiếp phù hợp, SpeedMap M1 có thể kích hoạt chế độ giám sát đỗ xe. Nếu nhận biết tác động khi xe đã tắt máy, thiết bị sẽ khởi động và lưu đoạn ghi hình khẩn cấp.</p>
+          <figure class="content-image"><img src="assets/m1 ngang/5.png" alt="Ghi hình đỗ xe SpeedMap M1">
+        </div>
+
+        <div class="article-block">
+          <h3>Pin siêu tụ và thiết kế nhỏ gọn</h3>
+          <p>Pin siêu tụ hỗ trợ thiết bị hoạt động ổn định trong môi trường nhiệt độ cao trên ô tô. Kích thước 90 × 30 × 44mm giúp camera dễ bố trí trên kính lái mà không chiếm nhiều không gian quan sát.</p>
+        </div>
+      </article>
+
+      <aside class="specs" id="thong-so">
+        <span class="brand">VIETMAP SpeedMap M1</span><h2>Thông số kỹ thuật</h2>
+        <table>
+          <tr><th>Cảm biến</th><td>Sony Starvis</td></tr>
+          <tr><th>Camera trước</th><td>Góc rộng 170°</td></tr>
+          <tr><th>Camera sau</th><td>Góc rộng 150°<br>Điều chỉnh được</td></tr>
+          <tr><th>Màn hình</th><td>IPS 3.18 inch</td></tr>
+          <tr><th>G-Sensor</th><td>Có</td></tr>
+          <tr><th>GPS</th><td>Có</td></tr>
+          <tr><th>Độ phân giải trước</th><td>Super HD 2K 30FPS</td></tr>
+          <tr><th>Độ phân giải sau</th><td>Full HD 1080p 30FPS<br>Phụ kiện rời</td></tr>
+          <tr><th>Thẻ nhớ</th><td>MicroSD U3<br>Tối đa 256GB</td></tr>
+          <tr><th>Dung lượng tối thiểu</th><td>8GB Class 10 U3</td></tr>
+          <tr><th>Pin</th><td>Siêu tụ điện</td></tr>
+          <tr><th>Nguồn điện</th><td>5V / 1A</td></tr>
+          <tr><th>Nhiệt độ hoạt động</th><td>20°C – 80°C</td></tr>
+          <tr><th>Kích thước</th><td>90 × 30 × 44mm</td></tr>
+          <tr><th>Ứng dụng</th><td>VIETMAP REC</td></tr>
+        </table>
+      </aside>
+    </div>
+    <section class="cta"><h2>Bạn muốn lắp SpeedMap M1 cho xe?</h2><p>Gửi tên xe và đời xe để Văn Long Auto tư vấn vị trí lắp, camera sau, thẻ nhớ và bộ nguồn phù hợp.</p><a class="btn primary" href="https://zalo.me/0886636338">Tư vấn ngay</a></section>
+  </main>
+
+  <footer>© Văn Long Auto · Trung tâm chăm sóc và nâng cấp xe hơi.</footer>
+  <script>
+    const slider=document.querySelector('#slider'),track=document.querySelector('#track'),slides=[...document.querySelectorAll('.slide')],dots=document.querySelector('#dots');let current=0,timer,x=0;
+    slides.forEach((_,i)=>dots.insertAdjacentHTML('beforeend',`<button class="dot" aria-label="Xem ảnh ${i+1}"></button>`));const dot=[...dots.children];
+    function show(i){current=(i+slides.length)%slides.length;track.style.transform=`translateX(-${current*100}%)`;dot.forEach((b,n)=>b.classList.toggle('active',n===current))}function auto(){clearInterval(timer);timer=setInterval(()=>show(current+1),3500)}
+    document.querySelector('.next').onclick=()=>{show(current+1);auto()};document.querySelector('.prev').onclick=()=>{show(current-1);auto()};dot.forEach((b,i)=>b.onclick=()=>{show(i);auto()});slider.ontouchstart=e=>{x=e.touches[0].clientX;clearInterval(timer)};slider.ontouchend=e=>{if(Math.abs(e.changedTouches[0].clientX-x)>45)show(current+(e.changedTouches[0].clientX<x?1:-1));auto()};slider.onmouseenter=()=>clearInterval(timer);slider.onmouseleave=auto;show(0);auto();
+  </script>
+</body>
+</html>

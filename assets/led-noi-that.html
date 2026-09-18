@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LED Viền Nội Thất Ô Tô | Văn Long Auto</title>
+  <meta name="description" content="LED viền nội thất ô tô V3 18 chi tiết và V4 22 chi tiết tại Văn Long Auto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #e51b2b;
+      --red-dark: #bd1020;
+      --black: #111214;
+      --text: #202124;
+      --muted: #6d7178;
+      --line: #e6e7e9;
+      --soft: #f5f6f7;
+      --white: #fff;
+      --radius: 16px;
+      --shadow: 0 16px 45px rgba(17, 18, 20, .10);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text);
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    img { display: block; width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .iso-container {
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+    .iso-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .iso-header__inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .iso-logo { width: 150px; max-height: 52px; object-fit: contain; }
+
+    .iso-back {
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .iso-back:hover { color: var(--red); }
+
+    /* BREADCRUMB */
+    .iso-breadcrumb {
+      padding-block: 20px;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .iso-breadcrumb a:hover { color: var(--red); }
+
+    /* PRODUCT HERO */
+    .iso-product {
+      padding: 8px 0 72px;
+    }
+
+    .iso-product__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .iso-gallery {
+      position: sticky;
+      top: 104px;
+    }
+
+    .iso-gallery__main {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--soft);
+      box-shadow: var(--shadow);
+    }
+
+    .iso-gallery__main img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .iso-gallery__thumbs {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .iso-gallery__thumbs img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 10px;
+    }
+
+    .iso-gallery__thumbs img:first-child { border-color: var(--red); }
+
+    .iso-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--red);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .iso-tag::before {
+      content: "";
+      width: 26px;
+      height: 3px;
+      background: var(--red);
+    }
+
+    .iso-summary h1 {
+      margin: 14px 0 16px;
+      color: var(--black);
+      font-size: clamp(2.15rem, 4vw, 3.65rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+
+    .iso-lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .iso-price {
+      margin: 26px 0 0;
+      padding: 22px 0;
+      border-block: 1px solid var(--line);
+    }
+
+    .iso-price small {
+      display: block;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .iso-price strong {
+      display: block;
+      margin-top: 3px;
+      color: var(--red);
+      font-size: clamp(1.7rem, 3vw, 2.25rem);
+      line-height: 1.2;
+    }
+
+    .iso-checks {
+      margin: 22px 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .iso-checks li {
+      position: relative;
+      padding-left: 28px;
+      font-size: .86rem;
+      font-weight: 600;
+    }
+
+    .iso-checks li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 19px;
+      height: 19px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #ffe9ec;
+      color: var(--red);
+      font-size: .7rem;
+      font-weight: 800;
+    }
+
+    .iso-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .iso-btn {
+      min-height: 50px;
+      padding: 12px 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--black);
+      border-radius: 8px;
+      font-size: .76rem;
+      font-weight: 800;
+      text-align: center;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+
+    .iso-btn--primary {
+      border-color: var(--red);
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .iso-btn--primary:hover { background: var(--red-dark); }
+    .iso-btn--outline:hover { background: var(--black); color: var(--white); }
+
+    .iso-meta {
+      margin-top: 22px;
+      padding-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .iso-meta div {
+      padding-right: 10px;
+      border-right: 1px solid var(--line);
+    }
+
+    .iso-meta div:last-child { border: 0; }
+    .iso-meta strong, .iso-meta span { display: block; }
+    .iso-meta strong { font-size: .78rem; }
+    .iso-meta span { color: var(--muted); font-size: .68rem; }
+
+    /* COMMON SECTION */
+    .iso-section { padding: 82px 0; }
+    .iso-section--soft { background: var(--soft); }
+    .iso-section--dark { background: var(--black); color: var(--white); }
+
+    .iso-heading {
+      max-width: 680px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .iso-heading span {
+      color: var(--red);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .iso-heading h2 {
+      margin: 8px 0 10px;
+      font-size: clamp(1.7rem, 3.5vw, 2.7rem);
+      line-height: 1.16;
+      letter-spacing: -.035em;
+    }
+
+    .iso-heading p { margin: 0; color: var(--muted); }
+
+    /* FEATURES */
+    .iso-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .iso-feature {
+      padding: 26px 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--white);
+    }
+
+    .iso-feature b {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--red);
+      color: var(--white);
+      font-size: .72rem;
+    }
+
+    .iso-feature h3 { margin: 0 0 8px; font-size: .95rem; }
+    .iso-feature p { margin: 0; color: var(--muted); font-size: .8rem; }
+
+    /* PACKAGES */
+    .iso-packages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .iso-package {
+      position: relative;
+      overflow: hidden;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .iso-package--featured { border: 2px solid var(--red); }
+
+    .iso-package__badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 7px 14px;
+      border-radius: 0 0 0 10px;
+      background: var(--red);
+      color: var(--white);
+      font-size: .62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .iso-package h3 { margin: 0; font-size: 1.5rem; }
+    .iso-package__price { margin: 5px 0 20px; color: var(--red); font-size: 1.7rem; font-weight: 800; }
+    .iso-package .iso-checks { margin-bottom: 28px; }
+    .iso-package .iso-btn { width: 100%; }
+
+    /* GALLERY + POSITIONS */
+    .iso-showcase {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+    }
+
+    .iso-showcase img {
+      height: 100%;
+      min-height: 310px;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .iso-position-card {
+      padding: 34px;
+      border-radius: var(--radius);
+      background: #1a1b1e;
+    }
+
+    .iso-position-card h3 { margin: 0 0 22px; font-size: 1.4rem; }
+
+    .iso-position-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .iso-position-list span {
+      padding: 9px 12px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 999px;
+      color: #dadbde;
+      font-size: .72rem;
+    }
+
+    .iso-position-card p { margin: 24px 0 0; color: #9fa2a8; font-size: .8rem; }
+
+    /* CTA + FOOTER */
+    .iso-cta {
+      padding: 70px 0;
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .iso-cta h2 { margin: 0 0 8px; font-size: clamp(1.7rem, 4vw, 2.8rem); }
+    .iso-cta p { margin: 0 0 24px; }
+    .iso-cta .iso-btn { border-color: var(--white); background: var(--white); color: var(--red); }
+
+    .iso-footer {
+      padding: 24px 0;
+      background: #0b0c0e;
+      color: #8f939a;
+      font-size: .72rem;
+      text-align: center;
+    }
+
+    .iso-mobile-bar { display: none; }
+
+    /* TABLET */
+    @media (max-width: 900px) {
+      .iso-product__grid { grid-template-columns: 1fr; gap: 34px; }
+      .iso-gallery { position: static; }
+      .iso-features { grid-template-columns: repeat(2, 1fr); }
+      .iso-showcase { grid-template-columns: 1fr; }
+      .iso-showcase img { min-height: 0; aspect-ratio: 16 / 9; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      body { padding-bottom: 68px; font-size: 14px; }
+      .iso-container { width: min(100% - 24px, 1180px); }
+      .iso-header__inner { min-height: 62px; }
+      .iso-logo { width: 120px; }
+      .iso-back { font-size: .66rem; }
+      .iso-breadcrumb { padding-block: 14px; font-size: .68rem; }
+      .iso-product { padding: 4px 0 48px; }
+      .iso-product__grid { gap: 24px; }
+      .iso-gallery__main { border-radius: 12px; }
+      .iso-gallery__thumbs { gap: 7px; margin-top: 7px; }
+      .iso-gallery__thumbs img { border-radius: 7px; }
+      .iso-summary { text-align: center; }
+      .iso-tag { justify-content: center; }
+      .iso-summary h1 { margin-top: 10px; font-size: clamp(1.9rem, 9vw, 2.6rem); }
+      .iso-lead { font-size: .84rem; }
+      .iso-price { margin-top: 20px; padding-block: 18px; }
+      .iso-checks { text-align: left; }
+      .iso-actions { grid-template-columns: 1fr; }
+      .iso-meta { gap: 7px; }
+      .iso-meta div { padding-right: 6px; }
+      .iso-meta strong { font-size: .66rem; }
+      .iso-meta span { font-size: .58rem; }
+      .iso-section { padding: 54px 0; }
+      .iso-heading { margin-bottom: 26px; }
+      .iso-heading h2 { font-size: 1.65rem; }
+      .iso-heading p { font-size: .8rem; }
+      .iso-features { grid-template-columns: 1fr; gap: 10px; }
+      .iso-feature { padding: 20px; display: grid; grid-template-columns: 36px 1fr; column-gap: 14px; }
+      .iso-feature b { grid-row: 1 / 3; margin: 0; }
+      .iso-feature h3 { align-self: end; }
+      .iso-packages { grid-template-columns: 1fr; }
+      .iso-package { padding: 26px 20px; }
+      .iso-showcase { gap: 12px; }
+      .iso-showcase img { aspect-ratio: 4 / 3; }
+      .iso-position-card { padding: 26px 20px; }
+      .iso-cta { padding: 50px 0; }
+      .iso-mobile-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 60;
+        padding: 9px 12px max(9px, env(safe-area-inset-bottom));
+        display: grid;
+        grid-template-columns: .8fr 1.2fr;
+        gap: 8px;
+        background: var(--white);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, .10);
+      }
+      .iso-mobile-bar .iso-btn { min-height: 46px; padding: 9px 8px; font-size: .67rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="iso-header">
+    <div class="iso-container iso-header__inner">
+      <a href="index.html" aria-label="Văn Long Auto">
+        <img class="iso-logo" src="assets/LOGO VAN LONG.png" alt="Logo Văn Long Auto">
+      </a>
+      <a class="iso-back" href="index.html#featured-services">← Quay lại dịch vụ</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="iso-container iso-breadcrumb">
+      <a href="index.html">Trang chủ</a> / <span>Nội thất ô tô</span> / <strong>LED viền nội thất</strong>
+    </div>
+
+    <section class="iso-product">
+      <div class="iso-container iso-product__grid">
+        <div class="iso-gallery">
+          <div class="iso-gallery__main">
+            <img src="assets/led noi that/8.png" alt="LED viền nội thất ô tô">
+          </div>
+          <div class="iso-gallery__thumbs">
+            <img src="assets/led noi that/8.png" alt="Khoang xe lắp LED nội thất">
+            <img src="assets/led noi that/7.png" alt="Chi tiết LED viền taplo">
+            <img src="assets/led noi that/10.png" alt="Chi tiết LED viền cửa xe">
+          </div>
+        </div>
+
+        <div class="iso-summary">
+          <span class="iso-tag">Văn Long Auto · Nội thất</span>
+          <h1>LED Viền Nội Thất Ô Tô</h1>
+          <p class="iso-lead">
+            Nâng cấp khoang xe bằng hệ thống ánh sáng ambient hiện đại,
+            đổi màu linh hoạt và đồng bộ hiệu ứng theo âm nhạc.
+          </p>
+
+          <div class="iso-price">
+            <small>Giá lắp đặt trọn gói từ</small>
+            <strong>1.950.000đ – 2.550.000đ</strong>
+          </div>
+
+          <ul class="iso-checks">
+            <li>Hai lựa chọn: V3 18 chi tiết và V4 22 chi tiết</li>
+            <li>Điều khiển qua ứng dụng hoặc bộ điều khiển tương thích</li>
+            <li>Thi công gọn gàng theo kết cấu từng dòng xe</li>
+          </ul>
+
+          <div class="iso-actions">
+            <a class="iso-btn iso-btn--primary" href="https://zalo.me/0886636338">Nhận tư vấn</a>
+            <a class="iso-btn iso-btn--outline" href="#goi-san-pham">Xem cấu hình</a>
+          </div>
+
+          <div class="iso-meta">
+            <div><strong>18–22</strong><span>Chi tiết LED</span></div>
+            <div><strong>Đa màu</strong><span>Tùy chỉnh linh hoạt</span></div>
+            <div><strong>Theo xe</strong><span>Kiểm tra trước khi lắp</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="iso-section iso-section--soft">
+      <div class="iso-container">
+        <div class="iso-heading">
+          <span>Điểm nổi bật</span>
+          <h2>Trải nghiệm ánh sáng hiện đại</h2>
+          <p>Những tính năng chính được trình bày rõ ràng, dễ xem trên cả máy tính và điện thoại.</p>
+        </div>
+
+        <div class="iso-features">
+          <article class="iso-feature">
+            <b>01</b><h3>Đổi màu linh hoạt</h3>
+            <p>Chọn màu sắc và hiệu ứng phù hợp với không gian nội thất.</p>
+          </article>
+          <article class="iso-feature">
+            <b>02</b><h3>Hiệu ứng theo nhạc</h3>
+            <p>Ánh sáng chuyển động theo nhịp âm thanh khi cần.</p>
+          </article>
+          <article class="iso-feature">
+            <b>03</b><h3>Nhiều vị trí lắp</h3>
+            <p>Taplo, cửa, tay nắm, hộc đồ, cần số và gầm taplo.</p>
+          </article>
+          <article class="iso-feature">
+            <b>04</b><h3>Thi công gọn</h3>
+            <p>Bố trí theo thiết kế xe, ưu tiên tính thẩm mỹ và sử dụng.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="iso-section" id="goi-san-pham">
+      <div class="iso-container">
+        <div class="iso-heading">
+          <span>Cấu hình sản phẩm</span>
+          <h2>Chọn gói LED phù hợp</h2>
+          <p>Thay bảng ngang bằng hai thẻ sản phẩm để khách hàng so sánh nhanh hơn.</p>
+        </div>
+
+        <div class="iso-packages">
+          <article class="iso-package">
+            <h3>LED V3</h3>
+            <div class="iso-package__price">1.950.000đ</div>
+            <ul class="iso-checks">
+              <li>18 chi tiết LED</li>
+              <li>Các vị trí chính trong khoang xe</li>
+              <li>Đổi màu và hiệu ứng theo nhạc</li>
+              <li>Phù hợp nhu cầu nâng cấp gọn</li>
+            </ul>
+            <a class="iso-btn iso-btn--outline" href="https://zalo.me/0886636338">Tư vấn gói V3</a>
+          </article>
+
+          <article class="iso-package iso-package--featured">
+            <span class="iso-package__badge">Nhiều vị trí hơn</span>
+            <h3>LED V4</h3>
+            <div class="iso-package__price">2.550.000đ</div>
+            <ul class="iso-checks">
+              <li>22 chi tiết LED</li>
+              <li>Mở rộng thêm vị trí so với V3</li>
+              <li>Đổi màu và hiệu ứng theo nhạc</li>
+              <li>Phù hợp nhu cầu phủ ánh sáng rộng</li>
+            </ul>
+            <a class="iso-btn iso-btn--primary" href="https://zalo.me/0886636338">Tư vấn gói V4</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="iso-section iso-section--dark">
+      <div class="iso-container">
+        <div class="iso-heading">
+          <span>Vị trí lắp đặt</span>
+          <h2>Bố trí theo từng khoang xe</h2>
+        </div>
+
+        <div class="iso-showcase">
+          <img src="assets/led noi that/10.png" alt="Không gian xe sau khi lắp LED nội thất" loading="lazy">
+          <div class="iso-position-card">
+            <h3>Các vị trí phổ biến</h3>
+            <div class="iso-position-list">
+              <span>Taplo</span><span>4 cánh cửa</span><span>Tay nắm cửa</span>
+              <span>Hộc để đồ</span><span>Khu vực cần số</span><span>Gầm taplo</span>
+            </div>
+            <p>
+              Số lượng và vị trí thực tế phụ thuộc thiết kế nội thất từng dòng xe.
+              Văn Long Auto sẽ kiểm tra xe trước khi chốt gói V3 hoặc V4.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="iso-cta">
+      <div class="iso-container">
+        <h2>Chưa biết nên chọn V3 hay V4?</h2>
+        <p>Gửi tên dòng xe để Văn Long Auto kiểm tra và tư vấn cấu hình phù hợp.</p>
+        <a class="iso-btn" href="https://zalo.me/0886636338">Tư vấn độ LED ngay</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="iso-footer">
+    <div class="iso-container">© Văn Long Auto · Trung tâm chăm sóc và nâng cấp xe hơi.</div>
+  </footer>
+
+  <div class="iso-mobile-bar" aria-label="Liên hệ nhanh">
+    <a class="iso-btn iso-btn--outline" href="tel:0886636338">Gọi ngay</a>
+    <a class="iso-btn iso-btn--primary" href="https://zalo.me/0886636338">Tư vấn qua Zalo</a>
+  </div>
+</body>
+</html>

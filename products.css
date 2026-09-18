@@ -1,0 +1,112 @@
+/* =========================================================
+   VĂN LONG AUTO — PRODUCT / SUBPAGE STYLES
+   Dùng cho do-amthanh.html và dan-phim-cach-nhiet.html.
+   ========================================================= */
+
+.subpage-main { padding-top: var(--nav-h); background: var(--bg); }
+.subpage-intro { padding: 44px 0 28px; border-bottom: 1px solid var(--border); background: #0b0b0c; }
+.subpage-title { margin-bottom: 10px; color: #ffd700; font: 800 clamp(1.8rem,4vw,2.6rem)/1.2 'Montserrat',var(--font-sans); text-align: center; text-transform: uppercase; }
+.subpage-desc { max-width: 760px; margin-inline: auto; color: #d0d0d0; font-size: 1rem; line-height: 1.7; text-align: center; }
+.product-page { padding: 42px 0 56px; background: var(--bg); }
+.product-back { margin-top: 34px; text-align: center; }
+.back-to-home { display: inline-block; padding-bottom: 3px; border-bottom: 1px solid #ffd700; color: #ffd700; font-weight: 600; }
+.back-to-home:hover { border-color: #fff; color: #fff; }
+
+/* Audio intro: đoạn 1 + details */
+.audio-intro { padding: 48px 0 20px; background: #0b0b0c; }
+.audio-text-block { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+.audio-text-block p { margin: 0 0 20px; color: rgba(255,255,255,.68); font-size: 15px; line-height: 1.85; }
+.audio-text-block strong { color: #fff; font-weight: 700; }
+.audio-details { width: 100%; }
+.audio-details summary { list-style: none; }
+.audio-details summary::-webkit-details-marker { display: none; }
+.audio-details-button { width: max-content; display: flex; align-items: center; gap: 7px; margin-top: 6px; color: var(--gold); font: 700 11px/1.2 'Montserrat',var(--font-sans); cursor: pointer; }
+.audio-details-button:hover { color: #fff; }
+.audio-details-arrow { display: inline-block; font-size: 15px; animation: arrow-bounce 1.2s ease-in-out infinite; }
+.audio-details[open] .audio-details-arrow { animation: none; transform: rotate(180deg); }
+.audio-details-content { margin-top: 22px; animation: details-open .3s ease; }
+.audio-details-content p:last-child { margin-bottom: 0; }
+@keyframes arrow-bounce { 50% { transform: translateY(4px); } }
+@keyframes details-open { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* Catalog dùng chung */
+.catalog-grid { display: grid; gap: 14px; }
+.catalog-card { min-width: 0; overflow: hidden; border: 1px solid var(--border-strong); border-radius: 9px; background: #141414; transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease); }
+.catalog-card:hover { transform: translateY(-3px); border-color: rgba(212,175,55,.75); box-shadow: 0 12px 24px rgba(0,0,0,.28); }
+.catalog-image { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #f3f3f3; }
+.catalog-image img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.sale-badge { position: absolute; top: 7px; left: 7px; z-index: 2; min-width: 38px; padding: 4px 6px; border-radius: 4px; background: #ef4319; color: #fff; font: 700 9px/1.1 'Montserrat',var(--font-sans); text-align: center; }
+.catalog-body { display: flex; flex-direction: column; padding: 10px 11px 12px; }
+.catalog-brand { width: max-content; margin-bottom: 6px; color: var(--gold); font: 700 8px/1.2 'Montserrat',var(--font-sans); letter-spacing: .08em; text-transform: uppercase; }
+.catalog-name { display: -webkit-box; min-height: 34px; overflow: hidden; color: #fff; font: 600 11.5px/1.42 'Montserrat',var(--font-sans); -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.catalog-name:hover { color: var(--gold); }
+.catalog-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 6px; margin-top: 8px; }
+.price-current { color: #ffd700; font: 800 14px/1.2 'Montserrat',var(--font-sans); }
+.price-old { color: #777; font-size: 8.5px; text-decoration: line-through; }
+
+/* Audio catalog: card rất nhỏ, ảnh 1:1 */
+.audio-catalog { width: min(1180px, calc(100% - 36px)); margin: 0 auto; padding: 26px 0 56px; }
+.audio-catalog .catalog-grid { grid-template-columns: repeat(auto-fit,160px); justify-content: center; }
+.audio-catalog .catalog-card { width: 160px; }
+.audio-catalog .catalog-image { width: 160px; aspect-ratio: 1/1; }
+
+/* Film page */
+.film-hero { padding: 54px 0 32px; background: linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.82)),url('assets/placeholder-film-hero.jpg') center/cover; }
+.dealer-banner { padding: 42px 0 8px; background: var(--bg); }
+.dealer-banner img { width: 100%; max-width: 1200px; margin-inline: auto; border-radius: 12px; object-fit: contain; box-shadow: 0 15px 40px rgba(0,0,0,.55); }
+.film-catalog { width: min(1120px, calc(100% - 40px)); margin-inline: auto; padding: 42px 0 56px; }
+.film-catalog .catalog-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+.film-catalog .catalog-card { display: flex; flex-direction: column; }
+.film-catalog .catalog-image { height: 260px; background: #1a1a1a; }
+.film-catalog .catalog-image img { object-fit: contain; }
+.film-catalog .catalog-body { flex: 1; padding: 24px; }
+.film-catalog .catalog-name { min-height: 0; margin-bottom: 12px; font-size: 20px; line-height: 1.35; -webkit-line-clamp: initial; }
+.catalog-description { margin-bottom: 15px; color: #ccc; font-size: 14px; line-height: 1.65; }
+.catalog-specs { flex: 1; margin-bottom: 20px; }
+.catalog-specs li { position: relative; margin-bottom: 9px; padding-left: 22px; color: #aaa; font-size: 13px; line-height: 1.5; }
+.catalog-specs li::before { content: '✓'; position: absolute; left: 0; color: #ffd700; font-weight: 700; }
+.catalog-action { display: block; margin-top: auto; padding: 10px 16px; border-radius: 6px; background: #ffd700; color: #111; font-weight: 700; text-align: center; transition: background var(--ease); }
+.catalog-action:hover { background: #fff; }
+
+@media (max-width: 768px) {
+  .subpage-main { padding-top: var(--nav-h); }
+  .subpage-intro, .film-hero { padding: 32px 0 24px; }
+  .subpage-desc { font-size: .9rem; }
+  .audio-intro { padding: 34px 0 12px; }
+  .audio-text-block { width: calc(100% - 28px); }
+  .audio-text-block p { font-size: 13px; line-height: 1.75; }
+  .audio-catalog { width: calc(100% - 18px); padding-top: 20px; }
+  .audio-catalog .catalog-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+  .audio-catalog .catalog-card, .audio-catalog .catalog-image { width: 100%; }
+  .audio-catalog .catalog-image { height: auto; aspect-ratio: 1/1; }
+  .catalog-body { padding: 8px; }
+  .catalog-name { min-height: 30px; font-size: 10px; }
+  .price-current { font-size: 12px; }
+  .price-old { font-size: 7.5px; }
+  .film-catalog { width: calc(100% - 24px); padding-top: 30px; }
+  .film-catalog .catalog-grid { grid-template-columns: 1fr; gap: 16px; }
+  .film-catalog .catalog-image { height: 220px; }
+  .film-catalog .catalog-body { padding: 18px; }
+  .film-catalog .catalog-name { font-size: 17px; }
+}
+/* CĂN ĐỀU GIÁ SẢN PHẨM */
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.catalog-image {
+  flex-shrink: 0;
+}
+.catalog-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.catalog-name {
+  min-height: 34px;
+}
+.catalog-price {
+  margin-top: auto;
+  padding-top: 8px;
+}

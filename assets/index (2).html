@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XUÂN GIÁP MEDIA | Nhâm Xuân Giáp – Nhiếp Ảnh, Dựng Phim & Sẩn Xuất Video Chuyên Nghiệp</title>
+  <meta name="description" content="Nhâm Xuân Giáp – Nhiếp ảnh gia và nhà làm phim chuyên nghiệp tại Việt Nam. Chuyên chụp ảnh, quay phim, sản xuất nội dung TikTok, YouTube và mạng xã hội." />
+  <meta property="og:title" content="Giáp Photographer | Nhâm Xuân Giáp" />
+  <meta property="og:description" content="Nhiếp ảnh gia chuyên nghiệp – Ảnh | Video | TikTok | YouTube" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />  <link rel="stylesheet" href="style.css" />
+
+  <!-- ======= KHUNG HÌNH TỰ ĐỘNG THEO TỶ LỆ MÀN HÌNH ======= -->
+  <style id="aspect-frame-style">
+    /* Mặc định (áp dụng chung) */
+    .hero-bg .hero-img {
+      object-fit: cover;
+      object-position: center 30%;
+      transition: object-position 0.3s ease;
+    }
+    .about-img-frame .about-img,
+    .fs-img-wrap img,
+    .service-media img {
+      transition: object-position 0.3s ease;
+    }
+
+    /* Điện thoại màn hình "siêu dài" (~20:9 - 21:9): Samsung S/Note Ultra, Xiaomi, Oppo Find X... */
+    body.ratio-ultra-tall .hero-bg .hero-img { object-position: center 15%; }
+    body.ratio-ultra-tall .hero-content { padding-top: 5vh; }
+
+    /* Điện thoại màn hình dài (~19.5:9): iPhone X → 15/16 Pro Max */
+    body.ratio-tall .hero-bg .hero-img { object-position: center 22%; }
+
+    /* Điện thoại tiêu chuẩn (~16:9 - 18:9): iPhone SE/8, các dòng Android đời cũ */
+    body.ratio-standard .hero-bg .hero-img { object-position: center 35%; }
+
+    /* Máy tính bảng / màn hình ngang (desktop, landscape) */
+    body.ratio-wide .hero-bg .hero-img { object-position: center 50%; }
+  </style>
+</head>
+<body>
+
+  <!-- ======= NAVIGATION ======= -->
+<nav class="navbar" id="navbar" style="background-color: #111111;">
+    <div class="nav-container">
+     <a href="#hero" class="nav-brand">
+        <img src="assets/LOGO VAN LONG.png" alt="Logo Văn Long Auto" class="logo" style="height: 90px; width: auto;">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+       <li><a href="#featured-services" class="nav-link">Dịch vụ</a></li>
+       <li><a href="#khuyen-mai" class="nav-link">Khuyến mãi</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Liên hệ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="assets/IMG_0777a.png" alt="Hero Background" class="hero-img" />
+     <div class="hero-overlay" style="background-color: rgba(0, 0, 0, 0.4);"></div>
+    </div>
+    <div class="hero-content">
+     <h1 class="hero-title">
+        <span class="hero-title-line" style="font-size: 85%; white-space: nowrap;">VĂN LONG AUTO</span>
+      </h1>
+<p class="hero-eyebrow" style="font-family: 'Montserrat', sans-serif; font-weight: 500; text-align: center; letter-spacing: 2px; font-size: 22px;">TRUNG TÂM CHĂM SÓC & NÂNG CẤP XE HƠI CHUYÊN NGHIỆP</p>      
+<p class="hero-desc" style="text-align: center; margin: 0 auto; font-weight: 700; color: #ffffff; white-space: nowrap;">Nâng tầm đẳng cấp xế cưng của bạn &mdash; Sang trọng, tiện nghi và hoàn mỹ.</p>
+      <div class="hero-buttons">
+  <a href="#khuyen-mai" class="btn btn-primary">
+    <span class="gift-icon">🎁</span> Nhận Ưu Đãi Ngay
+  </a>
+  <a href="#lien-he" class="btn btn-secondary">Tư Vấn Cấu Hình Xe</a>
+</div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Cuộn xuống</span>
+    </div>
+   <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num" style="font-family: 'Montserrat', sans-serif; font-weight: 700;"> 11 NĂM</span>
+        <span class="stat-label">Kinh nghiệm trong nghề</span>
+      </div>
+      
+      <div class="stat-divider"></div>
+      
+      <div class="stat-item">
+        <span class="stat-num" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">7000+</span>
+<div style="font-size: 22px; letter-spacing: 3px; margin: 4px 0; background: linear-gradient(90deg, #FFD700 90%, #888888 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
+  ★★★★★
+</div>        <span class="stat-label">Lượt đánh giá</span>
+      </div>
+      
+      <div class="stat-divider"></div>
+      
+      <div class="stat-item">
+        <span class="stat-num" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">47K+</span>
+        <span class="stat-label">Tổng người theo dõi trên các nền tảng</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= ABOUT ======= -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-img-frame">
+            <img src="assets/anh lng.png" alt="Nhâm Xuân Giáp – Nhiếp ảnh gia" class="about-img" />
+          </div>
+          <div class="about-tag">
+            <span class="tag-icon">📸</span>
+
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="section-eyebrow">FOUNDER & CEO - NGƯỜI SÁNG LẬP & GIÁM ĐỐC ĐIỀU HÀNH</p>
+          <h2 class="section-title">ĐINH VAN LONG</em></h2>
+          <p class="about-text">
+            Xin chào! Tôi là <strong>Nhâm Xuân Giáp</strong> – một nhiếp ảnh gia và nhà sản xuất nội dung số với hơn 5 năm kinh nghiệm trong lĩnh vực sáng tạo hình ảnh.
+          </p>
+          <p class="about-text">
+            Tôi tin rằng mỗi khoảnh khắc đều có câu chuyện riêng. Từ những bức ảnh chân dung đầy cảm xúc, những thước phim điện ảnh đến các nội dung sáng tạo trên TikTok và YouTube – tôi luôn đặt tâm huyết vào từng sản phẩm.
+          </p>
+         
+          <a href="#contact" class="btn btn-primary" style="margin-top:2rem;">Hợp tác cùng tôi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SERVICES ======= -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Dịch vụ chuyên nghiệp</p>
+        <h2 class="section-title">Trung tâm lắp đặt <em>Nội Ngoại Thất</em></h2>
+        <p class="section-subtitle">Giải pháp toàn diện giúp nâng tầm đẳng cấp, tiện nghi và bảo vệ tối đa cho xế cưng của bạn.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Card 1: Công nghệ & An toàn -->
+        <div class="service-card" id="service-tech">
+          <div class="service-icon-wrap">
+            <div class="service-icon">🖥️</div>
+          </div>
+          <div class="service-media">
+            <!-- Đã thay bằng thẻ img để hiển thị ảnh thực tế -->
+            <img src="assets/man-Hinh-Androi-xe-o-to-Viet-Nam-Car-Care-1024x601.jpg" alt="Công nghệ xe hơi" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <div class="service-media-overlay"></div>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Công Nghệ & An Toàn</h3>
+            <p class="service-desc">Lắp đặt các thiết bị thông minh hỗ trợ lái xe an toàn và trải nghiệm hiện đại.</p>
+            <ul class="service-list">
+              <li>Màn hình DVD & Android theo xe</li>
+              <li>Camera 360, Hành trình, Lùi & Lề</li>
+              <li>Thiết bị định vị, Cảm biến theo xe</li>
+              <li>Gập gương lên kính, chốt cửa tự động</li>
+            </ul>
+            <a href="#contact" class="service-link">Nhận báo giá →</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Nội thất & Tiện nghi -->
+        <div class="service-card" id="service-interior">
+          <div class="service-icon-wrap">
+            <div class="service-icon">💺</div>
+          </div>
+          <div class="service-media">
+            <!-- Đã thay bằng thẻ img để hiển thị ảnh thực tế -->
+            <img src="assets/do-noi-that-o-to-1 (1).jpg" alt="Nội thất và Tiện nghi xe" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <div class="service-media-overlay"></div>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Nội Thất & Tiện Nghi</h3>
+            <p class="service-desc">Nâng cấp không gian bên trong xe với chất liệu cao cấp và âm thanh sống động.</p>
+            <ul class="service-list">
+              <li>Độ thiết bị âm thanh cao cấp</li>
+              <li>Bọc ghế da, thảm trải sàn 360</li>
+              <li>Cách âm chống ồn toàn diện</li>
+              <li>Dán film cách nhiệt chính hãng</li>
+            </ul>
+            <a href="#contact" class="service-link">Nhận báo giá →</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Ngoại thất & Độ xe -->
+        <div class="service-card service-card--featured" id="service-exterior">
+          <div class="service-icon-wrap">
+            <div class="service-icon">🚘</div>
+          </div>
+          <div class="service-media">
+            <!-- Đã thay bằng thẻ img để hiển thị ảnh thực tế -->
+            <img src="assets/ngoai that.jpg" alt="Độ Ngoại Thất & Ánh Sáng" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <div class="service-media-overlay"></div>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Độ Ngoại Thất & Ánh Sáng</h3>
+            <p class="service-desc">Cá nhân hóa diện mạo xe, tăng cường ánh sáng và tính năng tiện ích bên ngoài.</p>
+            <ul class="service-list">
+              <li>Độ đèn Bi, Xenon, Đèn tăng sáng</li>
+              <li>Độ Bodykit, phụ kiện & đồ chơi</li>
+              <li>Độ cửa hít, cốp điện tự động</li>
+              <li>Bậc lên xuống, dán tem & wrap đổi màu</li>
+            </ul>
+            <a href="#contact" class="service-link">Nhận báo giá →</a>
+          </div>
+        </div>
+
+        <!-- Card 4: Chăm sóc toàn diện -->
+        <div class="service-card" id="service-detailing">
+          <div class="service-icon-wrap">
+            <div class="service-icon">✨</div>
+          </div>
+          <div class="service-media">
+            <!-- Đã thay bằng thẻ img để hiển thị ảnh thực tế -->
+            <img src="assets/deta.jpg" alt="Chăm Sóc & Detailing" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <div class="service-media-overlay"></div>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Chăm Sóc & Detailing</h3>
+            <p class="service-desc">Bảo dưỡng, vệ sinh chuyên sâu giúp xe luôn sạch đẹp như mới xuất xưởng.</p>
+            <ul class="service-list">
+              <li>Phủ Ceramic bảo vệ sơn</li>
+              <li>Rửa xe chi tiết, Dọn khoang máy</li>
+              <li>Dọn nội thất, Xông khử mùi xe</li>
+              <li>Bảo dưỡng định kỳ, thay dầu</li>
+            </ul>
+            <a href="#contact" class="service-link">Nhận báo giá →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ======= FEATURED SERVICES (DỊCH VỤ MŨI NHỌN) ======= -->
+  <style>
+    .featured-services {
+      background-color: #0a0a0a; /* Nền tối hơn một chút để làm nổi bật */
+      padding: 80px 0;
+    }
+    .fs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .fs-card {
+      background: #161616;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .fs-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      border-color: #D4AF37; /* Viền sáng màu vàng gold khi hover */
+    }
+    .fs-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .fs-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .fs-card:hover .fs-img-wrap img {
+      transform: scale(1.1);
+    }
+    .fs-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(90deg, #FFD700, #FDB931);
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .fs-content {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .fs-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    .fs-desc {
+      color: #aaa;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .fs-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px 0;
+    }
+    .fs-features li {
+      position: relative;
+      padding-left: 25px;
+      color: #ddd;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .fs-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #FFD700;
+      font-weight: bold;
+    }
+    .fs-btn {
+      margin-top: auto;
+      text-align: center;
+      display: block;
+      padding: 12px;
+      background: transparent;
+      color: #FFD700;
+      border: 1px solid #FFD700;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .fs-btn:hover {
+      background: #FFD700;
+      color: #000;
+    }
+  </style>
+
+  <section class="featured-services" id="featured-services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" style="color: #FFD700;">Dịch Vụ Mũi Nhọn</p>
+        <h2 class="section-title">Các Gói Nâng Cấp <em>Đỉnh Cao</em></h2>
+        <p class="section-subtitle">Những dịch vụ cao cấp được khách hàng ưa chuộng và đánh giá cao nhất tại Văn Long Auto.</p>
+      </div>
+
+      <div class="fs-grid">
+        <!-- 1. Độ Âm Thanh -->
+        <div class="fs-card">
+          <div class="fs-img-wrap">
+            <div class="fs-badge">HOT</div>
+            <!-- Thay src bằng link ảnh thi công loa của bạn -->
+            <img src="assets/loa.jpg" alt="Độ âm thanh xe hơi" style="display: none;" onload="this.style.display='block'" onerror="this.style.display='none'">
+            <span style="color:#777; position:absolute; z-index:-1;">[Ảnh Loa Sub/Loa Cánh]</span>
+          </div>
+          <div class="fs-content">
+            <h3 class="fs-title">Độ Âm Thanh Cao Cấp</h3>
+            <p class="fs-desc">Nâng tầm trải nghiệm âm nhạc trên xe với hệ thống loa cánh, loa treble và sub trầm uy lực chính hãng.</p>
+            <ul class="fs-features">
+              <li>Lắp đặt Loa Sub gầm ghế, Sub hơi</li>
+              <li>Độ Loa Cánh, phân tần âm thanh 3-way</li>
+              <li>Cách âm chống ồn cửa xe chuyên dụng</li>
+              <li>Cắm jack zin, an toàn hệ thống điện</li>
+            </ul>
+            <a href="do-amthanh.html" class="fs-btn">Tư vấn cấu hình</a>
+          </div>
+        </div>
+
+        <!-- 2. Độ Đèn -->
+        <div class="fs-card">
+          <div class="fs-img-wrap">
+            <!-- Thay src bằng link ảnh độ đèn -->
+            <img src="assets/den.jpg" alt="Độ đèn xe hơi" style="display: none;" onload="this.style.display='block'" onerror="this.style.display='none'">
+            <span style="color:#777; position:absolute; z-index:-1;">[Ảnh Độ Đèn Bi LED]</span>
+          </div>
+          <div class="fs-content">
+            <h3 class="fs-title">Nâng Cấp Ánh Sáng</h3>
+            <p class="fs-desc">Xóa tan màn đêm, đảm bảo an toàn tuyệt đối với các gói độ bi LED, bi Laser siêu sáng, bám đường tốt.</p>
+            <ul class="fs-features">
+              <li>Bi LED, Bi Laser bám đường vượt trội</li>
+              <li>Đường cắt ánh sáng sắc nét, không chói mắt</li>
+              <li>Lắp đặt qua path zin, không cắt chóa</li>
+              <li>Độ mí LED, mắt quỷ, vòng Angel Eyes</li>
+            </ul>
+            <a href="#contact" class="fs-btn">Tư vấn độ đèn</a>
+          </div>
+        </div>
+
+       <!-- 3. Dán Phim Cách Nhiệt (Đã được đưa lên hàng trên) -->
+        <div class="fs-card">
+          <div class="fs-img-wrap">
+            <!-- Thay src bằng link ảnh dán phim -->
+            <img src="assets/phim cah nhiet.jpg" alt="Dán phim cách nhiệt" style="display: none;" onload="this.style.display='block'" onerror="this.style.display='none'">
+            <span style="color:#777; position:absolute; z-index:-1;">[Ảnh Dán Phim Cách Nhiệt]</span>
+          </div>
+          <div class="fs-content">
+            <h3 class="fs-title">Dán Phim Cách Nhiệt</h3>
+            <p class="fs-desc">Giải pháp chống nóng hoàn hảo, cản tia UV/IR lên đến 99%, bảo vệ sức khỏe và nội thất xe khỏi ánh nắng gắt.</p>
+            <ul class="fs-features">
+              <li>Giảm nhiệt độ sâu, xe mát mẻ nhanh chóng</li>
+              <li>Tầm nhìn rõ nét, không gây lóa mắt</li>
+              <li>Đảm bảo sự riêng tư tuyệt đối cho người ngồi</li>
+              <li>Không cản sóng GPS, thu phí ETC</li>
+            </ul>
+            <a href="dan-phim-cach-nhiet.html" class="fs-btn">Xem chi tiết các gói phim</a>
+          </div>
+        </div>
+
+        <!-- 4. Màn Hình & Cam 360 (Đã được chuyển xuống hàng dưới) -->
+        <div class="fs-card">
+          <div class="fs-img-wrap">
+            <div class="fs-badge">BEST SELLER</div>
+            <!-- Thay src bằng link ảnh màn hình -->
+            <img src="assets/placeholder-screen.jpg" alt="Màn hình Android Cam 360" style="display: none;" onload="this.style.display='block'" onerror="this.style.display='none'">
+            <span style="color:#777; position:absolute; z-index:-1;">[Ảnh Màn Hình Android]</span>
+          </div>
+          <div class="fs-content">
+            <h3 class="fs-title">Màn Hình Android & 360</h3>
+            <p class="fs-desc">Trợ lý lái xe thông minh tích hợp bản đồ cảnh báo tốc độ, giải trí đa phương tiện và camera 360 xóa điểm mù.</p>
+            <ul class="fs-features">
+              <li>Ra lệnh giọng nói tiếng Việt thông minh</li>
+              <li>Bản đồ Vietmap S1/Live cảnh báo giao thông</li>
+              <li>Camera 360 Sony sắc nét ngày & đêm</li>
+              <li>Lướt web, xem YouTube, nghe nhạc online</li>
+            </ul>
+            <a href="#contact" class="fs-btn">Xem các dòng màn hình</a>
+          </div>
+        </div>
+
+        <!-- 5. LED Nội Thất -->
+        <div class="fs-card">
+          <div class="fs-img-wrap">
+            <!-- Thay src bằng link ảnh LED nội thất -->
+            <img src="assets/placeholder-led.jpg" alt="Độ LED nội thất" style="display: none;" onload="this.style.display='block'" onerror="this.style.display='none'">
+            <span style="color:#777; position:absolute; z-index:-1;">[Ảnh LED Nội Thất]</span>
+          </div>
+          <div class="fs-content">
+            <h3 class="fs-title">LED Viền Nội Thất</h3>
+            <p class="fs-desc">Biến không gian xe trở nên sang trọng và lung linh như các dòng xe hạng sang với dải LED Ambient Light.</p>
+            <ul class="fs-features">
+              <li>Hệ thống 64 triệu màu tùy chỉnh qua App</li>
+              <li>Chế độ nháy đổi màu theo nhịp điệu nhạc</li>
+              <li>Ánh sáng liền mạch, thanh mảnh, tinh tế</li>
+              <li>Lắp đặt thẩm mỹ ở taplo, cánh cửa, gầm ghế</li>
+            </ul>
+            <a href="#contact" class="fs-btn">Tư vấn độ LED</a>
+          </div>
+        </div>
+
+        <!-- 6. Dán PPF -->
+        <div class="fs-card">
+          <div class="fs-img-wrap">
+            <div class="fs-badge">PREMIUM</div>
+            <!-- Thay src bằng link ảnh dán PPF -->
+            <img src="assets/placeholder-ppf.jpg" alt="Dán PPF bảo vệ" style="display: none;" onload="this.style.display='block'" onerror="this.style.display='none'">
+            <span style="color:#777; position:absolute; z-index:-1;">[Ảnh Dán PPF / Ceramic]</span>
+          </div>
+          <div class="fs-content">
+            <h3 class="fs-title">Dán PPF Bảo Vệ Toàn Diện</h3>
+            <p class="fs-desc">Lớp áo giáp vô hình TPU cao cấp bảo vệ bề mặt sơn và các chi tiết nội thất khỏi trầy xước, đá văng.</p>
+            <ul class="fs-features">
+              <li>Khả năng tự phục hồi vết xước nhẹ (Self-healing)</li>
+              <li>Tăng độ bóng sâu, chống ố vàng bề mặt</li>
+              <li>Bảo vệ lớp sơn zin nguyên bản hoàn hảo</li>
+              <li>Dán nội thất: Màn hình, cần số, viền nhựa bóng</li>
+            </ul>
+            <a href="#contact" class="fs-btn">Tìm hiểu thêm</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ======= END FEATURED SERVICES ======= -->
+
+
+  <!-- ======= CONTACT ======= -->
+  <section class="contact section" id="contact">
+    <div class="contact-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Liên hệ</p>
+        <h2 class="section-title">Hãy cùng <em>tạo ra</em> điều gì đó tuyệt vời</h2>
+        <p class="section-subtitle">Tôi luôn sẵn sàng nghe về dự án của bạn và tư vấn miễn phí</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-info-card">
+            <div class="contact-info-header">
+              <h3>Thông tin liên hệ</h3>
+              <p>Hãy nhắn tin hoặc gọi cho tôi – tôi phản hồi trong vòng 24 giờ.</p>
+            </div>
+            
+            <ul class="contact-details">
+              <!-- Đã xóa style="margin-bottom: 24px;" để đồng bộ khoảng cách -->
+              <li class="contact-detail-item" id="contact-facebook">
+                <div class="cdi-icon">
+                  <!-- Bắt đầu mã vẽ Icon Facebook -->
+                  <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                  </svg>
+                  <!-- Kết thúc mã vẽ Icon Facebook -->
+                </div>
+                <div class="cdi-text">
+                  <span class="cdi-label">FACEBOOK</span>
+                  <a href="https://www.facebook.com/duyen.troi.96" target="_blank" class="cdi-value">Văn Long</a>
+                </div>
+              </li>
+              
+              <li class="contact-detail-item" id="contact-phone">
+                <div class="cdi-icon">📞</div>
+                <div class="cdi-text">
+                  <span class="cdi-label">Điện thoại</span>
+                  <a href="tel:+84886636338" class="cdi-value">+84 886 636 338</a>
+                </div>
+              </li>
+              
+              <li class="contact-detail-item" id="contact-email">
+                <div class="cdi-icon">✉️</div>
+                <div class="cdi-text">
+                  <span class="cdi-label">Email</span>
+                  <a href="mailto:vanlongauto3@gmail.com" class="cdi-value">vanlongauto3@gmail.com</a>
+                </div>
+              </li>
+              
+              <li class="contact-detail-item" id="contact-fanpage">
+                <div class="cdi-icon">💬</div>
+                <div class="cdi-text">
+                  <span class="cdi-label">FanPage</span>
+                  <a href="https://www.facebook.com/vanlongauto.cs3" target="_blank" class="cdi-value">Văn Long</a>
+                  <a href="#" class="cdi-value">Văn Long Auto</a>
+                </div>
+              </li>
+              
+              <li class="contact-detail-item" id="contact-location">
+                <div class="cdi-icon">📍</div>
+                <div class="cdi-text">
+                  <span class="cdi-label">Khu vực hoạt động</span>
+                  <span class="cdi-value">Số 45 Lý Thánh Tông, TDP Yên Lã, Từ Sơn, Bắc Ninh &amp; Toàn quốc</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="contact-social">
+              <a href="#" class="csocial-link" id="csocial-tiktok" aria-label="TikTok">🎵</a>
+              <a href="#" class="csocial-link" id="csocial-youtube" aria-label="YouTube">▶️</a>
+              <a href="#" class="csocial-link" id="csocial-instagram" aria-label="Instagram">📸</a>
+              <a href="#" class="csocial-link" id="csocial-facebook" aria-label="Facebook">📘</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Họ và tên <span class="required">*</span></label>
+                <input type="text" id="fname" name="fname" placeholder="Nguyễn Văn A" required />
+              </div>
+              <div class="form-group">
+                <label for="fphone">Số điện thoại <span class="required">*</span></label>
+                <input type="tel" id="fphone" name="fphone" placeholder="0xxx xxx xxx" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" name="femail" placeholder="email@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="fservice">Dịch vụ quan tâm <span class="required">*</span></label>
+              <select id="fservice" name="fservice" required>
+                <option value="">-- Chọn dịch vụ --</option>
+                <option value="photo">📷 Chụp ảnh</option>
+                <option value="video">🎬 Quay phim</option>
+                <option value="tiktok">🎵 TikTok Content</option>
+                <option value="youtube">▶️ YouTube &amp; Social Media</option>
+                <option value="combo">✨ Gói kết hợp</option>
+                <option value="other">💡 Khác / Tư vấn</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fmessage">Nội dung dự án</label>
+              <textarea id="fmessage" name="fmessage" rows="4" placeholder="Mô tả ngắn về dự án, ngân sách và thời gian dự kiến..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text">Gửi yêu cầu tư vấn</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✅</div>
+            <h4>Đã nhận được thông tin!</h4>
+            <p>Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm nhất có thể.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="brand-name">Giáp</span>
+          <span class="brand-sub">Photographer</span>
+          <p class="footer-tagline">Kể câu chuyện của bạn qua từng khung hình</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">Giới thiệu</a>
+          <a href="#services">Dịch vụ</a>
+          <a href="#portfolio">Tác phẩm</a>
+          <a href="#pricing" class="nav-link">Báo giá</a>
+          <a href="#contact">Liên hệ</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="TikTok">🎵</a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">▶️</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="footer-social-link" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+     <div class="footer-bottom" style="text-align: center; color: white;">
+        <p>© All Copyrights Reserved by XUAN GIAP MEDIA | EDIT VIDEO - QUAY PHIM - CƯỚI, HỎI - SỰ KIỆN - PHIM NGẮN - CHỤP ẢNH - KỈ YẾU - VISUAL - THIẾT KẾ.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Đóng">✕</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+<!-- ======= NÚT ZALO NỔI ======= -->
+  <style>
+    .zalo-floating {
+      position: fixed;
+      bottom: 40px;
+      left: 40px; /* Đã đổi sang góc trái */
+      display: flex;
+      align-items: center;
+      z-index: 9999; 
+      text-decoration: none;
+    }
+    .zalo-label {
+      background-color: white;
+      color: #0068FF;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 20px 10px 45px; /* Đảo lại padding để tạo khoảng trống bên trái chứa icon */
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-left: -35px; /* Kéo khung chữ lùi vào dưới icon từ bên trái */
+      transition: all 0.3s ease;
+    }
+    .zalo-icon-wrapper {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      background-color: #0068FF;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 104, 255, 0.4);
+      animation: pulse-zalo 1.5s infinite;
+      z-index: 2; /* Lệnh này đảm bảo icon luôn nằm đè lên trên khung chữ */
+    }
+    .zalo-floating:hover .zalo-label {
+      background-color: #f0f0f0;
+    }
+    
+    @keyframes pulse-zalo {
+      0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(0, 104, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
+    }
+  </style>
+
+  <a href="https://zalo.me/0886636338" target="_blank" class="zalo-floating">
+    <!-- Icon đã được đưa lên trên để hiển thị bên trái -->
+    <div class="zalo-icon-wrapper">
+      <svg width="34" height="34" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50,15 C25.147,15 5,31.785 5,52.5 C5,63.766 11.23,73.882 21.054,80.316 C20.485,83.916 16.924,89.516 12.822,93.43 C12.822,93.43 23.364,94.27 34.331,88.428 C39.261,90.222 44.526,91.196 50,91.196 C74.853,91.196 95,74.411 95,53.696 C95,32.981 74.853,15 50,15 Z" fill="white"/>
+        <text x="50" y="62" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#0068FF" text-anchor="middle" letter-spacing="-1">Zalo</text>
+      </svg>
+    </div>
+    
+    <!-- Khung chữ được chuyển xuống dưới để hiển thị bên phải -->
+    <div class="zalo-label">Chat hỗ trợ</div>
+  </a>
+  <!-- ======= KẾT THÚC NÚT ZALO ======= -->
+
+  <!-- ======= NHẠC NỀN ======= -->
+  <style>
+    .music-floating {
+      position: fixed;
+      bottom: 40px;
+      right: 40px; 
+      width: 55px;
+      height: 55px;
+      /* Dải màu Gradient chuẩn Apple Music */
+      background: linear-gradient(135deg, #fa243c 0%, #ff5e7e 100%); 
+      border: none; /* Bỏ viền vàng cũ */
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(250, 36, 60, 0.4); /* Đổ bóng màu hồng đỏ */
+      transition: all 0.3s ease;
+    }
+    
+    .music-floating:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(250, 36, 60, 0.6);
+    }
+
+    .music-icon {
+      font-size: 22px;
+      color: white; /* Nốt nhạc màu trắng để nổi bật trên nền hồng */
+      transition: all 0.3s ease;
+      z-index: 2; /* Đảm bảo icon nằm trên trái tim */
+    }
+
+    .music-playing .music-icon {
+      animation: spin-music 3s linear infinite;
+    }
+
+    @keyframes spin-music {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ==== Hiệu ứng trái tim bay ==== */
+    .flying-heart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 20px;
+      pointer-events: none; /* Không cản trở click chuột */
+      animation: explodeHeart 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      z-index: 1; /* Nằm dưới icon nốt nhạc một chút */
+    }
+
+    @keyframes explodeHeart {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.2);
+      }
+      100% {
+        opacity: 0;
+        /* Các biến --tx, --ty, --rot sẽ được JS tính toán ngẫu nhiên để bay tỏa ra */
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.5) rotate(var(--rot));
+      }
+    }
+  </style>
+
+  <!-- Thẻ chứa file nhạc -->
+  <audio id="bgMusic" loop>
+    <source src="assets/vay cuoi.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Nút giao diện bật/tắt -->
+  <div class="music-floating" id="musicToggle" onclick="toggleMusic()" title="Bật/Tắt nhạc nền">
+    <span class="music-icon" id="musicIcon">🎵</span>
+  </div>
+
+  <!-- Lệnh điều khiển nhạc & Hiệu ứng -->
+  <script>
+    function toggleMusic() {
+      var audio = document.getElementById("bgMusic");
+      var btn = document.getElementById("musicToggle");
+      var icon = document.getElementById("musicIcon");
+
+      if (audio.paused) {
+        audio.play();
+        btn.classList.add("music-playing");
+        icon.innerText = "⏸"; // Đổi thành Tạm dừng
+        
+        // Gọi hàm bắn trái tim
+        explodeHearts(btn);
+      } else {
+        audio.pause();
+        btn.classList.remove("music-playing");
+        icon.innerText = "🎵"; // Đổi lại thành nốt nhạc
+      }
+    }
+
+    // Hàm tạo hiệu ứng nổ trái tim
+    function explodeHearts(container) {
+      const heartCount = 12; // Số lượng trái tim bay ra mỗi lần bấm
+      const emojis = ['💖', '💗', '💕', '✨']; // Có pha thêm chút sao lấp lánh
+      
+      for (let i = 0; i < heartCount; i++) {
+        let heart = document.createElement("div");
+        heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        heart.classList.add("flying-heart");
+        
+        // Tính toán tọa độ bay ngẫu nhiên (tỏa ra xung quanh và hướng lên trên)
+        let tx = (Math.random() - 0.5) * 160 + "px"; 
+        let ty = (Math.random() * -150 - 30) + "px"; 
+        let rot = (Math.random() - 0.5) * 90 + "deg"; 
+        
+        heart.style.setProperty('--tx', tx);
+        heart.style.setProperty('--ty', ty);
+        heart.style.setProperty('--rot', rot);
+        
+        container.appendChild(heart);
+        
+        // Xóa trái tim khỏi web sau khi bay xong để không bị nặng máy
+        setTimeout(() => {
+          heart.remove();
+        }, 1200);
+      }
+    }
+  </script>
+  <!-- ======= KẾT THÚC NHẠC NỀN ======= -->
+
+  <!-- ======= HÀM TÙY CHỈNH KHUNG HÌNH THEO TỶ LỆ MÀN HÌNH ĐIỆN THOẠI ======= -->
+  <script>
+    /**
+     * adjustFrameByAspectRatio()
+     * Tự động nhận diện tỷ lệ khung hình (width / height) của màn hình thiết bị
+     * và gắn class tương ứng vào <body> để CSS điều chỉnh khung hình (object-position,
+     * chiều cao khối hero, v.v.) cho phù hợp với từng dòng máy điện thoại:
+     *
+     *  - ratio-ultra-tall : tỷ lệ ≈ 20:9 - 21:9 (Samsung S/Note Ultra, Xiaomi, Oppo Find X...)
+     *  - ratio-tall       : tỷ lệ ≈ 19.5:9      (iPhone X → iPhone 15/16 Pro Max)
+     *  - ratio-standard   : tỷ lệ ≈ 16:9 - 18:9 (iPhone SE/8, Android đời cũ)
+     *  - ratio-wide       : tỷ lệ > 0.6 (máy tính bảng, desktop, xoay ngang)
+     */
+    function adjustFrameByAspectRatio() {
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      var ratio = w / h; // < 1 nghĩa là màn hình dọc (điện thoại)
+
+      var body = document.body;
+      var classes = ['ratio-ultra-tall', 'ratio-tall', 'ratio-standard', 'ratio-wide'];
+      classes.forEach(function (c) { body.classList.remove(c); });
+
+      var currentClass;
+      if (ratio <= 0.44) {
+        currentClass = 'ratio-ultra-tall';
+      } else if (ratio <= 0.50) {
+        currentClass = 'ratio-tall';
+      } else if (ratio <= 0.60) {
+        currentClass = 'ratio-standard';
+      } else {
+        currentClass = 'ratio-wide';
+      }
+
+      body.classList.add(currentClass);
+
+      // Lưu tỷ lệ thực tế vào biến CSS để có thể dùng thêm trong style.css nếu cần
+      // vd: height: calc(100vh - var(--screen-ratio) * 10px);
+      document.documentElement.style.setProperty('--screen-ratio', ratio.toFixed(4));
+
+      // Xử lý riêng chiều cao thực trên trình duyệt di động (thanh địa chỉ ẩn/hiện
+      // làm 100vh bị sai lệch) — dùng biến --vh thay cho vh trong CSS khi cần chính xác.
+      document.documentElement.style.setProperty('--vh', (h * 0.01) + 'px');
+    }
+
+    // Chạy ngay khi tải trang
+    adjustFrameByAspectRatio();
+
+    // Chạy lại khi đổi kích thước cửa sổ hoặc xoay màn hình
+    window.addEventListener('resize', adjustFrameByAspectRatio);
+    window.addEventListener('orientationchange', function () {
+      setTimeout(adjustFrameByAspectRatio, 250); // đợi trình duyệt cập nhật kích thước xong
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

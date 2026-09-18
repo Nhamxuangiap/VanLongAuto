@@ -1,0 +1,26 @@
+---
+interface Props {
+  brandName?: string;
+  brandSub?: string;
+}
+
+const { brandName = 'Giáp', brandSub = 'Photographer' } = Astro.props;
+---
+
+<nav class="navbar" id="navbar" aria-label="Điều hướng chính">
+  <div class="nav-container">
+    <a href="#hero" class="nav-brand" aria-label="Giáp Photographer - Trang chủ">
+      <span class="brand-name">{brandName}</span>
+      <span class="brand-sub">{brandSub}</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Mở menu" aria-controls="navMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+      <li><a href="#services" class="nav-link">Dịch vụ</a></li>
+      <li><a href="#portfolio" class="nav-link">Tác phẩm</a></li>
+      <li><a href="#contact" class="nav-link nav-cta">Liên hệ</a></li>
+    </ul>
+  </div>
+</nav>

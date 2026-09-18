@@ -1,0 +1,47 @@
+---
+interface Props {
+  brandName?: string;
+  brandSub?: string;
+  tagline?: string;
+  copyright?: string;
+  credit?: string;
+  socialLinks?: Record<string, string>;
+}
+
+const {
+  brandName = 'Giáp',
+  brandSub = 'Photographer',
+  tagline = 'Kể câu chuyện của bạn qua từng khung hình',
+  copyright = '© 2025 Nhâm Xuân Giáp. All rights reserved.',
+  credit = 'Thiết kế với ❤️ bởi Giáp Photographer',
+  socialLinks = {},
+} = Astro.props;
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+          <span class="brand-name">{brandName}</span>
+          <span class="brand-sub">{brandSub}</span>
+          <p class="footer-tagline">{tagline}</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#services">Dịch vụ</a>
+        <a href="#portfolio">Tác phẩm</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+      <div class="footer-social">
+          <a href={socialLinks.tiktok ?? '#'} class="footer-social-link" aria-label="TikTok">🎵</a>
+          <a href={socialLinks.youtube ?? '#'} class="footer-social-link" aria-label="YouTube">▶️</a>
+          <a href={socialLinks.instagram ?? '#'} class="footer-social-link" aria-label="Instagram">📸</a>
+          <a href={socialLinks.facebook ?? '#'} class="footer-social-link" aria-label="Facebook">📘</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>{copyright}</p>
+      <p>{credit}</p>
+    </div>
+  </div>
+</footer>

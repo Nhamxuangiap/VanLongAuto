@@ -1,0 +1,10 @@
+TRANG SẢN PHẨM SANTEK X620 — VĂN LONG AUTO
+Chép san-pham-santek-x620.html vào cùng thư mục với index.html của website.
+Thêm ảnh thật tên 1.jpg–4.jpg vào assets/santek-x620/.
+Ảnh chính: khung 1:1, co vừa ảnh, không cắt.
+Slider bên dưới: 4 ảnh giữ tỉ lệ gốc, tự đổi chiều cao; tự trượt mỗi 3,5 giây, có mũi tên, chấm chọn, vuốt và tạm dừng.
+HTML đã tích hợp CSS và JavaScript; không cần thay style.css/script.js của website.
+Đổi liên kết thẻ sản phẩm X620 trong danh mục thành san-pham-santek-x620.html.
+Gói cập nhật này chưa kèm ảnh thật. Logo, trang chủ và trang danh mục sử dụng các file hiện có của website.
+Nguồn thông số: https://santekvietnam.com/san-pham/man-hinh-santek-x620/
+Giá tham khảo theo hãng: 6.500.000đ. Không mặc định đây là báo giá lắp đặt của Văn Long Auto.

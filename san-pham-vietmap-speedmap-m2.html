@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VIETMAP SpeedMap M2 | Văn Long Auto</title>
+  <meta name="description" content="VIETMAP SpeedMap M2 tại Văn Long Auto: camera trước 2K, Sony Starvis 2, màn hình cảm ứng 4 inch, 4G, cảnh báo giao thông và giám sát xe trực tuyến.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#c9a84c;--bg:#09090a;--card:#151517;--line:#303034;--text:#f5f5f5;--muted:#aaa}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Montserrat,Arial,sans-serif}img{max-width:100%}a{color:inherit;text-decoration:none}.container{width:min(1180px,calc(100% - 32px));margin:auto}
+    nav{border-bottom:1px solid #222;background:#101011}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{max-width:190px;max-height:48px}.back,.article p{color:var(--muted)}
+    .crumb{padding:24px 0;color:#888;font-size:13px}.crumb a,.brand,.eyebrow,.article h3{color:var(--gold)}.overview{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;padding-bottom:55px}
+    .slider{position:relative;overflow:hidden;aspect-ratio:1;border:1px solid var(--line);border-radius:14px;background:#111}.track{display:flex;height:100%;transition:transform .5s;touch-action:pan-y}.slide{position:relative;flex:0 0 100%;display:grid;place-items:center;margin:0}.slide img{position:absolute;width:100%;height:100%;object-fit:contain;user-select:none}.slot-label{display:grid;place-items:center;padding:24px;color:#777;text-align:center}.arrow{position:absolute;top:50%;z-index:2;width:42px;height:42px;border:0;border-radius:50%;background:var(--gold);font-size:27px;cursor:pointer;transform:translateY(-50%)}.prev{left:12px}.next{right:12px}.dots{position:absolute;right:0;bottom:14px;left:0;z-index:2;display:flex;justify-content:center;gap:7px}.dot{width:8px;height:8px;padding:0;border:0;border-radius:10px;background:#777}.dot.active{width:23px;background:var(--gold)}
+    .brand,.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}h1{margin:10px 0 14px;font-size:clamp(30px,4vw,50px);line-height:1.12}.summary>p{color:var(--muted)}.offer{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.price{display:flex;min-width:270px;flex-direction:column;padding:14px 20px;border:1px solid #65531d;border-radius:10px;background:#17150f}.price small{color:#aaa}.price strong{color:var(--gold);font-size:28px}.notes{display:grid;gap:8px}.note{padding:9px 13px;border:1px solid #333;border-radius:8px;background:var(--card);font-size:12px}.note b{color:var(--gold)}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{padding:12px 18px;border:1px solid var(--gold);border-radius:7px;font-weight:700}.primary{background:var(--gold);color:#111}
+    .highlights{padding:48px 0;border-top:1px solid #222}.section-head{margin-bottom:24px}.section-head h2{margin:6px 0;font-size:clamp(25px,3vw,38px);line-height:1.2}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.feature{overflow:hidden;border:1px solid var(--line);border-radius:10px;background:var(--card)}.feature-copy{padding:16px}.feature b{color:var(--gold)}.feature h3{margin:7px 0;font-size:16px}.feature p{margin:0;color:var(--muted);font-size:13px}.mini-media{position:relative;display:grid;min-height:145px;place-items:center;border-bottom:1px dashed #444;background:#101012}.mini-media img{position:absolute;width:100%;height:100%;object-fit:contain}.mini-media .slot-label{font-size:12px}
+    .detail{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:34px;align-items:start;padding:55px 0;border-top:1px solid #222}.article-block{margin-bottom:42px}.article-block h3{margin:0 0 10px;font-size:22px}.article ul{padding-left:20px;color:var(--muted)}
+    .description-banners{display:grid;gap:18px;margin-bottom:38px}.media{position:relative;display:grid;min-height:260px;place-items:center;margin:20px 0 0;overflow:hidden;border:1px dashed #555;border-radius:12px;background:#111}.description-banners .media{margin:0}.media img{position:relative;z-index:1;display:block;width:100%;height:auto;object-fit:contain}.media .slot-label{position:absolute;inset:0}.media figcaption{position:relative;z-index:2;width:100%;padding:10px 14px;color:#888;font-size:12px;background:#111}.article strong{color:#ddd}
+    .specs{position:sticky;top:20px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--card)}.specs h2{margin:5px 0 14px;font-size:21px}.specs h3{margin:20px 0 8px;font-size:15px}.spec-media{min-height:190px;margin:0 0 18px}.specs table{width:100%;border-collapse:collapse}.specs th,.specs td{padding:10px 0;border-bottom:1px solid #2a2a2d;font-size:13px;vertical-align:top}.specs th{width:44%;padding-right:10px;color:#999;text-align:left;font-weight:500}.specs td{text-align:right;font-weight:600}.specs tr:last-child>*{border:0}
+    .source{margin:0 0 30px;color:#999;font-size:13px}.source a{color:var(--gold)}.contact{margin-bottom:45px;padding:28px;border:1px solid #65531d;border-radius:12px;background:#15130e}.contact h2{margin:0 0 8px}.contact p{margin:0 0 18px;color:var(--muted)}footer{padding:24px;border-top:1px solid #222;color:#888;text-align:center}
+    @media(max-width:900px){.overview,.detail{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}.specs{position:static}}
+    @media(max-width:560px){.container{width:min(100% - 24px,1180px)}.nav{height:64px}.logo{max-width:145px}.back{font-size:12px}.overview{gap:22px}.highlights,.detail{padding:40px 0}.features{grid-template-columns:1fr}.price,.notes{width:100%;min-width:0}.arrow{width:38px;height:38px}.specs{padding:17px}.media{min-height:190px}}
+  </style>
+</head>
+<body>
+  <nav><div class="container nav">
+    <a href="index.html"><img class="logo" src="assets/LOGO VAN LONG.png" alt="Văn Long Auto"></a>
+    <a class="back" href="index.html">← Quay lại trang chủ</a>
+  </div></nav>
+
+  <main class="container">
+    <div class="crumb"><a href="index.html">Trang chủ</a> / Camera hành trình / SpeedMap M2</div>
+
+    <div class="overview">
+      <div class="slider" id="slider">
+        <div class="track" id="track">
+          <figure class="slide"><img src="assets/vietmap m2/m2 vuong/1.png" alt="SpeedMap M2, ảnh 1" draggable="false" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">THÊM ẢNH 1<br>assets/vietmap-speedmap-m2/1.jpg</span></figure>
+          <figure class="slide"><img src="assets/vietmap m2/m2 vuong/2.png" alt="SpeedMap M2, ảnh 2" draggable="false" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">THÊM ẢNH 2<br>assets/vietmap-speedmap-m2/2.jpg</span></figure>
+          <figure class="slide"><img src="assets/vietmap m2/m2 vuong/3.png" alt="SpeedMap M2, ảnh 3" draggable="false" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">THÊM ẢNH 3<br>assets/vietmap-speedmap-m2/3.jpg</span></figure>
+          <figure class="slide"><img src="assets/vietmap m2/m2 vuong/4.png" alt="SpeedMap M2, ảnh 4" draggable="false" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">THÊM ẢNH 4<br>assets/vietmap-speedmap-m2/4.jpg</span></figure>
+          <figure class="slide"><img src="assets/vietmap m2/m2 vuong/5.png" alt="SpeedMap M2, ảnh 5" draggable="false" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">THÊM ẢNH 5<br>assets/vietmap-speedmap-m2/5.jpg</span></figure>
+        </div>
+        <button class="arrow prev" aria-label="Ảnh trước">‹</button><button class="arrow next" aria-label="Ảnh tiếp theo">›</button>
+        <div class="dots" id="dots"></div>
+      </div>
+
+      <section class="summary">
+        <span class="brand">Văn Long Auto · VIETMAP</span>
+        <h1>Camera hành trình VIETMAP SpeedMap M2</h1>
+        <p>Camera trước 2K sử dụng cảm biến Sony Starvis 2, màn hình cảm ứng 4 inch, cảnh báo giao thông, kết nối 4G và quản lý xe trực tuyến.</p>
+        <div class="offer">
+          <div class="price"><small>Giá Niêm Yết Tại Văn Long Auto</small><strong>8.980.000đ</strong></div>
+          <div class="notes"><div class="note"><b>Tặng kèm:</b> thẻ nhớ U3 64GB</div><div class="note"><b>Bản quyền:</b> VIETMAP LIVE 12 tháng</div><div class="note"><b>Kết nối:</b> SIM DATA 12 tháng</div></div>
+        </div>
+        <div class="buttons"><a class="btn primary" href="https://zalo.me/0886636338">Nhận tư vấn</a><a class="btn" href="#thong-so">Xem thông số</a></div>
+      </section>
+    </div>
+
+    <div class="detail">
+      <article class="article">
+        <header class="section-head"><span class="eyebrow">Mô tả sản phẩm</span><h2>Nội dung và ảnh theo đúng thứ tự trang VIETMAP</h2></header>
+
+        <div class="description-banners">
+          <figure class="media"><img src="assets/vietmap m2/1.png" alt="Ảnh giới thiệu SpeedMap M2 số 1" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true">
+          <figure class="media"><img src="assets/vietmap m2/2.png" alt="Ảnh giới thiệu SpeedMap M2 số 2" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true">
+        </div>
+
+        <section class="article-block">
+          <h3>Ghi Hình Sắc Nét - Thông Tin Chi Tiết</h3>
+          <ul>
+            <li><strong>Cảm biến Sony Starvis 2 IMX675:</strong> hỗ trợ ghi hình rõ và giữ chi tiết trong nhiều điều kiện ánh sáng.</li>
+            <li><strong>Tối ưu hình ảnh bởi đội ngũ VIETMAP:</strong> hình ảnh được tinh chỉnh để thể hiện tự nhiên và dễ quan sát.</li>
+            <li><strong>Ghi hình kèm địa chỉ:</strong> video có thể hiển thị tên đường, quận/huyện, tỉnh/thành phố, tốc độ giới hạn và tốc độ hiện tại.</li>
+          </ul>
+          <figure class="media"><img src="assets/vietmap m2/3.png" alt="Ghi hình sắc nét trên SpeedMap M2" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">
+        </section>
+
+        <section class="article-block">
+          <h3>Màn Hình Cảm Ứng 4 Inch - Trải Nghiệm Mượt Mà</h3>
+          <ul>
+            <li><strong>Màn hình cảm ứng 4 inch:</strong> kích thước lớn, hình ảnh rõ và thao tác trực tiếp thuận tiện.</li>
+            <li><strong>Hiển thị trực quan:</strong> hỗ trợ quan sát hình ảnh và điều chỉnh các chức năng dễ dàng.</li>
+          </ul>
+          <figure class="media"><img src="assets/vietmap m2/4.png" alt="Màn hình cảm ứng 4 inch của SpeedMap M2" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">
+        </section>
+
+        <section class="article-block">
+          <h3>Cảnh Báo Giao Thông Toàn Diện</h3>
+          <ul>
+            <li><strong>Hiển thị tốc độ giới hạn:</strong> cung cấp mức tốc độ theo vị trí đang di chuyển.</li>
+            <li><strong>Cảnh báo vượt tốc độ:</strong> nhắc người lái khi xe vượt quá giới hạn cho phép.</li>
+            <li><strong>Cảnh báo biển báo bằng giọng nói:</strong> thông báo các biển báo quan trọng trên tuyến đường.</li>
+          </ul>
+          <figure class="media"><img src="assets/vietmap m2/5.png" alt="Cảnh báo giao thông trên SpeedMap M2" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">
+        </section>
+
+        <section class="article-block">
+          <h3>Module 4G Tích Hợp - Lưu trữ trực tuyến và Quản lý từ xa</h3>
+          <ul>
+            <li><strong>Tự động lưu video khóa lên đám mây:</strong> giúp bảo vệ những đoạn ghi hình quan trọng.</li>
+            <li><strong>Xem video trực tiếp từ xa:</strong> theo dõi hình ảnh camera qua kết nối 4G.</li>
+            <li><strong>Cập nhật phần mềm trực tuyến:</strong> cập nhật dữ liệu giao thông và duy trì hệ thống ở phiên bản phù hợp.</li>
+            <li><strong>Quản lý di chuyển chi tiết:</strong> xem lại lịch sử hành trình và định vị xe từ xa.</li>
+          </ul>
+          <figure class="media"><img src="assets/vietmap m2/6.png" alt="Module 4G và quản lý xe từ xa" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">
+        </section>
+
+        <section class="article-block">
+          <h3>Kết Nối Không Dây Nhanh Chóng</h3>
+          <ul>
+            <li><strong>Wi‑Fi 5GHz:</strong> hỗ trợ tải video nhanh và duy trì kết nối ổn định.</li>
+            <li><strong>Ứng dụng VIETMAP LIVE:</strong> kết nối, xem và quản lý camera thuận tiện trên điện thoại.</li>
+          </ul>
+          <figure class="media"><img src="assets/vietmap m2/7.png" alt="Kết nối Wi-Fi và ứng dụng VIETMAP LIVE" onload="this.nextElementSibling.hidden=true" onerror="this.hidden=true"><span class="slot-label">
+        </section>
+
+        <section class="article-block">
+          <h3>Ghi Hình Đỗ Xe Thông Minh Với Nguồn Trực Tiếp (mua thêm)</h3>
+          <ul>
+            <li><strong>Ghi hình va chạm khi đỗ:</strong> camera tự ghi lại sự kiện khi xe đang dừng đỗ.</li>
+            <li><strong>Ghi hình Time-lapse:</strong> tạo video tua nhanh để tiết kiệm dung lượng bộ nhớ.</li>
+            <li><strong>Phát hiện chuyển động:</strong> tự kích hoạt ghi hình khi nhận biết chuyển động quanh xe.</li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="specs" id="thong-so">
+        <span class="brand">VIETMAP SpeedMap M2</span><h2>Thông số kỹ thuật</h2>
+        <table>
+          <tr><th>Cảm biến</th><td>Sony Starvis 2 IMX675</td></tr>
+          <tr><th>Độ phân giải</th><td>Trước 2K<br>Sau Full HD</td></tr>
+          <tr><th>Xử lý hình ảnh</th><td>WDR</td></tr>
+          <tr><th>Chuẩn nén</th><td>H.265</td></tr>
+          <tr><th>Góc rộng</th><td>Trước 150°<br>Sau 150°</td></tr>
+          <tr><th>Khẩu độ</th><td>Trước F1.75<br>Sau F2.0</td></tr>
+          <tr><th>Màn hình</th><td>Cảm ứng IPS 4”<br>400 × 960P</td></tr>
+          <tr><th>Wi‑Fi</th><td>2.4GHz / 5GHz</td></tr>
+          <tr><th>G-Sensor / GPS</th><td>Có</td></tr>
+          <tr><th>Pin</th><td>Siêu tụ điện</td></tr>
+          <tr><th>Cổng nguồn</th><td>Type-C</td></tr>
+          <tr><th>Thẻ nhớ</th><td>Tối đa 256GB<br>Chuẩn U3</td></tr>
+          <tr><th>Nguồn điện</th><td>5V / 1.5A</td></tr>
+          <tr><th>Cảnh báo giao thông</th><td>Có</td></tr>
+          <tr><th>Kết nối 4G</th><td>Có</td></tr>
+          <tr><th>Giám sát trực tuyến</th><td>Có</td></tr>
+          <tr><th>Lưu video đám mây</th><td>Có</td></tr>
+          <tr><th>Giám sát đỗ xe</th><td>Có, cần mua nguồn trực tiếp</td></tr>
+          <tr><th>Ứng dụng</th><td>VIETMAP LIVE<br>VIETMAP REC</td></tr>
+        </table>
+      </aside>
+    </div>
+    <section class="contact"><span class="eyebrow">Văn Long Auto</span><h2>Tư vấn và lắp đặt SpeedMap M2</h2><p>Gửi tên xe và đời xe để được tư vấn vị trí lắp camera, thẻ nhớ và bộ nguồn giám sát đỗ xe phù hợp.</p><div class="buttons"><a class="btn primary" href="https://zalo.me/0886636338">Nhận Tư Vấn Zalo</a><a class="btn" href="tel:0886636338">Gọi ngay 0886 636 338</a></div></section>
+  </main>
+
+  <footer>© Văn Long Auto · Trung tâm chăm sóc và nâng cấp xe hơi.</footer>
+  <script>
+    const slider=document.querySelector('#slider'),track=document.querySelector('#track'),slides=[...document.querySelectorAll('.slide')],dots=document.querySelector('#dots');let current=0,timer,startX=0;
+    slides.forEach((_,i)=>dots.insertAdjacentHTML('beforeend',`<button class="dot" aria-label="Xem ảnh ${i+1}"></button>`));const dot=[...dots.children];
+    function show(i){current=(i+slides.length)%slides.length;track.style.transform=`translateX(-${current*100}%)`;dot.forEach((b,n)=>b.classList.toggle('active',n===current))}
+    function auto(){clearInterval(timer);timer=setInterval(()=>show(current+1),3500)}
+    document.querySelector('.next').onclick=()=>{show(current+1);auto()};document.querySelector('.prev').onclick=()=>{show(current-1);auto()};dot.forEach((b,i)=>b.onclick=()=>{show(i);auto()});slider.ontouchstart=e=>{startX=e.touches[0].clientX;clearInterval(timer)};slider.ontouchend=e=>{if(Math.abs(e.changedTouches[0].clientX-startX)>45)show(current+(e.changedTouches[0].clientX<startX?1:-1));auto()};slider.onmouseenter=()=>clearInterval(timer);slider.onmouseleave=auto;show(0);auto();
+  </script>
+</body>
+</html>
