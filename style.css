@@ -899,3 +899,48 @@ button { border: 0; background: none; cursor: pointer; }
   .led-block__head h2, .gallery-head h2 { font-size: 19px; }
   .led-detail-page .gallery-slider { aspect-ratio: 16 / 10; }
 }
+/* --- NÚT LIÊN HỆ & SOCIAL ICON (Phần Giới thiệu CEO) --- */
+.about-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Cho phép rớt dòng nếu màn hình điện thoại quá nhỏ */
+  gap: 18px; /* Khoảng cách giữa nút và cụm icon */
+  margin-top: 24px;
+}
+
+.about-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background-color: var(--surface);
+  color: var(--muted);
+  transition: all var(--ease);
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  background-color: rgba(201,168,76, 0.1); /* Phủ nhẹ màu vàng gold */
+  color: var(--gold);
+  box-shadow: 0 4px 12px rgba(201,168,76, 0.15);
+}@media (max-width: 768px) {
+  .about-actions {
+    justify-content: center !important;
+  }
+}
