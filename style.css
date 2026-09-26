@@ -311,7 +311,18 @@ button { border: 0; background: none; cursor: pointer; }
 .pd-section ul { display: grid; gap: 8px; margin: 14px 0; }
 .pd-section li { position: relative; padding-left: 19px; color: #bcbcbc; font-size: 13px; line-height: 1.6; }
 .pd-section li::before { content: '•'; position: absolute; left: 2px; color: var(--gold); }
-.pd-detail-image { width: 100%; margin: 18px 0 6px; border: 1px solid var(--border); border-radius: 12px; background: #111; object-fit: contain; }
+.pd-detail-image {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  margin: 22px auto 30px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #151515;
+  object-fit: contain;
+}
 
 /* Specs */
 .pd-sidebar { position: sticky; top: calc(var(--nav-h) + 72px); }
@@ -362,26 +373,7 @@ button { border: 0; background: none; cursor: pointer; }
   .pd-section p { font-size: 13px; line-height: 1.72; }
   .pd-related-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
 }
-/* ẢNH CHI TIẾT SẢN PHẨM 800x800 - HIỂN THỊ GỌN */
-
-.pd-detail-image {
-  display: block;
-
-  width: 100%;
-  max-width: 480px;
-
-  aspect-ratio: 1 / 1;
-
-  height: auto;
-
-  object-fit: contain;
-
-  margin: 22px auto 30px;
-
-  border-radius: 10px;
-
-  background: #151515;
-}/* =====================================================
+/* =====================================================
    VAN LONG AUTO - PRODUCT GRID
    DESKTOP: 5 SẢN PHẨM / HÀNG
 ===================================================== */
@@ -942,5 +934,228 @@ button { border: 0; background: none; cursor: pointer; }
 }@media (max-width: 768px) {
   .about-actions {
     justify-content: center !important;
+  }
+}.video-gradient-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.vertical-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo video hiển thị đầy đủ, không bị méo */
+  display: block;
+}
+
+.black-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65%; /* Chiều cao của lớp gradient chiếm 65% từ dưới lên */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 45%, transparent 100%);
+  z-index: 1;
+  pointer-events: none; /* Tránh cản trở thao tác nhấn của người dùng */
+}
+
+.text-on-video {
+  position: absolute;
+  bottom: 16px; /* Cách lề dưới 16px */
+  left: 16px; 
+  right: 16px; 
+  z-index: 2;
+}
+
+.video-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-family: 'Montserrat', var(--font-sans);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.video-subtitle {
+  color: var(--gold-light, #e2c47a);
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}/* Styling cho cụm nút điều khiển Video */
+.video-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.video-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px); /* Làm mờ nền đằng sau nút */
+  transition: all 0.3s ease;
+}
+
+.video-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.video-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: scale(1.05);
+}/* Styling định dạng lại khung thẻ video cho bằng các thẻ khác */
+.video-card-custom {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-card-custom .video-gradient-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit; /* Kế thừa viền bo góc từ thẻ gốc */
+}
+
+/* Ẩn nội dung mặc định phía dưới (nếu có) để tránh làm thẻ bị dài thêm */
+.video-card-custom .promotion-content {
+  display: none !important;
+}.cdi-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold); /* Đổi màu icon thành màu vàng của theme */
+}/* =========================================================
+   CỤM NÚT LIÊN HỆ NỔI BÊN PHẢI (CALL, MESSENGER, ZALO)
+   ========================================================= */
+.floating-action-menu {
+  position: fixed;
+  right: 25px; /* Ghim sát mép phải giống Chung Auto */
+  bottom: 120px; /* Đẩy lên cao để không đè vào nút nhạc */
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cta-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Hiệu ứng nhấp nháy tỏa vòng tròn */
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  animation: cta-pulse 1.5s infinite;
+  opacity: 0.6;
+}
+
+@keyframes cta-pulse {
+  0% { transform: scale(0.85); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Các màu sắc chuyên biệt cho từng nút */
+.cta-phone {
+  background-color: #ff3b30; /* Đỏ - Hotline */
+  color: #ff3b30; /* Biến màu cho viền tỏa ngoài */
+}
+
+.cta-messenger {
+  background: linear-gradient(45deg, #00c6ff, #0072ff); /* Gradient Messenger */
+  color: #0072ff;
+}
+
+.cta-zalo {
+  background-color: #0068ff; /* Xanh Zalo */
+  color: #0068ff;
+}
+
+/* Tooltip text khi lướt chuột qua */
+.cta-label {
+  position: absolute;
+  right: 65px; /* Đẩy chữ sang bên trái của nút */
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Hình tam giác chỉ vào nút */
+.cta-label::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.95);
+}
+
+.cta-btn:hover .cta-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Tinh chỉnh cho điện thoại */
+@media (max-width: 768px) {
+  .floating-action-menu {
+    right: 15px;
+    bottom: 90px;
+    gap: 12px;
+  }
+  
+  .cta-btn {
+    width: 44px;
+    height: 44px;
+  }
+  
+  /* Ẩn chữ tooltip trên điện thoại tránh cản màn hình */
+  .cta-label {
+    display: none;
   }
 }
