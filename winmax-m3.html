@@ -132,6 +132,7 @@
     function auto(){clearInterval(timer);timer=setInterval(()=>show(current+1),3500)}
     document.querySelector('.next').onclick=()=>{show(current+1);auto()};document.querySelector('.prev').onclick=()=>{show(current-1);auto()};dot.forEach((b,i)=>b.onclick=()=>{show(i);auto()});slider.ontouchstart=e=>{startX=e.touches[0].clientX;clearInterval(timer)};slider.ontouchend=e=>{if(Math.abs(e.changedTouches[0].clientX-startX)>45)show(current+(e.changedTouches[0].clientX<startX?1:-1));auto()};slider.onmouseenter=()=>clearInterval(timer);slider.onmouseleave=auto;show(0);auto();
   </script>
+  
    <!-- ======= CỤM NÚT LIÊN HỆ NỔI (CALL, MESSENGER, ZALO) ======= -->
 <div class="floating-action-menu">
   
