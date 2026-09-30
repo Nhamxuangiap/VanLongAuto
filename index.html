@@ -12,6 +12,41 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@700&amp;family=Syne:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/> <link href="style.css" rel="stylesheet"/><link href="home.css" rel="stylesheet"/>
 </head>
+<!-- ======= POPUP KHUYẾN MÃI PHIM CÁCH NHIỆT (CÓ ÂM THANH) ======= -->
+<div id="promoPopup" class="popup-overlay">
+  <div class="popup-container">
+    <!-- Nút đóng (Dấu X) -->
+    <button id="closePopupBtn" class="popup-close" aria-label="Đóng popup">×</button>
+    
+    <div class="popup-content-inner">
+      <div class="video-gradient-container" style="position: relative; width: 100%; height: 100%; min-height: 380px;">
+        <!-- Video Khuyến Mãi (ban đầu phải muted để tự động chạy trên mobile) -->
+        <video id="popupVideo" autoplay muted loop playsinline webkit-playsinline class="vertical-video" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <source src="assets/Video/phim cách nhiet.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Nút bật âm thanh nhanh trên popup -->
+        <button id="popupMuteToggle" class="popup-sound-btn" style="position: absolute; top: 12px; left: 12px; z-index: 20; background: rgba(0,0,0,0.6); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px);">
+          🔇 Bật tiếng
+        </button>
+
+        <div class="black-gradient"></div>
+        <div class="text-on-video">
+          <p class="promotion-category" style="color: var(--gold); margin-bottom: 6px;">ƯU ĐÃI ĐẶC BIỆT</p>
+          <h3 class="video-title" style="font-size: 18px; margin-bottom: 12px; line-height: 1.4;">
+            Giảm Giá Kịch Sàn<br/>Gói Dán Phim Cách Nhiệt
+          </h3>
+          <div class="promotion-bottom" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="promotion-date" style="color: #fff;">🎁 Số lượng có hạn</div>
+            <a class="promotion-btn" href="https://zalo.me/0886636338" target="_blank" rel="noopener noreferrer" style="background: var(--gold); color: #111; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 13px;">
+              Nhận ưu đãi →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <body>
 <!-- ======= NAVIGATION ======= -->
 <nav class="navbar" id="navbar">
@@ -271,10 +306,10 @@ Với hơn 11 năm kinh nghiệm trong ngành Nội Thất Ô Tô, tôi đã có
   <article class="promotion-card video-card-custom">
   <div class="video-gradient-container">
     <!-- Video nền -->
-   <video id="promoVideo" autoplay muted loop playsinline webkit-playsinline class="vertical-video">
-  <source src="assets/Video/phim cách nhiet.mp4" type="video/mp4">
-  Trình duyệt của bạn không hỗ trợ thẻ video.
-</video>
+    <video id="promoVideo" autoplay muted loop playsinline class="vertical-video">
+      <!-- Đổi tên file mp4 cho đúng đường dẫn của bạn -->
+      <source src="assets/Video/phim cách nhiet.mp4" type="video/mp4">
+    </video>
     
     <!-- Nút điều khiển âm thanh và tạm dừng -->
     <div class="video-controls">

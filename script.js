@@ -277,3 +277,52 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  /* =====================================================
+   XỬ LÝ POPUP TỰ ĐỘNG HIỆN KHI VÀO TRANG
+   ===================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const popupOverlay = document.getElementById('promoPopup');
+  const closePopupBtn = document.getElementById('closePopupBtn');
+
+  if (popupOverlay && closePopupBtn) {
+    // Tự động bật popup sau khi vào trang 0.8 giây
+    setTimeout(() => {
+      popupOverlay.classList.add('active');
+    }, 800);
+
+    // Đóng popup khi bấm vào nút X
+    closePopupBtn.addEventListener('click', () => {
+      popupOverlay.classList.remove('active');
+    });
+
+    // Đóng popup khi bấm vào vùng nền đen bên ngoài khung
+    popupOverlay.addEventListener('click', (e) => {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove('active');
+      }
+    });
+  }
+});
+/* =====================================================
+   XỬ LÝ ÂM THANH CHO POPUP
+   ===================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const popupVideo = document.getElementById('popupVideo');
+  const popupMuteToggle = document.getElementById('popupMuteToggle');
+
+  if (popupVideo && popupMuteToggle) {
+    popupMuteToggle.addEventListener('click', () => {
+      if (popupVideo.muted) {
+        popupVideo.muted = false;
+        popupMuteToggle.innerHTML = "🔊 Đang bật tiếng";
+        popupMuteToggle.style.borderColor = "var(--gold)";
+        popupMuteToggle.style.color = "var(--gold)";
+      } else {
+        popupVideo.muted = true;
+        popupMuteToggle.innerHTML = "🔇 Bật tiếng";
+        popupMuteToggle.style.borderColor = "rgba(255,255,255,0.3)";
+        popupMuteToggle.style.color = "#fff";
+      }
+    });
+  }
+});
