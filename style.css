@@ -1043,67 +1043,7 @@ button { border: 0; background: none; cursor: pointer; }
   align-items: center;
   justify-content: center;
   color: var(--gold); /* Đổi màu icon thành màu vàng của theme */
-}/* =========================================================
-   CỤM NÚT LIÊN HỆ NỔI BÊN PHẢI (CALL, MESSENGER, ZALO)
-   ========================================================= */
-.floating-action-menu {
-  position: fixed;
-  right: 25px; /* Ghim sát mép phải giống Chung Auto */
-  bottom: 120px; /* Đẩy lên cao để không đè vào nút nhạc */
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.cta-btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.cta-btn:hover {
-  transform: scale(1.1);
-}
-
-/* Hiệu ứng nhấp nháy tỏa vòng tròn */
-.cta-btn::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 1.5px solid currentColor;
-  animation: cta-pulse 1.5s infinite;
-  opacity: 0.6;
-}
-
-@keyframes cta-pulse {
-  0% { transform: scale(0.85); opacity: 0.8; }
-  100% { transform: scale(1.4); opacity: 0; }
-}
-
-/* Các màu sắc chuyên biệt cho từng nút */
-.cta-phone {
-  background-color: #ff3b30; /* Đỏ - Hotline */
-  color: #ff3b30; /* Biến màu cho viền tỏa ngoài */
-}
-
-.cta-messenger {
-  background: linear-gradient(45deg, #00c6ff, #0072ff); /* Gradient Messenger */
-  color: #0072ff;
-}
-
-.cta-zalo {
-  background-color: #0068ff; /* Xanh Zalo */
-  color: #0068ff;
-}
+}.floating-action-menu
 
 /* Tooltip text khi lướt chuột qua */
 .cta-label {
@@ -1229,4 +1169,107 @@ button { border: 0; background: none; cursor: pointer; }
   color: #111;
   border-color: var(--gold);
   transform: scale(1.1);
+}
+/* =========================
+   FLOATING CTA
+========================= */
+
+.floating-action-menu {
+  position: fixed;
+  right: 25px;
+  bottom: 120px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  z-index: 9999;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.cta-btn {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  transition: transform 0.25s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.1);
+}
+
+.cta-phone {
+  background: #ff3b30;
+  color: #ff3b30;
+}
+
+.cta-messenger {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: #0072ff;
+}
+
+.cta-zalo {
+  background: #0068ff;
+  color: #0068ff;
+}
+
+
+/* Hiệu ứng vòng sóng */
+.cta-btn::before {
+  content: '';
+
+  position: absolute;
+  inset: -6px;
+
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+
+  animation: ctaPulse 1.5s infinite;
+
+  pointer-events: none;
+}
+
+@keyframes ctaPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .floating-action-menu {
+    right: 15px;
+    bottom: 90px;
+    gap: 12px;
+  }
+
+  .cta-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cta-label {
+    display: none;
+  }
 }

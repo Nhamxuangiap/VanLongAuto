@@ -278,51 +278,81 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   /* =====================================================
-   XỬ LÝ POPUP TỰ ĐỘNG HIỆN KHI VÀO TRANG
+   POPUP KHUYẾN MÃI PHIM CÁCH NHIỆT
    ===================================================== */
+
 document.addEventListener('DOMContentLoaded', () => {
-  const popupOverlay = document.getElementById('promoPopup');
-  const closePopupBtn = document.getElementById('closePopupBtn');
+  const popup = document.getElementById('promoPopup');
+  const video = document.getElementById('popupVideo');
+  const closeBtn = document.getElementById('closePopupBtn');
+  const soundBtn = document.getElementById('popupMuteToggle');
 
-  if (popupOverlay && closePopupBtn) {
-    // Tự động bật popup sau khi vào trang 0.8 giây
-    setTimeout(() => {
-      popupOverlay.classList.add('active');
-    }, 800);
+  if (!popup || !video || !closeBtn) return;
 
-    // Đóng popup khi bấm vào nút X
-    closePopupBtn.addEventListener('click', () => {
-      popupOverlay.classList.remove('active');
-    });
+  // Cập nhật giao diện nút âm thanh
+  const updateSoundButton = () => {
+    if (!soundBtn) return;
 
-    // Đóng popup khi bấm vào vùng nền đen bên ngoài khung
-    popupOverlay.addEventListener('click', (e) => {
-      if (e.target === popupOverlay) {
-        popupOverlay.classList.remove('active');
-      }
-    });
-  }
-});
-/* =====================================================
-   XỬ LÝ ÂM THANH CHO POPUP
-   ===================================================== */
-document.addEventListener('DOMContentLoaded', () => {
-  const popupVideo = document.getElementById('popupVideo');
-  const popupMuteToggle = document.getElementById('popupMuteToggle');
+    if (video.muted) {
+      soundBtn.textContent = '🔇 Bật tiếng';
+      soundBtn.style.color = '#fff';
+      soundBtn.style.borderColor = 'rgba(255,255,255,0.3)';
+    } else {
+      soundBtn.textContent = '🔊 Đang bật tiếng';
+      soundBtn.style.color = 'var(--gold)';
+      soundBtn.style.borderColor = 'var(--gold)';
+    }
+  };
 
-  if (popupVideo && popupMuteToggle) {
-    popupMuteToggle.addEventListener('click', () => {
-      if (popupVideo.muted) {
-        popupVideo.muted = false;
-        popupMuteToggle.innerHTML = "🔊 Đang bật tiếng";
-        popupMuteToggle.style.borderColor = "var(--gold)";
-        popupMuteToggle.style.color = "var(--gold)";
-      } else {
-        popupVideo.muted = true;
-        popupMuteToggle.innerHTML = "🔇 Bật tiếng";
-        popupMuteToggle.style.borderColor = "rgba(255,255,255,0.3)";
-        popupMuteToggle.style.color = "#fff";
-      }
-    });
-  }
+  // Mở popup
+  const openPopup = () => {
+    popup.classList.add('active');
+
+    // Luôn bắt đầu ở trạng thái tắt tiếng
+    video.muted = true;
+
+    updateSoundButton();
+
+    // Chỉ phát video khi popup xuất hiện
+    video.play().catch(() => {});
+  };
+
+  // Đóng popup
+  const closePopup = () => {
+    popup.classList.remove('active');
+
+    // QUAN TRỌNG:
+    // Dừng hoàn toàn video khi đóng popup
+    video.pause();
+    video.muted = true;
+    video.currentTime = 0;
+
+    updateSoundButton();
+  };
+
+  // Bật / tắt âm thanh
+  soundBtn?.addEventListener('click', () => {
+    video.muted = !video.muted;
+    updateSoundButton();
+  });
+
+  // Đóng bằng nút X
+  closeBtn.addEventListener('click', closePopup);
+
+  // Click vùng đen ngoài popup để đóng
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
+
+  // Nhấn ESC để đóng
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('active')) {
+      closePopup();
+    }
+  });
+
+  // Hiện popup sau 0.8 giây
+  setTimeout(openPopup, 800);
 });
