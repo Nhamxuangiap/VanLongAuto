@@ -114,60 +114,73 @@ document.addEventListener('DOMContentLoaded', () => {
     mainImage.alt = $('img', thumb)?.alt || 'LED nội thất ô tô';
   }));
 
-  /* Nghệ sĩ & KOL: tự trượt sang phải, có nút và vuốt mobile */
-  const artistSlider = $('.artist-slider');
-  const artistTrack = $('.artist-track');
-  const artistDotsBox = $('.artist-dots');
-  if (artistSlider && artistTrack && artistDotsBox) {
-    const artistCards = $$('.artist-card', artistTrack);
-    let artistIndex = 0;
-    let artistTimer;
-    let scrollFrame;
+  /* Chứng chỉ & bằng khen: tự trượt, có nút và vuốt mobile */
+  const certificateSlider = $('.certificate-slider');
+  const certificateTrack = $('.certificate-track');
+  const certificateDotsBox = $('.certificate-dots');
 
-    const artistStep = () => {
-      const gap = parseFloat(getComputedStyle(artistTrack).gap) || 0;
-      return (artistCards[0]?.getBoundingClientRect().width || 0) + gap;
+  let certificateIndex = 0;
+  let certificateTimer;
+  let certificateScrollFrame;
+
+  if (certificateSlider && certificateTrack && certificateDotsBox) {
+    const certificateCards = $$('.certificate-card', certificateTrack);
+    const certificateStep = () => {
+      const gap = parseFloat(getComputedStyle(certificateTrack).gap) || 0;
+      return (certificateCards[0]?.getBoundingClientRect().width || 0) + gap;
     };
-    const artistMax = () => Math.max(0, Math.round((artistTrack.scrollWidth - artistTrack.clientWidth) / artistStep()));
-    const updateArtistDots = () => $$('.artist-dot', artistDotsBox).forEach((dot, i) => dot.classList.toggle('active', i === artistIndex));
-    const buildArtistDots = () => {
-      artistDotsBox.replaceChildren();
-      for (let i = 0; i <= artistMax(); i += 1) {
+    const certificateMax = () => {
+      const step = certificateStep();
+      return step ? Math.max(0, Math.round((certificateTrack.scrollWidth - certificateTrack.clientWidth) / step)) : 0;
+    };
+    const updateCertificateDots = () => $$('.artist-dot', certificateDotsBox).forEach((dot, index) => dot.classList.toggle('active', index === certificateIndex));
+    const moveCertificate = nextIndex => {
+      const maxIndex = certificateMax();
+      certificateIndex = nextIndex > maxIndex ? 0 : nextIndex < 0 ? maxIndex : nextIndex;
+      certificateTrack.scrollTo({ left: certificateIndex * certificateStep(), behavior: 'smooth' });
+      updateCertificateDots();
+    };
+    const buildCertificateDots = () => {
+      certificateDotsBox.replaceChildren();
+      for (let index = 0; index <= certificateMax(); index += 1) {
         const dot = document.createElement('button');
         dot.type = 'button';
-        dot.className = `artist-dot${i === artistIndex ? ' active' : ''}`;
-        dot.setAttribute('aria-label', `Xem ảnh từ vị trí ${i + 1}`);
-        dot.addEventListener('click', () => moveArtist(i));
-        artistDotsBox.append(dot);
+        dot.className = `artist-dot${index === certificateIndex ? ' active' : ''}`;
+        dot.setAttribute('aria-label', `Xem chứng chỉ từ vị trí ${index + 1}`);
+        dot.addEventListener('click', () => moveCertificate(index));
+        certificateDotsBox.append(dot);
       }
     };
-    const moveArtist = nextIndex => {
-      artistIndex = nextIndex > artistMax() ? 0 : nextIndex < 0 ? artistMax() : nextIndex;
-      artistTrack.scrollTo({ left: artistIndex * artistStep(), behavior: 'smooth' });
-      updateArtistDots();
+    const playCertificates = () => {
+      clearInterval(certificateTimer);
+      if (certificateMax() > 0) {
+        certificateTimer = setInterval(() => moveCertificate(certificateIndex + 1), 3500);
+      }
     };
-    const playArtists = () => {
-      clearInterval(artistTimer);
-      artistTimer = setInterval(() => moveArtist(artistIndex + 1), 3500);
-    };
+    const pauseCertificates = () => clearInterval(certificateTimer);
 
-    artistTrack.addEventListener('scroll', () => {
-      cancelAnimationFrame(scrollFrame);
-      scrollFrame = requestAnimationFrame(() => {
-        artistIndex = Math.min(artistMax(), Math.round(artistTrack.scrollLeft / artistStep()));
-        updateArtistDots();
+    certificateTrack.addEventListener('scroll', () => {
+      cancelAnimationFrame(certificateScrollFrame);
+      certificateScrollFrame = requestAnimationFrame(() => {
+        const step = certificateStep();
+        if (!step) return;
+        certificateIndex = Math.min(certificateMax(), Math.round(certificateTrack.scrollLeft / step));
+        updateCertificateDots();
       });
     }, { passive: true });
-    $('.artist-next')?.addEventListener('click', () => { moveArtist(artistIndex + 1); playArtists(); });
-    $('.artist-prev')?.addEventListener('click', () => { moveArtist(artistIndex - 1); playArtists(); });
-    artistSlider.addEventListener('mouseenter', () => clearInterval(artistTimer));
-    artistSlider.addEventListener('mouseleave', playArtists);
-    artistSlider.addEventListener('touchstart', () => clearInterval(artistTimer), { passive: true });
-    artistSlider.addEventListener('touchend', playArtists, { passive: true });
-    addEventListener('resize', () => { artistIndex = Math.min(artistIndex, artistMax()); buildArtistDots(); }, { passive: true });
+    $('.certificate-next')?.addEventListener('click', () => { moveCertificate(certificateIndex + 1); playCertificates(); });
+    $('.certificate-prev')?.addEventListener('click', () => { moveCertificate(certificateIndex - 1); playCertificates(); });
+    certificateSlider.addEventListener('mouseenter', pauseCertificates);
+    certificateSlider.addEventListener('mouseleave', playCertificates);
+    certificateSlider.addEventListener('touchstart', pauseCertificates, { passive: true });
+    certificateSlider.addEventListener('touchend', playCertificates, { passive: true });
+    addEventListener('resize', () => {
+      certificateIndex = Math.min(certificateIndex, certificateMax());
+      buildCertificateDots();
+    }, { passive: true });
 
-    buildArtistDots();
-    playArtists();
+    buildCertificateDots();
+    playCertificates();
   }
 
   /* Slider ngang: 5 ảnh, tự chạy và vuốt mobile */

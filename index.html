@@ -11,6 +11,8 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@700&amp;family=Syne:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/> <link href="style.css" rel="stylesheet"/><link href="home.css" rel="stylesheet"/>
+<link href="theme.css" rel="stylesheet"/>
+<script src="theme.js"></script>
 </head>
 <!-- ======= POPUP KHUYẾN MÃI PHIM CÁCH NHIỆT (CÓ ÂM THANH) ======= -->
 <div id="promoPopup" class="popup-overlay">
@@ -21,7 +23,8 @@
     <div class="popup-content-inner">
       <div class="video-gradient-container" style="position: relative; width: 100%; height: 100%; min-height: 380px;">
         <!-- Video Khuyến Mãi (ban đầu phải muted để tự động chạy trên mobile) -->
-<video id="popupVideo" muted loop playsinline webkit-playsinline class="vertical-video">        <source src="assets/Video/phim cách nhiet.mp4" type="video/mp4">
+        <video id="popupVideo" autoplay muted loop playsinline webkit-playsinline class="vertical-video" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <source src="assets/Video/phim cách nhiet.mp4" type="video/mp4">
         </video>
         
         <!-- Nút bật âm thanh nhanh trên popup -->
@@ -35,12 +38,12 @@
           <h3 class="video-title" style="font-size: 18px; margin-bottom: 12px; line-height: 1.4;">
             Giảm Giá Kịch Sàn<br/>Gói Dán Phim Cách Nhiệt
           </h3>
-          <div class="promotion-bottom" style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="promotion-date" style="color: #fff;">🎁 Số lượng có hạn</div>
-            <a class="promotion-btn" href="https://zalo.me/0886636338" target="_blank" rel="noopener noreferrer" style="background: var(--gold); color: #111; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 13px;">
-              Nhận ưu đãi →
-            </a>
-          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
         </div>
       </div>
     </div>
@@ -60,7 +63,7 @@
 <li><a class="nav-link" href="#about">Giới thiệu</a></li>
 <li><a class="nav-link" href="#featured-services">Dịch vụ</a></li>
 <li><a class="nav-link" href="#khuyen-mai">Khuyến mãi</a></li>
-<li><a class="nav-link" href="#nghe-si-kol">Nghệ sĩ &amp; KOL</a></li>
+<li><a class="nav-link" href="#chung-chi-bang-khen">Chứng chỉ &amp; Bằng khen</a></li>
 <li><a class="nav-link nav-cta" href="#contact">Liên hệ</a></li>
 </ul>
 </div>
@@ -223,7 +226,7 @@ Với hơn 11 năm kinh nghiệm trong ngành Nội Thất Ô Tô, tôi đã có
 
 <div class="fs-card">
 <div class="fs-img-wrap">
-<div class="fs-badge">BEST SELLER</div>
+
 
 <img alt="Màn hình Android Cam 360" src="assets/man hinh 360.png"/>
 
@@ -262,7 +265,7 @@ Với hơn 11 năm kinh nghiệm trong ngành Nội Thất Ô Tô, tôi đã có
 
 <div class="fs-card">
 <div class="fs-img-wrap">
-<div class="fs-badge">PREMIUM</div>
+
 
 <img alt="Dán PPF bảo vệ" src="assets/ppf.jpg"/>
 
@@ -434,28 +437,6 @@ Chỉ còn đúng 50 bộ
 </div>
 <div class="services-grid">
 
-<div class="service-card" id="service-tech">
-<div class="service-icon-wrap">
-<div class="service-icon">🖥️</div>
-</div>
-<div class="service-media">
-
-<img alt="Công nghệ xe hơi" class="service-img" src="assets/man-Hinh-Androi-xe-o-to-Viet-Nam-Car-Care-1024x601.jpg">
-<div class="service-media-overlay"></div>
-</img></div>
-<div class="service-body">
-<h3 class="service-title">Công Nghệ &amp; An Toàn</h3>
-<p class="service-desc">Lắp đặt các thiết bị thông minh hỗ trợ lái xe an toàn và trải nghiệm hiện đại.</p>
-<ul class="service-list">
-<li>Màn hình DVD &amp; Android theo xe</li>
-<li>Camera 360, Hành trình, Lùi &amp; Lề</li>
-<li>Thiết bị định vị, Cảm biến theo xe</li>
-<li>Gập gương lên kính, chốt cửa tự động</li>
-</ul>
-<a class="service-link" href="#contact">Nhận báo giá →</a>
-</div>
-</div>
-
 <div class="service-card" id="service-interior">
 <div class="service-icon-wrap">
 <div class="service-icon">💺</div>
@@ -474,7 +455,7 @@ Chỉ còn đúng 50 bộ
 <li>Cách âm chống ồn toàn diện</li>
 <li>Dán film cách nhiệt chính hãng</li>
 </ul>
-<a class="service-link" href="#contact">Nhận báo giá →</a>
+<a class="service-link" href="#contact">Nhận Tư Vấn Ngay →</a>
 </div>
 </div>
 
@@ -496,7 +477,7 @@ Chỉ còn đúng 50 bộ
 <li>Độ cửa hít, cốp điện tự động</li>
 <li>Bậc lên xuống, dán tem &amp; wrap đổi màu</li>
 </ul>
-<a class="service-link" href="#contact">Nhận báo giá →</a>
+<a class="service-link" href="#contact">Nhận Tư Vấn Ngay →</a>
 </div>
 </div>
 
@@ -518,71 +499,71 @@ Chỉ còn đúng 50 bộ
 <li>Dọn nội thất, Xông khử mùi xe</li>
 <li>Bảo dưỡng định kỳ, thay dầu</li>
 </ul>
-<a class="service-link" href="#contact">Nhận báo giá →</a>
+<a class="service-link" href="#contact">Nhận Tư Vấn Ngay →</a>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- ======= NGHỆ SĨ & KOL ĐỒNG HÀNH ======= -->
-<section class="artist-section section" id="nghe-si-kol">
+<!-- ======= CHỨNG CHỈ & BẰNG KHEN ======= -->
+<section class="artist-section section" id="chung-chi-bang-khen">
   <div class="container">
     <div class="section-header artist-heading">
-      <p class="section-eyebrow">Khách hàng nổi bật</p>
-      <h2 class="section-title">Nghệ sĩ &amp; KOL <em>đồng hành</em></h2>
-      <p class="section-subtitle">Những khách hàng đã trải nghiệm dịch vụ tại Văn Long Auto.</p>
+      <p class="section-eyebrow">Ghi nhận chuyên môn</p>
+      <h2 class="section-title">Chứng chỉ &amp; <em>Bằng Khen</em></h2>
+      <p class="section-subtitle">Các chứng nhận và bằng khen dành cho Văn Long Auto cùng đội ngũ.</p>
     </div>
 
-    <div class="artist-slider">
-      <button class="artist-arrow artist-prev" type="button" aria-label="Xem ảnh trước">‹</button>
-
-      <div class="artist-track">
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 01</span><img src="assets/nghe si/1.png" alt="Tên nghệ sĩ 01" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>TRẦN NHƯỢNG</h3><p>Diễn viên</p></div>
-        </article>
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 02</span><img src="assets/nghe si/2.png" alt="Tên nghệ sĩ 02" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>HỒ PHONG</h3><p>Diễn Viên</p></div>
-        </article>
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 03</span><img src="assets/nghe si/3.png" alt="Tên nghệ sĩ 03" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>CHIẾN THẮNG</h3><p>DANH HÀI - DIỄN VIÊN</p></div>
-        </article>
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 04</span><img src="assets/nghe si/IMG_6978.JPG" alt="Tên nghệ sĩ 04" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>BÌNH TRỌNG</h3><p>Diễn Viên - Đạo Diễn</p></div>
-        </article>
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 05</span><img src="assets/nghe si/5.png" alt="Tên nghệ sĩ 05" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>HIẾU KHỔNG LỒ</h3><p>KOL - VẬN ĐỘNG VIÊN</p></div>
-        </article>
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 06</span><img src="assets/nghe si/6.png" alt="Tên nghệ sĩ 06" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>THẬT MẠNH</h3><p>Diễn viên</p></div>
-        </article>
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 07</span><img src="assets/nghe si/7.png" alt="Tên nghệ sĩ 07" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>TRUNG ĐỨC (KEN)</h3><p>Diễn Viên</p></div>
-        </article>
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 08</span><img src="assets/nghe si/8.png" alt="Tên nghệ sĩ 08" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>QUANG TÈO</h3><p>DIỄN VIÊN - NGHỆ SĨ</p></div>
-        </article>
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 09</span><img src="assets/nghe si/9.png" alt="Tên nghệ sĩ 09" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>HỒ VĂN KHOA</h3><p>KOL</p></div>
-        </article>
-        <article class="artist-card">
-          <div class="artist-media"><span>ẢNH 10</span><img src="assets/nghe si/10.png" alt="Tên nghệ sĩ 10" onerror="this.remove()"/></div>
-          <div class="artist-caption"><h3>HẢI IDOL</h3><p>KOL - TIKTOKER</p></div>
-        </article>
-        <article class="artist-card">
+    <div class="certificate-panel">
+      <div class="certificate-slider">
+        <button class="artist-arrow certificate-prev" type="button" aria-label="Xem chứng chỉ trước">‹</button>
+        <div class="certificate-track">
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /1.png" alt="Giấy chứng nhận ủy quyền S.Cent cho Văn Long Auto" loading="lazy"></div>
+            <h3>Đại lý ủy quyền S.Cent</h3>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /2.png" alt="Chứng nhận đại lý chính thức ICAR Việt Nam" loading="lazy"></div>
+            <h3>Đại lý chính thức ICAR</h3>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /3.png" alt="Chứng chỉ ICAR Sales Skill Level A" loading="lazy"></div>
+            <h3>ICAR Sales Skill Level A</h3>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /4.png" alt="Chứng nhận tốt nghiệp khóa kỹ thuật lắp đặt phim cách nhiệt Classis" loading="lazy"></div>
+            <h3>Chứng nhận tốt nghiệp Classis</h3>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /5.png" alt="Chứng nhận đại lý chính thức Autobis" loading="lazy"></div>
+            <h3>Đại lý chính thức Autobis</h3>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /6.png" alt="Chứng nhận đại lý lắp đặt sản phẩm chính hãng HCLightAuto" loading="lazy"></div>
+            <h3>Đại lý lắp đặt HCLightAuto</h3>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /8.png" alt="Chứng nhận đại lý đồng hành và bán hàng chính hãng Master Tune" loading="lazy"></div>
+            <h3>Đại lý chính thức Master Tune</h3>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /9.png" alt="Chứng nhận lắp đặt nội thất ô tô HCLightAuto" loading="lazy"></div>
+            <h3>Chứng nhận lắp đặt HCLightAuto</h3>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /10.png" alt="Chứng chỉ ICAR Sales Skill Level A của Đinh Văn Long" loading="lazy"></div>
+            <h3>ICAR Sales Skill Level A</h3>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-media"><img src="assets/chung chi /7.png" alt="Bằng khen ban tổ chức Lễ hội xe Fun Wheels Festival Hạ Long 2024" loading="lazy"></div>
+            <h3>Bằng khen Fun Wheels Festival 2024</h3>
+          </article>
+        </div>
+        <button class="artist-arrow certificate-next" type="button" aria-label="Xem chứng chỉ tiếp theo">›</button>
       </div>
-      <button class="artist-arrow artist-next" type="button" aria-label="Xem ảnh tiếp theo">›</button>
+      <div class="artist-dots certificate-dots" aria-label="Chọn nhóm chứng chỉ"></div>
     </div>
-    <div class="artist-dots" aria-label="Chọn nhóm ảnh"></div>
   </div>
 </section>
 
@@ -937,14 +918,53 @@ Chỉ còn đúng 50 bộ
             </li>
 
           </ul>
-         
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ======= FOOTER (BẢN QUYỀN) ======= -->
 <footer class="footer footer--simple" style="padding: 24px 0; border-top: 1px solid var(--border); background: var(--bg-soft); text-align: center;">
   <div class="container">
-    <p style="color: #ffffff; font-size: 13px; font-weight: 500; margin: 0; letter-spacing: 0.05em; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
-      &copy; 2026 Văn Long Auto - Trung Tâm Nội Thất Ô Tô Từ Sơn, Bắc Ninh.
+    <p style="color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 300; margin: 0; letter-spacing: 0;">
+      &copy; 2026 Văn Long Auto - Trung Tâm Nâng Cấp & Chăm Sóc Xe Hơi Chuyên Nghiệp
     </p>
   </div>
 </footer>
 <!-- ======= KẾT THÚC FOOTER ======= -->
+ 
+ <!-- ======= CỤM NÚT LIÊN HỆ NỔI (CALL, MESSENGER, ZALO) ======= -->
+<div class="floating-action-menu">
+  
+  <!-- Nút Gọi điện -->
+  <a href="tel:+84886636338" class="cta-btn cta-phone" aria-label="Gọi ngay">
+    <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+    </svg>
+    <span class="cta-label">0886.636.338</span>
+  </a>
 
+  <!-- Nút Messenger -->
+  <a href="https://www.facebook.com/messages/t/vanlongauto.cs3" target="_blank" rel="noopener noreferrer" class="cta-btn cta-messenger" aria-label="Chat Messenger">
+    <svg viewBox="0 0 24 24" fill="white" width="24" height="24">
+      <path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.91 1.5 5.51 3.84 7.24v3.91l3.52-1.93c.85.24 1.74.37 2.64.37 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1.09 12.38l-2.73-2.91-5.32 2.91 5.86-6.22 2.83 2.91 5.22-2.91-5.86 6.22z"/>
+    </svg>
+    <span class="cta-label">Chat Messenger</span>
+  </a>
+
+  <!-- Nút Zalo -->
+  <a href="https://zalo.me/0886636338" target="_blank" rel="noopener noreferrer" class="cta-btn cta-zalo" aria-label="Chat Zalo">
+    <svg viewBox="0 0 100 100" width="24" height="24">
+      <path d="M50,15 C25.147,15 5,31.785 5,52.5 C5,63.766 11.23,73.882 21.054,80.316 C20.485,83.916 16.924,89.516 12.822,93.43 C12.822,93.43 23.364,94.27 34.331,88.428 C39.261,90.222 44.526,91.196 50,91.196 C74.853,91.196 95,74.411 95,53.696 C95,32.981 74.853,15 50,15 Z" fill="white"></path>
+      <text fill="#0068FF" font-family="Arial, sans-serif" font-size="28" font-weight="bold" letter-spacing="-1" text-anchor="middle" x="50" y="62">Zalo</text>
+    </svg>
+    <span class="cta-label">Chat Zalo</span>
+  </a>
+
+</div>
+<!-- ======= KẾT THÚC CỤM NÚT LIÊN HỆ ======= -->
+
+<script src="script.js"></script>
+</body>
+</html>

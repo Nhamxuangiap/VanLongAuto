@@ -103,7 +103,14 @@
 .service-list { flex: 1; display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.25rem; }
 .service-list li { position: relative; padding-left: 1rem; color: var(--muted); font-size: .8rem; }
 .service-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
-.service-link { display: inline-flex; align-items: center; gap: 4px; color: var(--gold); font: 600 .8rem/1.2 var(--font-display); }
+.service-link { display: inline-flex; align-items: center; gap: 4px; color: var(--gold); font: 600 .8rem/1.2 var(--font-display); transform-origin: center; animation: service-link-shake 5s ease-in-out infinite; }
+@keyframes service-link-shake {
+  0%, 94%, 100% { transform: rotate(0); }
+  95% { transform: rotate(-1.5deg); }
+  96% { transform: rotate(1.5deg); }
+  97% { transform: rotate(-1deg); }
+  98% { transform: rotate(0); }
+}
 .services-grid > .service-card:nth-child(4) { grid-column: 1/-1; display: grid; grid-template-columns: 72px 280px minmax(0,1fr); align-items: stretch; }
 .services-grid > .service-card:nth-child(4) .service-icon-wrap { padding: 1.5rem; }
 .services-grid > .service-card:nth-child(4) .service-media { height: 100%; min-height: 210px; margin: 0; border-radius: 0; }

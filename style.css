@@ -142,9 +142,14 @@ button { border: 0; background: none; cursor: pointer; }
 }
 
 /* Nghệ sĩ & KOL: 5 ảnh desktop, 3 tablet, 2 mobile */
-.artist-section { overflow: hidden; border-top: 1px solid var(--border); background: var(--bg-soft); }
+.artist-section { overflow: hidden; scroll-margin-top: var(--nav-h); border-top: 1px solid var(--border); background: var(--bg-soft); }
 .artist-heading { margin-bottom: 38px; }
 .artist-section, .artist-section button { font-family: 'Montserrat', sans-serif; }
+.artist-tabs { display: flex; justify-content: center; gap: 8px; margin: -14px 0 28px; border-bottom: 1px solid var(--border); }
+.artist-tab { padding: 12px 18px; border-bottom: 2px solid transparent; color: var(--muted); font-size: 13px; font-weight: 600; transition: color var(--ease), border-color var(--ease); }
+.artist-tab[aria-selected="true"] { border-color: var(--gold); color: var(--text); }
+.artist-tab:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.artist-panel[hidden] { display: none; }
 .artist-slider { position: relative; }
 .artist-track {
   display: flex;
@@ -191,22 +196,37 @@ button { border: 0; background: none; cursor: pointer; }
 .artist-arrow:hover { background: var(--gold); color: #111; }
 .artist-prev { left: 10px; }
 .artist-next { right: 10px; }
+.certificate-prev { left: 10px; }
+.certificate-next { right: 10px; }
 .artist-dots { display: flex; justify-content: center; gap: 7px; margin-top: 22px; }
 .artist-dot { width: 7px; height: 7px; border-radius: 50%; background: #555; transition: width var(--ease), background var(--ease); }
 .artist-dot.active { width: 22px; border-radius: 10px; background: var(--gold); }
+.certificate-slider { position: relative; }
+.certificate-track { display: flex; gap: 16px; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-inline: contain; }
+.certificate-track::-webkit-scrollbar { display: none; }
+.certificate-card { display: flex; min-width: 0; flex: 0 0 calc((100% - 48px) / 4); flex-direction: column; overflow: hidden; aspect-ratio: auto; border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface); scroll-snap-align: start; }
+.certificate-media { position: relative; overflow: hidden; background: var(--surface-2); }
+.certificate-media img { display: block; width: 100%; height: auto; object-fit: contain; }
+.certificate-card h3 { padding: 12px 14px; color: var(--text); font-size: 13px; }
 
 @media (max-width: 900px) {
   .artist-card { flex-basis: calc((100% - 32px) / 3); }
+  .certificate-card { flex-basis: calc((100% - 32px) / 3); }
 }
 
 @media (max-width: 600px) {
   .artist-heading { margin-bottom: 28px; }
+  .artist-tabs { gap: 0; margin: -8px 0 22px; }
+  .artist-tab { padding: 11px 9px; font-size: 11px; }
   .artist-track { gap: 10px; }
   .artist-card { flex-basis: calc((100% - 10px) / 2); border-radius: 10px; }
   .artist-caption { padding: 38px 11px 11px; }
   .artist-caption h3 { font-size: 12px; }
   .artist-caption p { font-size: 9px; }
   .artist-arrow { display: none; }
+  .certificate-track { gap: 10px; }
+  .certificate-card { flex-basis: calc((100% - 10px) / 2); }
+  .certificate-card h3 { padding: 10px; font-size: 11px; }
 }
 /* =========================================================
    VĂN LONG AUTO — PRODUCT DETAIL
@@ -1043,7 +1063,67 @@ button { border: 0; background: none; cursor: pointer; }
   align-items: center;
   justify-content: center;
   color: var(--gold); /* Đổi màu icon thành màu vàng của theme */
-}.floating-action-menu
+}/* =========================================================
+   CỤM NÚT LIÊN HỆ NỔI BÊN PHẢI (CALL, MESSENGER, ZALO)
+   ========================================================= */
+.floating-action-menu {
+  position: fixed;
+  right: 25px; /* Ghim sát mép phải giống Chung Auto */
+  bottom: 120px; /* Đẩy lên cao để không đè vào nút nhạc */
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cta-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Hiệu ứng nhấp nháy tỏa vòng tròn */
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  animation: cta-pulse 1.5s infinite;
+  opacity: 0.6;
+}
+
+@keyframes cta-pulse {
+  0% { transform: scale(0.85); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Các màu sắc chuyên biệt cho từng nút */
+.cta-phone {
+  background-color: #ff3b30; /* Đỏ - Hotline */
+  color: #ff3b30; /* Biến màu cho viền tỏa ngoài */
+}
+
+.cta-messenger {
+  background: linear-gradient(45deg, #00c6ff, #0072ff); /* Gradient Messenger */
+  color: #0072ff;
+}
+
+.cta-zalo {
+  background-color: #0068ff; /* Xanh Zalo */
+  color: #0068ff;
+}
 
 /* Tooltip text khi lướt chuột qua */
 .cta-label {
