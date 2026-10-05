@@ -8,6 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = $('#navbar');
   const navToggle = $('#navToggle');
   const navMenu = $('#navMenu');
+  const mapToggle = $('#mapToggle');
+  const mapMenu = $('#mapBranchMenu');
+  const closeMapMenu = () => {
+    if (!mapToggle || !mapMenu) return;
+    mapMenu.hidden = true;
+    mapToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  mapToggle?.addEventListener('click', event => {
+    event.stopPropagation();
+    const open = mapMenu.hidden;
+    mapMenu.hidden = !open;
+    mapToggle.setAttribute('aria-expanded', String(open));
+  });
+  document.addEventListener('click', event => {
+    if (mapMenu && !mapMenu.hidden && !mapMenu.contains(event.target) && !mapToggle.contains(event.target)) closeMapMenu();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || mapMenu?.hidden) return;
+    closeMapMenu();
+    mapToggle.focus();
+  });
+
   const closeMenu = () => {
     navMenu?.classList.remove('open');
     navToggle?.classList.remove('open');
@@ -87,12 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     button.disabled = true;
     try {
-      const response = await fetch('https://formsubmit.co/ajax/vanlongauto3@gmail.com', {
+      const ajaxEndpoint = form.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+      const response = await fetch(ajaxEndpoint, {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: new FormData(form)
       });
-      if (!response.ok) throw new Error('Không thể gửi biểu mẫu');
+      const result = await response.json();
+      if (!response.ok || ![true, 'true'].includes(result.success)) {
+        throw new Error(result.message || 'Không thể gửi biểu mẫu');
+      }
       form.reset();
       form.style.display = 'none';
       success.style.display = 'block';

@@ -769,7 +769,7 @@ Chỉ còn đúng 50 bộ
 
             <input
               id="femail"
-              name="email"
+              name="_replyto"
               type="email"
               placeholder="email@example.com"
               autocomplete="email"
@@ -1013,7 +1013,20 @@ Chỉ còn đúng 50 bộ
  
  <!-- ======= CỤM NÚT LIÊN HỆ NỔI (CALL, MESSENGER, ZALO) ======= -->
 <div class="floating-action-menu">
-  
+  <div class="cta-map-wrap">
+    <button type="button" class="cta-btn cta-map" id="mapToggle" aria-label="Chọn cơ sở trên bản đồ" aria-expanded="false" aria-controls="mapBranchMenu">
+      <svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+      </svg>
+      <span class="cta-label">Map</span>
+    </button>
+    <div class="map-branch-menu" id="mapBranchMenu" aria-label="Chọn cơ sở" hidden>
+      <a class="map-branch-link" href="https://www.google.com/maps/search/?api=1&amp;query=3HA+Th%C6%B0%C6%A1ng+M%E1%BA%A1i+Khu+X7+X%C3%A3+%C4%90%C3%B4ng+Anh+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener noreferrer">Cơ Sở Đông Anh</a>
+      <a class="map-branch-link" href="https://maps.app.goo.gl/2RRWWSwhNe3cemxd7" target="_blank" rel="noopener noreferrer">Cơ Sở Bắc Ninh</a>
+    </div>
+  </div>
+
   <!-- Nút Gọi điện -->
   <a href="tel:+84886636338" class="cta-btn cta-phone" aria-label="Gọi ngay">
     <svg viewBox="0 0 24 24" fill="white" width="22" height="22">

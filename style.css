@@ -1142,6 +1142,26 @@ button { border: 0; background: none; cursor: pointer; }
   color: #ff3b30; /* Biến màu cho viền tỏa ngoài */
 }
 
+.cta-map-wrap { position: relative; display: flex; justify-content: flex-end; }
+.cta-map { border: 0; background-color: #34a853; color: #34a853; }
+.map-branch-menu {
+  position: absolute;
+  right: 64px;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  min-width: 176px;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+.map-branch-menu[hidden] { display: none; }
+.map-branch-link { padding: 10px 12px; border-radius: 5px; color: #202a36; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.map-branch-link:hover, .map-branch-link:focus-visible { background: #edf1f5; color: #202a36; outline: none; }
+
 .cta-messenger {
   background: linear-gradient(45deg, #00c6ff, #0072ff); /* Gradient Messenger */
   color: #0072ff;
@@ -1195,7 +1215,7 @@ button { border: 0; background: none; cursor: pointer; }
     bottom: 90px;
     gap: 12px;
   }
-  
+
   .cta-btn {
     width: 44px;
     height: 44px;
