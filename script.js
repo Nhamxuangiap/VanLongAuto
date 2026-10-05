@@ -114,6 +114,62 @@ document.addEventListener('DOMContentLoaded', () => {
     mainImage.alt = $('img', thumb)?.alt || 'LED nội thất ô tô';
   }));
 
+  /* Nghệ sĩ & KOL: tự trượt sang phải, có nút và vuốt mobile */
+  const artistSlider = $('.artist-slider');
+  const artistTrack = $('.artist-track');
+  const artistDotsBox = $('.artist-dots');
+  if (artistSlider && artistTrack && artistDotsBox) {
+    const artistCards = $$('.artist-card', artistTrack);
+    let artistIndex = 0;
+    let artistTimer;
+    let scrollFrame;
+
+    const artistStep = () => {
+      const gap = parseFloat(getComputedStyle(artistTrack).gap) || 0;
+      return (artistCards[0]?.getBoundingClientRect().width || 0) + gap;
+    };
+    const artistMax = () => Math.max(0, Math.round((artistTrack.scrollWidth - artistTrack.clientWidth) / artistStep()));
+    const updateArtistDots = () => $$('.artist-dot', artistDotsBox).forEach((dot, index) => dot.classList.toggle('active', index === artistIndex));
+    const buildArtistDots = () => {
+      artistDotsBox.replaceChildren();
+      for (let index = 0; index <= artistMax(); index += 1) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = `artist-dot${index === artistIndex ? ' active' : ''}`;
+        dot.setAttribute('aria-label', `Xem ảnh từ vị trí ${index + 1}`);
+        dot.addEventListener('click', () => moveArtist(index));
+        artistDotsBox.append(dot);
+      }
+    };
+    const moveArtist = nextIndex => {
+      artistIndex = nextIndex > artistMax() ? 0 : nextIndex < 0 ? artistMax() : nextIndex;
+      artistTrack.scrollTo({ left: artistIndex * artistStep(), behavior: 'smooth' });
+      updateArtistDots();
+    };
+    const playArtists = () => {
+      clearInterval(artistTimer);
+      artistTimer = setInterval(() => moveArtist(artistIndex + 1), 3500);
+    };
+
+    artistTrack.addEventListener('scroll', () => {
+      cancelAnimationFrame(scrollFrame);
+      scrollFrame = requestAnimationFrame(() => {
+        artistIndex = Math.min(artistMax(), Math.round(artistTrack.scrollLeft / artistStep()));
+        updateArtistDots();
+      });
+    }, { passive: true });
+    $('.artist-next')?.addEventListener('click', () => { moveArtist(artistIndex + 1); playArtists(); });
+    $('.artist-prev')?.addEventListener('click', () => { moveArtist(artistIndex - 1); playArtists(); });
+    artistSlider.addEventListener('mouseenter', () => clearInterval(artistTimer));
+    artistSlider.addEventListener('mouseleave', playArtists);
+    artistSlider.addEventListener('touchstart', () => clearInterval(artistTimer), { passive: true });
+    artistSlider.addEventListener('touchend', playArtists, { passive: true });
+    addEventListener('resize', () => { artistIndex = Math.min(artistIndex, artistMax()); buildArtistDots(); }, { passive: true });
+
+    buildArtistDots();
+    playArtists();
+  }
+
   /* Chứng chỉ & bằng khen: tự trượt, có nút và vuốt mobile */
   const certificateSlider = $('.certificate-slider');
   const certificateTrack = $('.certificate-track');
