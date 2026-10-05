@@ -8,6 +8,103 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = $('#navbar');
   const navToggle = $('#navToggle');
   const navMenu = $('#navMenu');
+  const siteSearchForm = $('#siteSearchForm');
+  const siteSearchInput = $('#siteSearchInput');
+  const siteSearchResults = $('#siteSearchResults');
+  const searchItems = [
+    { label: 'Độ âm thanh', href: 'do-amthanh.html' },
+    { label: 'Nâng cấp ánh sáng', href: 'nang-cap-anh-sang.html' },
+    { label: 'Dán phim cách nhiệt 3M', href: 'phim-cach-nhiet-3m.html' },
+    { label: 'Dán phim cách nhiệt NTECH', href: 'phim-cach-nhiet-ntech.html' },
+    { label: 'Dán PPF bảo vệ sơn', href: 'ppf-bao-ve-toan-dien-cap-nhat.html' },
+    { label: 'Màn hình Android & Camera 360', href: 'man-hinh-android-cam-360.html' },
+    { label: 'LED nội thất', href: 'led-noi-that.html' },
+    { label: 'Chống ồn RAD Diamond Sinfoni Italy', href: 'chong-on-rad-diamond-sinfoni.html' },
+    { label: 'Camera hành trình 70mai A210', href: 'san-pham-70mai-a210.html' },
+    { label: 'Camera hành trình 70mai A510', href: 'san-pham-70mai-a510.html' },
+    { label: 'Bi gầm HCLight G2 Plus', href: 'san-pham-bi-gam-hclight-g2-plus.html' },
+    { label: 'Bi LED trợ sáng 3 mắt Winmax M3 Ultra', href: 'san-pham-bi-led-tro-sang-3-mat-winmax-m3-ultra.html' },
+    { label: 'Android Box Bisonic V900', href: 'san-pham-bisonic-v900.html' },
+    { label: 'Loa Mid-Treble BOS SM3', href: 'san-pham-bos-sm3.html' },
+    { label: 'Bóng LED HCLight A50 Ultra', href: 'san-pham-hclight-a50-ultra.html' },
+    { label: 'Bóng LED HCLight A65 Ultra', href: 'san-pham-hclight-a65-ultra.html' },
+    { label: 'Bi gầm Henvvei GT-Pro', href: 'san-pham-henvvei-gt-pro.html' },
+    { label: 'Bi LED Henvvei L81 Pro', href: 'san-pham-henvvei-l81-pro.html' },
+    { label: 'Bi gầm HKC K3 Laser 3 màu', href: 'san-pham-hkc-k3-laser-3-mau.html' },
+    { label: 'Sub điện I-Sotec BA6', href: 'san-pham-isotec-ba6.html' },
+    { label: 'Loa sub Kenner K8', href: 'san-pham-kenner-k8.html' },
+    { label: 'Loa sub điện KS Audio KS68', href: 'san-pham-ks-audio-ks68.html' },
+    { label: 'Loa đồng trục Focal Access 165 AC', href: 'san-pham-loa-focal-access-165-ac.html' },
+    { label: 'Loa phân tần Focal Access 165 AS', href: 'san-pham-loa-focal-access-165-as.html' },
+    { label: 'Loa đồng trục Focal Auditor ACX 165', href: 'san-pham-loa-focal-auditor-acx-165.html' },
+    { label: 'Loa cánh Focal Auditor ASE 165', href: 'san-pham-loa-focal-auditor-ase-165.html' },
+    { label: 'Loa cánh Focal Flax Evo PS 165 FE', href: 'san-pham-loa-focal-flax-evo-ps-165-fe.html' },
+    { label: 'Loa cánh Focal Flax Evo PS 165 FXE', href: 'san-pham-loa-focal-flax-evo-ps-165-fxe.html' },
+    { label: 'Màn hình liền khối VF3 64GB', href: 'san-pham-man-hinh-lien-khoi-vf3-64g.html' },
+    { label: 'Camera hành trình Navicom J247 Pro', href: 'san-pham-navicom-j247-pro.html' },
+    { label: 'Camera hành trình Navicom J247 Pro 4K 3CH', href: 'san-pham-navicom-j247pro4k-3ch.html' },
+    { label: 'Màn hình Santek 2K S600 360', href: 'san-pham-santek-2k-s600-360.html' },
+    { label: 'Màn hình Santek ST900 360', href: 'san-pham-santek-st900-360.html' },
+    { label: 'Màn hình Santek X620', href: 'san-pham-santek-x620.html' },
+    { label: 'Loa đồng trục Sinfoni DS602', href: 'san-pham-sinfoni-ds602.html' },
+    { label: 'Loa cánh 2Way Sinfoni S60 II', href: 'san-pham-sinfoni-s60ii.html' },
+    { label: 'Loa sub điện Sinfoni S88', href: 'san-pham-sinfoni-s88.html' },
+    { label: 'Camera hành trình VIETMAP S720', href: 'san-pham-vietmap-s720.html' },
+    { label: 'Camera hành trình VIETMAP SpeedMap M1', href: 'san-pham-vietmap-speedmap-m1.html' },
+    { label: 'Camera hành trình VIETMAP SpeedMap M2', href: 'san-pham-vietmap-speedmap-m2.html' },
+    { label: 'Loa sub điện Vinsub VS-8 Pro', href: 'san-pham-vinsub-v8.html' },
+    { label: 'Đèn bi LED KC-PRO', href: 'kc-pro.html' },
+    { label: 'Bi LED trợ sáng Winmax M3 Ultra', href: 'winmax-m3.html' },
+    { label: 'Loa cánh Focal Auditor ACX 165', href: 'focal-auditor-acx-165.html' }
+  ];
+  const normalizeSearch = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const closeSearchResults = () => {
+    if (!siteSearchInput || !siteSearchResults) return;
+    siteSearchResults.hidden = true;
+    siteSearchInput.setAttribute('aria-expanded', 'false');
+  };
+  const renderSearchResults = () => {
+    if (!siteSearchInput || !siteSearchResults) return;
+    const query = normalizeSearch(siteSearchInput.value.trim());
+    siteSearchResults.replaceChildren();
+    if (query.length < 2) {
+      closeSearchResults();
+      return;
+    }
+    const matches = searchItems.filter(item => normalizeSearch(item.label).includes(query)).slice(0, 7);
+    if (matches.length) {
+      matches.forEach(item => {
+        const link = document.createElement('a');
+        link.className = 'site-search-result';
+        link.href = item.href;
+        link.setAttribute('role', 'option');
+        link.textContent = item.label;
+        siteSearchResults.append(link);
+      });
+    } else {
+      const empty = document.createElement('div');
+      empty.className = 'site-search-empty';
+      empty.textContent = 'Không tìm thấy sản phẩm hoặc dịch vụ';
+      siteSearchResults.append(empty);
+    }
+    siteSearchResults.hidden = false;
+    siteSearchInput.setAttribute('aria-expanded', 'true');
+  };
+  siteSearchInput?.addEventListener('input', renderSearchResults);
+  siteSearchForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    const firstResult = $('.site-search-result', siteSearchResults || document);
+    if (firstResult) window.location.href = firstResult.href;
+  });
+  document.addEventListener('click', event => {
+    if (siteSearchForm && !siteSearchForm.contains(event.target)) closeSearchResults();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || siteSearchResults?.hidden) return;
+    closeSearchResults();
+    siteSearchInput.focus();
+  });
+
   const mapToggle = $('#mapToggle');
   const mapMenu = $('#mapBranchMenu');
   const closeMapMenu = () => {

@@ -51,7 +51,6 @@
 .audio-catalog .catalog-image { width: 160px; aspect-ratio: 1/1; }
 
 /* Film page */
-.film-hero { padding: 54px 0 32px; background: linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.82)),url('assets/placeholder-film-hero.jpg') center/cover; }
 .dealer-banner { padding: 42px 0 8px; background: var(--bg); }
 .dealer-banner img { width: 100%; max-width: 1200px; margin-inline: auto; border-radius: 12px; object-fit: contain; box-shadow: 0 15px 40px rgba(0,0,0,.55); }
 .film-catalog { width: min(1120px, calc(100% - 40px)); margin-inline: auto; padding: 42px 0 56px; }
@@ -70,7 +69,7 @@
 
 @media (max-width: 768px) {
   .subpage-main { padding-top: var(--nav-h); }
-  .subpage-intro, .film-hero { padding: 32px 0 24px; }
+  .subpage-intro { padding: 32px 0 24px; }
   .subpage-desc { font-size: .9rem; }
   .audio-intro { padding: 34px 0 12px; }
   .audio-text-block { width: calc(100% - 28px); }
