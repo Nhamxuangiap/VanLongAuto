@@ -145,6 +145,16 @@
   -webkit-text-fill-color: #d4af37 !important;
 }
 
+:root body .artist-caption h3 {
+  color: #d4af37 !important;
+  -webkit-text-fill-color: #d4af37 !important;
+}
+
+:root body .artist-caption p {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 :root body .hero-stats {
   border-color: rgba(255, 255, 255, .2) !important;
   background-color: rgba(22, 30, 38, .92) !important;
