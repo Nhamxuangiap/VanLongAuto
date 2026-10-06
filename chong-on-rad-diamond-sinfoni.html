@@ -44,8 +44,7 @@
           <div class="pd-main-image">
             <img src="assets/cacham/cach am 4.jpg" alt="Chống ồn RAD Diamond Sinfoni Italy">
           </div>
-          <p class="pd-image-note">Thay ảnh trên bằng ảnh sản phẩm thực tế của Văn Long Auto.</p>
-        </div>
+          </div>
 
         <div class="pd-summary">
           <span class="pd-brand">SINFONI ITALY</span>
@@ -53,13 +52,6 @@
           <p class="pd-short">
             Giải pháp giảm rung và hỗ trợ cách âm cho xe hơi, sử dụng vật liệu cao su Butyl có độ bám dính và đàn hồi tốt. Phù hợp cho các vị trí cần kiểm soát rung động và tăng độ chắc chắn của bề mặt kim loại trên xe.
           </p>
-
-          <div class="pd-price-box">
-            <span class="pd-price-label">Giá tại Văn Long Auto</span>
-            <div class="pd-price-row">
-              <span class="pd-price-current">7.500.000đ</span>
-            </div>
-          </div>
 
           <div class="pd-points">
             <div class="pd-point">Cao su Butyl không bị ô xi hóa và không mùi.</div>
@@ -69,19 +61,11 @@
           </div>
 
           <div class="pd-actions">
-            <a class="pd-btn pd-btn--primary" href="tel:+84886636338">Đặt Lịch Ngay</a>
-            <a class="pd-btn pd-btn--ghost" href="https://zalo.me/0886636338" target="_blank" rel="noopener">Tư vấn Zalo</a>
+            <a class="pd-btn pd-btn--primary" href="#bang-gia" data-scroll-to="bang-gia">Xem Bảng Giá</a>
+            <a class="pd-btn pd-btn--ghost" href="https://zalo.me/0886636338" target="_blank" rel="noopener">Đặt Lịch Ngay</a>
           </div>
         </div>
       </section>
-
-      <!-- ANCHOR -->
-      <nav class="pd-anchorbar" aria-label="Điều hướng nội dung">
-        <a href="#gioi-thieu">Giới thiệu</a>
-        <a href="#uu-diem">Ưu điểm</a>
-        <a href="#thong-so">Thông số</a>
-        <a href="#lap-dat">Lắp đặt</a>
-      </nav>
 
       <div class="pd-content-grid">
         <article class="pd-article">
@@ -101,6 +85,19 @@
               </figure>
               <figure class="product-media">
                 <img src="assets/cacham/cach-am-2.jpeg" alt="Chống ồn RAD Diamond Sinfoni Italy mặt sau" loading="lazy">
+              </figure>
+            </div>
+          </section>
+
+           <section class="pd-section" id="bang-gia" style="scroll-margin-top: calc(var(--nav-h, 72px) + 16px);">
+            <h2>Bảng Giá Cách Âm Chống Ồn</h2>
+
+            <div class="product-gallery" aria-label="Hình ảnh RAD Diamond Sinfoni" style="grid-template-columns: minmax(0, 1fr);">
+              <figure class="product-media">
+                <img src="assets/cacham/bang gia 1.png" alt="Hình ảnh RAD Diamond Sinfoni 1" loading="lazy" style="width: 100%; height: auto; object-fit: contain;">
+              </figure>
+              <figure class="product-media">
+                <img src="assets/cacham/bang gia 2.png" alt="Hình ảnh RAD Diamond Sinfoni 2" loading="lazy" style="width: 100%; height: auto; object-fit: contain;">
               </figure>
             </div>
           </section>
@@ -137,10 +134,10 @@
 
             <div class="product-gallery">
               <figure class="product-media">
-                <img src="assets/cacham/cach-am-3.jpg" alt="Thi công chống ồn RAD Diamond khả năng bám dính" loading="lazy">
+                <img src="assets/cacham/cach-am-1.jpeg" alt="Thi công chống ồn RAD Diamond khả năng bám dính" loading="lazy">
               </figure>
               <figure class="product-media">
-                <img src="assets/cacham/cach am 4.jpg" alt="Khu vực lắp đặt chống ồn RAD Diamond" loading="lazy">
+                <img src="assets/cacham/cach-am-3.jpg" alt="Khu vực lắp đặt chống ồn RAD Diamond" loading="lazy">
               </figure>
             </div>
           </section>
@@ -299,5 +296,26 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // CTA "Xem Bảng Giá" -> tự trượt mượt xuống phần bảng giá
+    (function () {
+      var btn = document.querySelector('[data-scroll-to="bang-gia"]');
+      var target = document.getElementById("bang-gia");
+      if (!btn || !target) return;
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var navH = 72;
+        var nav = document.querySelector(".navbar");
+        if (nav) navH = nav.getBoundingClientRect().height || 72;
+        var y = target.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+        window.scrollTo({ top: y, behavior: "smooth" });
+        // highlight nhẹ để khách biết đâu là bảng giá
+        target.style.transition = "box-shadow .4s ease";
+        target.style.boxShadow = "0 0 0 2px rgba(201,168,76,.7)";
+        setTimeout(function () { target.style.boxShadow = "none"; }, 1600);
+        history.replaceState(null, "", "#bang-gia");
+      });
+    })();
+  </script>
 </body>
 </html>

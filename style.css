@@ -351,9 +351,8 @@ button { border: 0; background: none; cursor: pointer; }
 
 /* Content */
 .pd-content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 34px; align-items: start; }
-.pd-article { min-width: 0; }
-.pd-section { scroll-margin-top: calc(var(--nav-h) + 72px); padding-bottom: 34px; }
-.pd-section + .pd-section { padding-top: 34px; border-top: 1px solid var(--border); }
+.pd-article { display: grid; gap: 16px; min-width: 0; }
+.pd-section { scroll-margin-top: calc(var(--nav-h) + 72px); padding: 20px 22px 22px; border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface); }
 .pd-section h2 { margin-bottom: 13px; color: #fff; font: 800 21px/1.35 'Montserrat', var(--font-sans); }
 .pd-section h3 { margin: 24px 0 8px; color: #fff; font: 700 15px/1.4 'Montserrat', var(--font-sans); }
 .pd-section p { margin-bottom: 14px; color: var(--muted); font-size: 14px; line-height: 1.82; }
