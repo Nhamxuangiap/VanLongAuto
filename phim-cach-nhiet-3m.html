@@ -696,69 +696,80 @@
 
   const dotsBox = document.querySelector('.gallery-dots');
 
-  if (!slider || !track || !slides.length || !dotsBox) return;
+  if (slider && track && slides.length && dotsBox && prev && next) {
+    let current = 0;
 
-  let current = 0;
+
+    slides.forEach((_, index) => {
+
+      const dot = document.createElement('button');
+
+      dot.type = 'button';
+
+      dot.className =
+        'gallery-dot' +
+        (index === 0 ? ' active' : '');
+
+      dot.onclick = () => {
+        current = index;
+        update();
+      };
+
+      dotsBox.appendChild(dot);
+
+    });
 
 
-  slides.forEach((_, index) => {
+    function update() {
 
-    const dot = document.createElement('button');
+      track.style.transform =
+        `translateX(-${current * 100}%)`;
 
-    dot.type = 'button';
+      dotsBox
+        .querySelectorAll('.gallery-dot')
+        .forEach((dot, index) => {
 
-    dot.className =
-      'gallery-dot' +
-      (index === 0 ? ' active' : '');
+          dot.classList.toggle(
+            'active',
+            index === current
+          );
 
-    dot.onclick = () => {
-      current = index;
+        });
+
+    }
+
+
+    next.onclick = () => {
+
+      current =
+        (current + 1) % slides.length;
+
       update();
+
     };
 
-    dotsBox.appendChild(dot);
 
-  });
+    prev.onclick = () => {
 
+      current =
+        (current - 1 + slides.length)
+        % slides.length;
 
-  function update() {
+      update();
 
-    track.style.transform =
-      `translateX(-${current * 100}%)`;
+    };
 
-    dotsBox
-      .querySelectorAll('.gallery-dot')
-      .forEach((dot, index) => {
+    let autoplay = setInterval(next.onclick, 5000);
 
-        dot.classList.toggle(
-          'active',
-          index === current
-        );
-
-      });
-
+    slider.addEventListener('mouseenter', () => clearInterval(autoplay));
+    slider.addEventListener('mouseleave', () => {
+      autoplay = setInterval(next.onclick, 5000);
+    });
+    slider.addEventListener('focusin', () => clearInterval(autoplay));
+    slider.addEventListener('focusout', () => {
+      autoplay = setInterval(next.onclick, 5000);
+    });
   }
-
-
-  next.onclick = () => {
-
-    current =
-      (current + 1) % slides.length;
-
-    update();
-
-  };
-
-
-  prev.onclick = () => {
-
-    current =
-      (current - 1 + slides.length)
-      % slides.length;
-
-    update();
-
-  };
 
 </script>
 
