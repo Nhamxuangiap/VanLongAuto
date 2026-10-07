@@ -322,3 +322,16 @@
     transition-duration: .01ms !important;
   }
 }
+
+/* Giữ nút Quay lại luôn trắng trên navbar tối */
+:root body .navbar a.back,
+:root body .navbar .back,
+:root body .navbar .nav-menu--static .nav-link,
+:root body nav a.back,
+:root body a.back,
+:root body .back-to-home {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-weight: 600;
+}

@@ -9,7 +9,7 @@
 .subpage-desc { max-width: 760px; margin-inline: auto; color: #d0d0d0; font-size: 1rem; line-height: 1.7; text-align: center; }
 .product-page { padding: 42px 0 56px; background: var(--bg); }
 .product-back { margin-top: 34px; text-align: center; }
-.back-to-home { display: inline-block; padding-bottom: 3px; border-bottom: 1px solid #ffd700; color: #ffd700; font-weight: 600; }
+.back-to-home { display: inline-block; padding-bottom: 3px; border-bottom: 1px solid #ffd700; color: #fff; font-family: 'Montserrat', Arial, sans-serif; font-weight: 600; }
 .back-to-home:hover { border-color: #fff; color: #fff; }
 
 /* Audio intro: đoạn 1 + details */

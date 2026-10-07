@@ -1460,3 +1460,19 @@ button { border: 0; background: none; cursor: pointer; }
     border-radius:10px;
   }
 }
+
+/* Back links - Quay lại trang chủ: luôn trắng + Montserrat */
+a.back,
+.back,
+.back-to-home,
+.nav-menu--static .nav-link {
+  color: #fff !important;
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-weight: 600;
+}
+a.back:hover,
+.back:hover,
+.back-to-home:hover,
+.nav-menu--static .nav-link:hover {
+  color: var(--gold-light, #e2c47a) !important;
+}
