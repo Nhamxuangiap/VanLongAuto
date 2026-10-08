@@ -546,6 +546,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Hiện popup sau 0.8 giây
-  setTimeout(openPopup, 800);
+  // Chỉ hiện 1 lần / trình duyệt (localStorage)
+  const PROMO_KEY = 'vanlongauto_promo_seen';
+  try {
+    if (localStorage.getItem(PROMO_KEY)) return;
+  } catch (e) {}
+
+  // Hiện popup sau 0.8 giây nếu chưa xem
+  setTimeout(() => {
+    openPopup();
+    try { localStorage.setItem(PROMO_KEY, '1'); } catch (e) {}
+  }, 800);
 });
