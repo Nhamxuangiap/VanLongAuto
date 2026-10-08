@@ -558,3 +558,51 @@ document.addEventListener('DOMContentLoaded', () => {
     try { localStorage.setItem(PROMO_KEY, '1'); } catch (e) {}
   }, 800);
 });
+
+/* =====================================================
+   GIU VI TRI #featured-services KHI QUAY LAI TU TRANG SAN PHAM
+   ===================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const BACK_KEY = 'vanlongauto_back_to_featured';
+  const PROMO_KEY = 'vanlongauto_promo_seen';
+
+  // Khi bam .fs-btn: danh dau de khi quay lai index se scroll ve #featured-services
+  document.querySelectorAll('.fs-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      try {
+        sessionStorage.setItem(BACK_KEY, '#featured-services');
+        // Chan popup hien lai khi quay ve (phong khi roi trang truoc 800ms)
+        localStorage.setItem(PROMO_KEY, '1');
+      } catch (e) {}
+    });
+  });
+
+  // Khi index.html duoc mo lai: neu co co thi scroll ve dung muc roi xoa
+  let target = null;
+  try { target = sessionStorage.getItem(BACK_KEY); } catch (e) {}
+  if (!target) return;
+
+  const section = document.getElementById('featured-services');
+  if (!section) {
+    try { sessionStorage.removeItem(BACK_KEY); } catch (e) {}
+    return;
+  }
+
+  try { sessionStorage.removeItem(BACK_KEY); } catch (e) {}
+
+  // Tat tu restore cua trinh duyet de khong nhay len dau trang
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+
+  const scrollToFeatured = () => {
+    const navbar = document.getElementById('navbar');
+    const navH = navbar ? navbar.offsetHeight : 72;
+    const top = section.getBoundingClientRect().top + window.scrollY - navH - 8;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+  };
+
+  // Scroll ngay + them 1 lan sau load de chong lech do anh/font load cham
+  requestAnimationFrame(() => setTimeout(scrollToFeatured, 50));
+  if (document.readyState !== 'complete') {
+    window.addEventListener('load', () => setTimeout(scrollToFeatured, 50), { once: true });
+  }
+});
