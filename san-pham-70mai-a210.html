@@ -35,11 +35,11 @@
     <div class="overview">
       <div class="product-slider" id="slider">
         <div class="track" id="track">
-          <figure class="slide"><img src="assets/a210/a210 vuong/1.png" alt="70mai A210, ảnh 1" draggable="false"></figure>
-          <figure class="slide"><img src="assets/a210/a210 vuong/2.png" alt="70mai A210, ảnh 2" draggable="false"></figure>
-          <figure class="slide"><img src="assets/a210/a210 vuong/3.png" alt="70mai A210, ảnh 3" draggable="false"></figure>
-          <figure class="slide"><img src="assets/a210/a210 vuong/4.png" alt="70mai A210, ảnh 4" draggable="false"></figure>
-          <figure class="slide"><img src="assets/a210/a210 vuong/5.png" alt="70mai A210, ảnh 5" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a210/a210 vuong/1.jpeg" alt="70mai A210, ảnh 1" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a210/a210 vuong/2.jpeg" alt="70mai A210, ảnh 2" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a210/a210 vuong/3.jpeg" alt="70mai A210, ảnh 3" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a210/a210 vuong/4.jpeg" alt="70mai A210, ảnh 4" draggable="false"></figure>
+          <figure class="slide"><img src="assets/a210/a210 vuong/5.jpeg" alt="70mai A210, ảnh 5" draggable="false"></figure>
         </div>
         <button class="arrow prev" aria-label="Ảnh trước">‹</button><button class="arrow next" aria-label="Ảnh tiếp theo">›</button>
         <div class="dots" id="dots" aria-label="Chọn ảnh"></div>
@@ -64,7 +64,7 @@
           <p>A210 có thể ghi camera trước ở 1080P 60FPS để hình ảnh chuyển động mượt hơn. Khi kết hợp camera sau RC21, thiết bị bổ sung góc quan sát phía sau 1080P. Góc nhìn trước 132° và góc nhìn sau 130° giúp bao quát nhiều phần đường hơn.</p>
           <p><small>Camera RC21 bán riêng. Khi ghi 60FPS, HDR không hoạt động.</small></p>
           <figure class="content-media">
-            <img id="visionImage" src="assets/a210/a210 ngang/1.png" alt="Ghi hình ban ngày của 70mai A210">
+            <img id="visionImage" src="assets/a210/a210 ngang/1.jpeg" alt="Ghi hình ban ngày của 70mai A210">
             <div class="media-tabs" role="tablist" aria-label="Chọn điều kiện ghi hình">
               <button class="media-tab active" type="button" data-vision="day" role="tab" aria-selected="true">Ban ngày</button>
               <button class="media-tab" type="button" data-vision="night" role="tab" aria-selected="false">Ban đêm</button>
@@ -77,7 +77,7 @@
           <h3>Super Night Vision và HDR</h3>
           <p>Khẩu độ f/1.6 hỗ trợ camera thu sáng tốt hơn vào ban đêm. Thuật toán HDR giúp chuyển tiếp vùng sáng tối tự nhiên hơn và làm rõ các chi tiết quan trọng trong điều kiện ánh sáng phức tạp.</p>
           <p><small>Khi bật HDR, camera trước tự chuyển về 30FPS.</small></p>
-          <figure class="content-media"><img src="assets/a210/a210 ngang/3.png" alt="Khả năng ghi hình HDR của 70mai A210"><figcaption>Có thể dùng ảnh ngang, dọc hoặc ảnh dài.</figcaption></figure>
+          <figure class="content-media"><img src="assets/a210/a210 ngang/3.jpeg" alt="Khả năng ghi hình HDR của 70mai A210"><figcaption>Có thể dùng ảnh ngang, dọc hoặc ảnh dài.</figcaption></figure>
         </div>
 
         <div class="article-block">
@@ -253,7 +253,7 @@
     function show(i){current=(i+slides.length)%slides.length;track.style.transform=`translateX(-${current*100}%)`;dot.forEach((b,n)=>b.classList.toggle('active',n===current))}function auto(){clearInterval(timer);timer=setInterval(()=>show(current+1),3500)}
     document.querySelector('.next').onclick=()=>{show(current+1);auto()};document.querySelector('.prev').onclick=()=>{show(current-1);auto()};dot.forEach((b,i)=>b.onclick=()=>{show(i);auto()});slider.ontouchstart=e=>{x=e.touches[0].clientX;clearInterval(timer)};slider.ontouchend=e=>{if(Math.abs(e.changedTouches[0].clientX-x)>45)show(current+(e.changedTouches[0].clientX<x?1:-1));auto()};slider.onmouseenter=()=>clearInterval(timer);slider.onmouseleave=auto;show(0);auto();
     const tabs=(selector,media,files)=>document.querySelectorAll(selector).forEach(btn=>btn.onclick=()=>{media.src=files[btn.dataset.vision||btn.dataset.parking];if(media.tagName==='VIDEO'){media.load();media.play().catch(()=>{})}document.querySelectorAll(selector).forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',b===btn)})});
-    tabs('[data-vision]',document.querySelector('#visionImage'),{day:'assets/a210/a210 ngang/1.png',night:'assets/a210/a210 ngang/2.png'});
+    tabs('[data-vision]',document.querySelector('#visionImage'),{day:'assets/a210/a210 ngang/1.jpeg',night:'assets/a210/a210 ngang/2.jpeg'});
     const parkingVideo=document.querySelector('#parkingVideo'),parkingTabs=document.querySelectorAll('[data-parking]');
     parkingTabs.forEach(btn=>btn.onclick=()=>{parkingVideo.src=btn.dataset.src;parkingVideo.play().catch(()=>{});parkingTabs.forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',b===btn)})});
   </script>
