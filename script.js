@@ -546,17 +546,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Chỉ hiện 1 lần / trình duyệt (localStorage)
-  const PROMO_KEY = 'vanlongauto_promo_seen';
+  // Hien moi khi load lai / vao trang
+  // Ngoai tru khi quay lai tu trang san pham (.fs-btn) thi khong hien de khoi che #featured-services
   try {
-    if (localStorage.getItem(PROMO_KEY)) return;
+    if (sessionStorage.getItem('vanlongauto_back_to_featured')) return;
   } catch (e) {}
 
-  // Hiện popup sau 0.8 giây nếu chưa xem
-  setTimeout(() => {
-    openPopup();
-    try { localStorage.setItem(PROMO_KEY, '1'); } catch (e) {}
-  }, 800);
+  // Hiện popup sau 0.8 giây mỗi lần vào trang
+  setTimeout(openPopup, 800);
 });
 
 /* =====================================================
@@ -564,15 +561,13 @@ document.addEventListener('DOMContentLoaded', () => {
    ===================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const BACK_KEY = 'vanlongauto_back_to_featured';
-  const PROMO_KEY = 'vanlongauto_promo_seen';
 
   // Khi bam .fs-btn: danh dau de khi quay lai index se scroll ve #featured-services
+  // (popup se tu an khi thay key nay nen khong che mat section)
   document.querySelectorAll('.fs-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       try {
         sessionStorage.setItem(BACK_KEY, '#featured-services');
-        // Chan popup hien lai khi quay ve (phong khi roi trang truoc 800ms)
-        localStorage.setItem(PROMO_KEY, '1');
       } catch (e) {}
     });
   });
