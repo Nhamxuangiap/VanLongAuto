@@ -35,16 +35,17 @@
     .ppf-benefit strong {
       display: block;
       margin-bottom: 7px;
-      color: #fff;
+      color: var(--text);
       font-size: 13px;
       font-weight: 700;
     }
 
     .ppf-benefit p {
       margin: 0;
-      color: var(--muted);
+      color: var(--text);
       font-size: 12px;
       line-height: 1.65;
+      opacity: .92;
     }
 
     .ppf-packages {
@@ -58,7 +59,13 @@
       padding: 18px;
       border: 1px solid var(--border);
       border-radius: 12px;
-      background: #111;
+      background: var(--surface);
+    }
+
+    .ppf-package p,
+    .ppf-benefit p {
+      color: var(--text) !important;
+      opacity: .92;
     }
 
     .ppf-package span {
@@ -91,7 +98,12 @@
       padding: 16px;
       border: 1px solid var(--border);
       border-radius: 10px;
-      background: #111;
+      background: var(--surface);
+    }
+
+    .ppf-step p {
+      color: var(--text) !important;
+      opacity: .92;
     }
 
     .ppf-step-number {
@@ -133,7 +145,7 @@
 
     .ppf-price-head h2 {
       margin-top: 7px;
-      color: #fff;
+      color: var(--text);
       font-size: 22px;
       font-weight: 800;
     }
@@ -142,7 +154,7 @@
       overflow: hidden;
       border: 1px solid var(--border);
       border-radius: 14px;
-      background: #111;
+      background: var(--surface);
     }
 
     .ppf-price-image img {
@@ -287,14 +299,6 @@
       </section>
 
 
-      <!-- MENU NỘI DUNG -->
-      <nav class="pd-anchorbar" aria-label="Nội dung PPF">
-        <a href="#chi-tiet">PPF là gì?</a>
-        <a href="#loi-ich">Lợi ích</a>
-        <a href="#goi-dan">Các gói PPF</a>
-        <a href="#bang-gia">Bảng giá</a>
-        <a href="#quy-trinh">Quy trình</a>
-      </nav>
 
 
       <div class="pd-content-grid">
